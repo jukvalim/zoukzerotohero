@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { setLocale, getLocale } from '$lib/paraglide/runtime';
-	import { page } from '$app/state';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { m } from '$lib/paraglide/messages.js';
 
@@ -30,12 +30,30 @@
 
 		<!-- Desktop Navigation -->
 		<nav class="hidden items-center space-x-6 md:flex">
-			<a href="/" class="text-gray-800 transition-colors hover:text-gray-600"
-				>{m['navigation.home']()}</a
+			<a
+				href="/"
+				class="transition-colors hover:text-gray-600"
+				class:text-gray-800={$page.url.pathname !== '/'}
+				class:text-blue-600={$page.url.pathname === '/'}
+				class:font-semibold={$page.url.pathname === '/'}
+				class:border-b-2={$page.url.pathname === '/'}
+				class:border-blue-600={$page.url.pathname === '/'}
+				class:pb-1={$page.url.pathname === '/'}
 			>
-			<a href="/welcome" class="text-gray-800 transition-colors hover:text-gray-600"
-				>{m['navigation.welcome']()}</a
+				{m['navigation.home']()}
+			</a>
+			<a
+				href="/welcome"
+				class="transition-colors hover:text-gray-600"
+				class:text-gray-800={$page.url.pathname !== '/welcome'}
+				class:text-blue-600={$page.url.pathname === '/welcome'}
+				class:font-semibold={$page.url.pathname === '/welcome'}
+				class:border-b-2={$page.url.pathname === '/welcome'}
+				class:border-blue-600={$page.url.pathname === '/welcome'}
+				class:pb-1={$page.url.pathname === '/welcome'}
 			>
+				{m['navigation.welcome']()}
+			</a>
 		</nav>
 
 		<!-- Mobile Hamburger Button -->
@@ -107,7 +125,10 @@
 				<nav class="flex flex-col space-y-4">
 					<a
 						href="/"
-						class="border-b border-gray-200 py-2 text-gray-800 transition-colors hover:text-gray-600"
+						class="border-b border-gray-200 py-2 transition-colors hover:text-gray-600"
+						class:text-gray-800={$page.url.pathname !== '/'}
+						class:text-blue-600={$page.url.pathname === '/'}
+						class:font-semibold={$page.url.pathname === '/'}
 						onclick={closeMobileMenu}
 						onkeydown={(e) => {
 							if (e.key === ' ') {
@@ -121,7 +142,10 @@
 					</a>
 					<a
 						href="/welcome"
-						class="py-2 text-gray-800 transition-colors hover:text-gray-600"
+						class="py-2 transition-colors hover:text-gray-600"
+						class:text-gray-800={$page.url.pathname !== '/welcome'}
+						class:text-blue-600={$page.url.pathname === '/welcome'}
+						class:font-semibold={$page.url.pathname === '/welcome'}
 						onclick={closeMobileMenu}
 						onkeydown={(e) => {
 							if (e.key === ' ') {
