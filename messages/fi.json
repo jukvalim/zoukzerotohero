@@ -18,5 +18,9 @@
 		"lambada": "LambadaHelsinki",
 		"lambada_extra_info": "Zouk kehittyi Lambadasta, ja moni tanssii myös Lambadaa zouk sosiaalitansseissa",
 		"helsinki_zouk_instagram": "helsinki_zouk Instagram-tili"
+	},
+	"navigation": {
+		"home": "Etusivu",
+		"welcome": "Tervetuloa"
 	}
 }
