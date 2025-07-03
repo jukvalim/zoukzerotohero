@@ -17,17 +17,6 @@
 		</div>
 		<div class="flex items-center space-x-2">
 			<button
-				onclick={() => setLocale('fi')}
-				class="flex items-center space-x-1 px-2 py-1 rounded transition-colors"
-				class:bg-white={currentLocale === 'fi'}
-				class:text-gray-800={currentLocale === 'fi'}
-				class:font-bold={currentLocale === 'fi'}
-				class:cursor-default={currentLocale === 'fi'}
-				class:cursor-pointer={currentLocale !== 'fi'}
-			>
-				<span>🇫🇮</span><span>fi</span>
-			</button>
-			<button
 				onclick={() => setLocale('en')}
 				class="flex items-center space-x-1 px-2 py-1 rounded transition-colors"
 				class:bg-white={currentLocale === 'en'}
@@ -37,6 +26,17 @@
 				class:cursor-pointer={currentLocale !== 'en'}
 			>
 				<span>🇬🇧</span><span>en</span>
+			</button>
+			<button
+				onclick={() => setLocale('fi')}
+				class="flex items-center space-x-1 px-2 py-1 rounded transition-colors"
+				class:bg-white={currentLocale === 'fi'}
+				class:text-gray-800={currentLocale === 'fi'}
+				class:font-bold={currentLocale === 'fi'}
+				class:cursor-default={currentLocale === 'fi'}
+				class:cursor-pointer={currentLocale !== 'fi'}
+			>
+				<span>🇫🇮</span><span>fi</span>
 			</button>
 		</div>
 	</header>
