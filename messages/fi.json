@@ -3,7 +3,7 @@
 	"hello_world": "Hello, {name} from fi!",
 	"zouk_zero_to_hero_description": "Järjestämme brasilialaisen zoukin oppitunteja ja sosiaalitansseja Helsingissä",
 	"welcome": {
-		"welcome_title": "Haluaisitko oppia tanssimaan brasilialaista zoukia?",
+		"welcome_title": "Haluatko oppia tanssimaan brasilialaista zoukia?",
 		"welcome_description": "Kesäisin meillä on oppitunnit ja ulkoilmatanssit joka keskiviikkoilta sään salliessa. Tule kokeilemaan! Et tarvitse aikaisempaa kokemusta tai omaa tanssiparia. Voit tarkistaa yksityiskohdat <a href=\"https://www.facebook.com/events/1949014439171820/\">Facebook-tapahtumasta</a>.",
 		"links_title": "Brasilialaisesta zoukista Helsingissä",
 		"links": {
@@ -15,6 +15,8 @@
 			"lambada": "LambadaHelsinki",
 			"lambada_extra_info": "Zouk kehittyi Lambadasta, ja moni tanssii myös Lambadaa zouk sosiaalitansseissa",
 			"helsinki_zouk_instagram": "helsinki_zouk Instagram-tili"
-		}
+		},
+		"welcome_description_1": "Kesäisin meillä on oppitunnit ja ulkoilmatanssit joka keskiviikkoilta sään salliessa. Tule kokeilemaan! Et tarvitse aikaisempaa kokemusta tai omaa tanssiparia. Voit tarkistaa yksityiskohdat",
+		"welcome_description_2": "Facebook-tapahtumasta"
 	}
 }

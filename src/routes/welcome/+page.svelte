@@ -4,7 +4,7 @@
 
 <h1 class="text-4xl font-bold mb-4">{m['welcome.welcome_title']()}</h1>
 <p class="mb-8">
-	{@html m['welcome.welcome_description']()}
+	{m['welcome.welcome_description_1']()} <a href="https://www.facebook.com/events/1949014439171820/">{m['welcome.welcome_description_2']()}</a>.
 </p>
 
 <h2 class="text-2xl font-bold mb-2">{m['welcome.links_title']()}</h2>
