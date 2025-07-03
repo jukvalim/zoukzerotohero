@@ -27,5 +27,8 @@
   <li>
 		<a href="https://www.facebook.com/lambadahelsinki">{m['welcome.links.lambada']()}</a> ({m['welcome.links.lambada_extra_info']()})
   </li>
+  <li>
+		<a href="https://www.instagram.com/helsinki_zouk/">{m['welcome.links.helsinki_zouk_instagram']()}</a>
+  </li>
 
 </ul>
