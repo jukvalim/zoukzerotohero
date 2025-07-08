@@ -1,1 +1,50 @@
-{"$schema":"https://inlang.com/schema/inlang-message-format","hello_world":"Hello, {name} from en!","zouk_zero_to_hero_description":"We organize Brazilian Zouk classes and socials in Helsinki.","welcome":{"welcome_title":"Would you like to learn to dance Brazilian Zouk?","welcome_description":"In the summer, we have outdoor classes every Wednesday evening, weather permitting. Come try it out! No previous dance experience or partner of your own needed. You can check the details in the <a href=\"https://www.facebook.com/events/1949014439171820/\">Facebook event</a>.","links_title":"Brazilian Zouk in Helsinki","links":{"calendar":"Brazilian Zouk Finland Google calendar","hdc":"Helsinki Dance Central dance school","guidelines":"Community Guidelines","facebook_group":"Brazilian Zouk Finland Facebook group","zerotohero_page":"Zouk Zero to Hero Facebook page","lambada":"LambadaHelsinki","lambada_extra_info":"Zouk evolved from Lambada, and many people also dance Lambada in Zouk socials","helsinki_zouk_instagram":"helsinki_zouk Instagram account"},"welcome_description_1":"In the summer, we have outdoor classes every Wednesday evening, weather permitting. Come try it out! No previous dance experience or partner of your own needed. You can check the details in the","welcome_description_2":"Facebook event"},"links_title":"Brazilian Zouk in Helsinki","links":{"calendar":"Brazilian Zouk Finland Google calendar","hdc":"Helsinki Dance Central dance school","guidelines":"Community Guidelines","facebook_group":"Brazilian Zouk Finland Facebook group","zerotohero_page":"Zouk Zero to Hero Facebook page","lambada":"LambadaHelsinki","lambada_extra_info":"Zouk evolved from Lambada, and many people also dance Lambada in Zouk socials","helsinki_zouk_instagram":"helsinki_zouk Instagram account"},"navigation":{"home":"Zouk Zero to Hero","welcome":"Welcome"},"who_are_we":{"who_are_we_title":"Who are we?","who_are_we_description":"We are Brazilian Zouk enthusiasts, instructors and organizers based in Helsinki. The borders are honestly a bit blurry here since we work with all the (fantastic!) Brazilian Zouk instructors in Helsinki, but the main people involved in organizing our socials and events are below."}}
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"hello_world": "Hello, {name} from en!",
+	"zouk_zero_to_hero_description": "We organize Brazilian Zouk classes and socials in Helsinki.",
+	"welcome": {
+		"welcome_title": "Would you like to learn to dance Brazilian Zouk?",
+		"welcome_description": "In the summer, we have outdoor classes every Wednesday evening, weather permitting. Come try it out! No previous dance experience or partner of your own needed. You can check the details in the <a href=\"https://www.facebook.com/events/1949014439171820/\">Facebook event</a>.",
+		"links_title": "Brazilian Zouk in Helsinki",
+		"links": {
+			"calendar": "Brazilian Zouk Finland Google calendar",
+			"hdc": "Helsinki Dance Central dance school",
+			"guidelines": "Community Guidelines",
+			"facebook_group": "Brazilian Zouk Finland Facebook group",
+			"zerotohero_page": "Zouk Zero to Hero Facebook page",
+			"lambada": "LambadaHelsinki",
+			"lambada_extra_info": "Zouk evolved from Lambada, and many people also dance Lambada in Zouk socials",
+			"helsinki_zouk_instagram": "helsinki_zouk Instagram account"
+		},
+		"welcome_description_1": "In the summer, we have outdoor classes every Wednesday evening, weather permitting. Come try it out! No previous dance experience or partner of your own needed. You can check the details in the",
+		"welcome_description_2": "Facebook event"
+	},
+	"links_title": "Brazilian Zouk in Helsinki",
+	"links": {
+		"calendar": "Brazilian Zouk Finland Google calendar",
+		"hdc": "Helsinki Dance Central dance school",
+		"guidelines": "Community Guidelines",
+		"facebook_group": "Brazilian Zouk Finland Facebook group",
+		"zerotohero_page": "Zouk Zero to Hero Facebook page",
+		"lambada": "LambadaHelsinki",
+		"lambada_extra_info": "Zouk evolved from Lambada, and many people also dance Lambada in Zouk socials",
+		"helsinki_zouk_instagram": "helsinki_zouk Instagram account"
+	},
+	"navigation": {
+		"home": "Zouk Zero to Hero",
+		"welcome": "Welcome to Zouk"
+	},
+	"who_are_we": {
+		"who_are_we_title": "Who are we?",
+		"who_are_we_description": "We are Brazilian Zouk enthusiasts, instructors and organizers based in Helsinki. The borders can get a bit blurry here since we work with all the (fantastic!) Brazilian Zouk instructors in Helsinki. The main people involved in organizing our socials and events are below.",
+		"jukka_1": "Jukka is the main organizer for Zouk Zero to Hero. He started learning Brazilian Zouk in 2010, never stopped, and does not intend to stop. The craft and the art of the dance - and of teaching the dance - is endlessly fascinating to him.",
+		"jukka_2": "His main teachers have been Freddy and Andressa, and he taught for many years at Helsinki Dance Central. He teaches mainly in Helsinki, but has also taught in many other European countries over the years.",
+		"jukka_3": "Jukka is available for private classes. Prices in Helsinki: 100€/h single class, 300€/5h package. Contact him at",
+		"kristina_1": "",
+		"kristina_2": "",
+		"kristina_3": "",
+		"anna_1": "",
+		"anna_2": "",
+		"anna_3": ""
+	}
+}
