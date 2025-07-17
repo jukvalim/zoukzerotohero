@@ -20,7 +20,7 @@
 	}
 </script>
 
-<h1 class="mb-4 text-4xl font-bold">{m['who_are_we.who_are_we_title']()}</h1>
+<h1 class="mb-4 md:text-4xl text-2xl font-bold">{m['who_are_we.who_are_we_title']()}</h1>
 <p class="mb-2">
 	{m['who_are_we.who_are_we_description_1']()}
 </p>

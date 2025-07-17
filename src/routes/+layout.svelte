@@ -7,9 +7,9 @@
 	let currentLocale = $derived(getLocale());
 </script>
 
-<div class="grid min-h-screen grid-cols-12">
+<div class="grid grid-cols-12">
 	<header
-		class="col-span-10 col-start-2 flex items-center justify-between bg-white p-4 text-gray-800"
+		class="col-span-10 col-start-2 flex items-center justify-between bg-white p-4 text-gray-800 mb-4 md:mb-8"
 	>
 		<!-- Left side: Add logo or site name here if needed
 		<div class="flex items-center">

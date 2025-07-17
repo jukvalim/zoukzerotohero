@@ -3,7 +3,7 @@
 
 	const links = [
 		{
-			href: 'https://www.helsinkidancecentral.com/community-guidelines',
+			href: '/community-guidelines',
 			title: m['links.guidelines']()
 		},
 		{
@@ -38,7 +38,7 @@
 	];
 </script>
 
-<h2 class="mb-2 text-2xl font-bold">{m['links_title']()}</h2>
+<h2 class="mb-2 md:text-2xl text-xl font-bold">{m['links_title']()}</h2>
 
 <ul class="space-y-2">
 	{#each links as link}

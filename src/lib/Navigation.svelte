@@ -39,6 +39,18 @@
 	>
 		{m['navigation.welcome']()}
 	</a>
+	<a
+		href="/community-guidelines"
+		class="transition-colors hover:text-gray-600"
+		class:text-gray-800={$page.url.pathname !== '/community-guidelines'}
+		class:text-blue-600={$page.url.pathname === '/community-guidelines'}
+		class:font-semibold={$page.url.pathname === '/community-guidelines'}
+		class:border-b-2={$page.url.pathname === '/community-guidelines'}
+		class:border-blue-600={$page.url.pathname === '/community-guidelines'}
+		class:pb-1={$page.url.pathname === '/community-guidelines'}
+	>
+		{m['navigation.community-guidelines']()}
+	</a>
 </nav>
 
 <!-- Mobile Hamburger Button -->
@@ -115,6 +127,23 @@
 					}}
 				>
 					{m['navigation.welcome']()}
+				</a>
+				<a
+					href="/community-guidelines"
+					class="py-2 transition-colors hover:text-gray-600"
+					class:text-gray-800={$page.url.pathname !== '/community-guidelines'}
+					class:text-blue-600={$page.url.pathname === '/community-guidelines'}
+					class:font-semibold={$page.url.pathname === '/community-guidelines'}
+					onclick={closeMobileMenu}
+					onkeydown={(e) => {
+						if (e.key === ' ') {
+							e.preventDefault();
+							closeMobileMenu();
+							window.location.href = '/community-guidelines';
+						}
+					}}
+				>
+					{m['navigation.community-guidelines']()}
 				</a>
 			</nav>
 		</div>
