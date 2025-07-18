@@ -89,7 +89,7 @@
 	{m['community_guidelines.hygiene_p_2']()}
 </p>
 
-<p class="mt-6">
+<p class="mt-6 mb-6">
 	<a href="https://www.helsinkidancecentral.com/community-guidelines">
 		{m['community_guidelines.available_at_hdc']()}
 	</a>

@@ -117,11 +117,17 @@
 		<div class="flex-1">
 			<!-- Content (collapsible on mobile, always visible on desktop) -->
 			{#if kristinaExpanded}
-				<div class="leading-relaxed text-gray-700">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			<div class="leading-relaxed text-gray-700">
+				<p class="mb-2">
+					{m['who_are_we.kristina_1']()}
+				</p>
+				<p class="mb-2">
+					{m['who_are_we.kristina_2']()}
+				</p>
+				<p class="">
+						{m['who_are_we.kristina_3']()}
+						<a href="mailto:kristina.elanor@gmail.com"> kristina.elanor@gmail.com &#9993; </a>
+					</p>
 				</div>
 			{/if}
 		</div>

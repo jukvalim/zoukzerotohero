@@ -51,6 +51,18 @@
 	>
 		{m['navigation.community-guidelines']()}
 	</a>
+	<a
+		href="/who-are-we"
+		class="transition-colors hover:text-gray-600"
+		class:text-gray-800={$page.url.pathname !== '/who-are-we'}
+		class:text-blue-600={$page.url.pathname === '/who-are-we'}
+		class:font-semibold={$page.url.pathname === '/who-are-we'}
+		class:border-b-2={$page.url.pathname === '/who-are-we'}
+		class:border-blue-600={$page.url.pathname === '/who-are-we'}
+		class:pb-1={$page.url.pathname === '/who-are-we'}
+	>
+		{m['navigation.who-are-we']()}
+	</a>
 </nav>
 
 <!-- Mobile Hamburger Button -->
@@ -144,6 +156,23 @@
 					}}
 				>
 					{m['navigation.community-guidelines']()}
+				</a>
+				<a
+					href="/who-are-we"
+					class="py-2 transition-colors hover:text-gray-600"
+					class:text-gray-800={$page.url.pathname !== '/who-are-we'}
+					class:text-blue-600={$page.url.pathname === '/who-are-we'}
+					class:font-semibold={$page.url.pathname === '/who-are-we'}
+					onclick={closeMobileMenu}
+					onkeydown={(e) => {
+						if (e.key === ' ') {
+							e.preventDefault();
+							closeMobileMenu();
+							window.location.href = '/who-are-we';
+						}
+					}}
+				>
+					{m['navigation.who-are-we']()}
 				</a>
 			</nav>
 		</div>

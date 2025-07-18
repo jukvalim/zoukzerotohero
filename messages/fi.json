@@ -33,21 +33,22 @@
 	"navigation": {
 		"home": "Zouk Zero to Hero",
 		"welcome": "Tervetuloa tanssimaan zoukia",
-		"community-guidelines": "Yhteisön sosiaalitanssiohjeet"
+		"community-guidelines": "Yhteisön sosiaalitanssiohjeet",
+		"who-are-we": "Keitä me olemme?"
 	},
 	"who_are_we": {
 		"who_are_we_title": "Keitä me olemme?",
-		"who_are_we_description_1": "Olemme brasilialaisen zoukin tanssijoita, opettajia ja järjestäjiä Helsingissä. Rajat ovat joskus epäselviä, koska teemme yhteistyötä kaikkien Helsingissä vaikuttavien zouk-opettajien kanssa. Pääasialliset tapahtumanjärjestäjämme ovat alapuolella.",
+		"who_are_we_description_1": "Olemme brasilialaisen zoukin tanssijoita, opettajia ja järjestäjiä Helsingissä. Rajat ovat joskus epäselviä, koska teemme yhteistyötä kaikkien Helsingissä vaikuttavien zouk- ja lambada-opettajien kanssa. Pääasialliset tapahtumanjärjestäjämme ovat alapuolella.",
 		"who_are_we_description_2": "Jos haluat järjestää jotain kanssamme, ota yhteyttä",
 		"jukka_1": "Jukka on Zouk Zero to Heron pääjärjestäjä. Hän aloitti brasilialaisen zoukin vuonna 2010, ei missään vaiheessa lopettanut sen opettelua, eikä aio lopettaa. Tanssin - ja sen opettamisen - taito ja taide ovat hänelle loputtoman kiinnostavia.",
 		"jukka_2": "Hänen pääopettajansa ovat olleet Freddy ja Andressa, ja hän on opettanut Helsinki Dance Centralissa monen vuoden ajan. Hän opettaa pääasiassa Helsingissä, mutta on vuosien varrella opettanut monissa muissa Euroopan maissa.",
 		"jukka_3": "Jukka opettaa yksityistunteja. Hinnat Helsingissä: 100 €/h yksi tunti, 300 €/5h paketti. Tunneista voi sopia laittamalla viestiä",
-		"kristina_1": "",
-		"kristina_2": "",
-		"kristina_3": "",
-		"anna_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-		"anna_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-		"anna_3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		"kristina_1": "Kristina aloitti brasilialaisen zoukin tanssimisen Pietarissa Venäjällä vuonna 2010. Tuolloin Zouk oli juuri saapumassa Pietariin. Hänen ensimmäiset opettajansa olivat Anikas Poklad, Anastasiya ja William dos Santos.",
+		"kristina_2": "Zouk oli Kristinan ensimmäinen paritanssi, ja siitä tuli hänelle intohimo. Vuonna 2014 Kristina muutti Helsinkiin ja aloitti opettelemaan tanssia Freddyn ja Andressan johdolla Helsinki Dance Centralissa. Siellä hänestä tuli opettaja ja hän opetti siellä tunteja useita vuosia; hän on opettanut myös ulkomailla.",
+		"kristina_3": "Zoukissa Kristina rakastaa erityisesti saatavilla olevan musiikin monipuolisuutta ja sen mahdollistamaa luovuutta ja vaihtelua. Jos olet kiinnostunut yksityistunneista Kristinan kanssa, ota yhteyttä",
+		"anna_1": "Anna hurahti brasilialaiseen zoukiin vuonna 2020 (kiitos Jukka ja Kristina!) - ja jäi nopeasti koukkuun. Oppimispolku jatkui harjoittelulla Freddyn ja Andressan kanssa, mikä sytytti omistautumisen, josta kasvoi nopeasti enemmän kuin harrastus. Rakkauden tanssiin ja kehityshalun ajamana hän on matkustanut laajalti Euroopassa oppiakseen kansainvälisiltä huippuopettajilta ja uppoutuakseen globaaliin zouk-yhteisöön.",
+		"anna_2": "Ajan myötä Anna siirtyi oppilaasta assistentiksi ja eteni luonnollisesti opettamaan ja järjestämään tanssitapahtumia.",
+		"anna_3": "Jos olet kiinnostunut yksityistunneista Annan kanssa, ota yhteyttä"
 	},
 	"community_guidelines": {
 		"title": "Brasilialaisen zoukin sosiaalitanssiohjeet",
