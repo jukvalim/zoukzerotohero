@@ -4,6 +4,14 @@
 
 	let mobileMenuOpen = $state(false);
 
+	// Navigation items configuration
+	const navigationItems = [
+		{ href: '/', key: 'navigation.home' as const },
+		{ href: '/welcome', key: 'navigation.welcome' as const },
+		{ href: '/community-guidelines', key: 'navigation.community-guidelines' as const },
+		{ href: '/who-are-we', key: 'navigation.who-are-we' as const }
+	] as const;
+
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 	}
@@ -11,58 +19,41 @@
 	function closeMobileMenu() {
 		mobileMenuOpen = false;
 	}
+
+	function isActive(href: string): boolean {
+		return $page.url.pathname === href;
+	}
+
+	function getActiveClasses(href: string): string {
+		const active = isActive(href);
+		return active
+			? 'text-blue-600 font-semibold border-b-2 border-blue-600 pb-1'
+			: 'text-gray-800';
+	}
+
+	function handleMobileKeydown(e: KeyboardEvent, href: string) {
+		if (e.key === ' ') {
+			e.preventDefault();
+			closeMobileMenu();
+			window.location.href = href;
+		}
+	}
+
+	function getMessage(key: string) {
+		return (m as any)[key]();
+	}
 </script>
 
 <!-- Desktop Navigation -->
 <nav class="hidden items-center space-x-6 md:flex">
-	<a
-		href="/"
-		class="transition-colors hover:text-gray-600"
-		class:text-gray-800={$page.url.pathname !== '/'}
-		class:text-blue-600={$page.url.pathname === '/'}
-		class:font-semibold={$page.url.pathname === '/'}
-		class:border-b-2={$page.url.pathname === '/'}
-		class:border-blue-600={$page.url.pathname === '/'}
-		class:pb-1={$page.url.pathname === '/'}
-	>
-		{m['navigation.home']()}
-	</a>
-	<a
-		href="/welcome"
-		class="transition-colors hover:text-gray-600"
-		class:text-gray-800={$page.url.pathname !== '/welcome'}
-		class:text-blue-600={$page.url.pathname === '/welcome'}
-		class:font-semibold={$page.url.pathname === '/welcome'}
-		class:border-b-2={$page.url.pathname === '/welcome'}
-		class:border-blue-600={$page.url.pathname === '/welcome'}
-		class:pb-1={$page.url.pathname === '/welcome'}
-	>
-		{m['navigation.welcome']()}
-	</a>
-	<a
-		href="/community-guidelines"
-		class="transition-colors hover:text-gray-600"
-		class:text-gray-800={$page.url.pathname !== '/community-guidelines'}
-		class:text-blue-600={$page.url.pathname === '/community-guidelines'}
-		class:font-semibold={$page.url.pathname === '/community-guidelines'}
-		class:border-b-2={$page.url.pathname === '/community-guidelines'}
-		class:border-blue-600={$page.url.pathname === '/community-guidelines'}
-		class:pb-1={$page.url.pathname === '/community-guidelines'}
-	>
-		{m['navigation.community-guidelines']()}
-	</a>
-	<a
-		href="/who-are-we"
-		class="transition-colors hover:text-gray-600"
-		class:text-gray-800={$page.url.pathname !== '/who-are-we'}
-		class:text-blue-600={$page.url.pathname === '/who-are-we'}
-		class:font-semibold={$page.url.pathname === '/who-are-we'}
-		class:border-b-2={$page.url.pathname === '/who-are-we'}
-		class:border-blue-600={$page.url.pathname === '/who-are-we'}
-		class:pb-1={$page.url.pathname === '/who-are-we'}
-	>
-		{m['navigation.who-are-we']()}
-	</a>
+	{#each navigationItems as { href, key }}
+		<a
+			{href}
+			class="transition-colors hover:text-gray-600 {getActiveClasses(href)}"
+		>
+			{getMessage(key)}
+		</a>
+	{/each}
 </nav>
 
 <!-- Mobile Hamburger Button -->
@@ -106,74 +97,19 @@
 			tabindex="0"
 		>
 			<nav class="flex flex-col space-y-4">
-				<a
-					href="/"
-					class="border-b border-gray-200 py-2 transition-colors hover:text-gray-600"
-					class:text-gray-800={$page.url.pathname !== '/'}
-					class:text-blue-600={$page.url.pathname === '/'}
-					class:font-semibold={$page.url.pathname === '/'}
-					onclick={closeMobileMenu}
-					onkeydown={(e) => {
-						if (e.key === ' ') {
-							e.preventDefault();
-							closeMobileMenu();
-							window.location.href = '/';
-						}
-					}}
-				>
-					{m['navigation.home']()}
-				</a>
-				<a
-					href="/welcome"
-					class="py-2 transition-colors hover:text-gray-600"
-					class:text-gray-800={$page.url.pathname !== '/welcome'}
-					class:text-blue-600={$page.url.pathname === '/welcome'}
-					class:font-semibold={$page.url.pathname === '/welcome'}
-					onclick={closeMobileMenu}
-					onkeydown={(e) => {
-						if (e.key === ' ') {
-							e.preventDefault();
-							closeMobileMenu();
-							window.location.href = '/welcome';
-						}
-					}}
-				>
-					{m['navigation.welcome']()}
-				</a>
-				<a
-					href="/community-guidelines"
-					class="py-2 transition-colors hover:text-gray-600"
-					class:text-gray-800={$page.url.pathname !== '/community-guidelines'}
-					class:text-blue-600={$page.url.pathname === '/community-guidelines'}
-					class:font-semibold={$page.url.pathname === '/community-guidelines'}
-					onclick={closeMobileMenu}
-					onkeydown={(e) => {
-						if (e.key === ' ') {
-							e.preventDefault();
-							closeMobileMenu();
-							window.location.href = '/community-guidelines';
-						}
-					}}
-				>
-					{m['navigation.community-guidelines']()}
-				</a>
-				<a
-					href="/who-are-we"
-					class="py-2 transition-colors hover:text-gray-600"
-					class:text-gray-800={$page.url.pathname !== '/who-are-we'}
-					class:text-blue-600={$page.url.pathname === '/who-are-we'}
-					class:font-semibold={$page.url.pathname === '/who-are-we'}
-					onclick={closeMobileMenu}
-					onkeydown={(e) => {
-						if (e.key === ' ') {
-							e.preventDefault();
-							closeMobileMenu();
-							window.location.href = '/who-are-we';
-						}
-					}}
-				>
-					{m['navigation.who-are-we']()}
-				</a>
+				{#each navigationItems as { href, key }, index}
+					<a
+						{href}
+						class="py-2 transition-colors hover:text-gray-600 {index === 0 ? 'border-b border-gray-200' : ''}"
+						class:text-gray-800={!isActive(href)}
+						class:text-blue-600={isActive(href)}
+						class:font-semibold={isActive(href)}
+						onclick={closeMobileMenu}
+						onkeydown={(e) => handleMobileKeydown(e, href)}
+					>
+						{getMessage(key)}
+					</a>
+				{/each}
 			</nav>
 		</div>
 	</div>
