@@ -48,7 +48,6 @@
 	<main class="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3">
 		{@render children()}
 	</main>
-	<footer class="col-span-10 col-start-2 bg-white text-gray-800">
-		<p></p>
+	<footer class="col-span-10 col-start-2 bg-white text-gray-800 mt-6">
 	</footer>
 </div>
