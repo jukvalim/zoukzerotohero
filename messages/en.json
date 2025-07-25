@@ -34,7 +34,10 @@
 		"home": "Zouk Zero to Hero",
 		"welcome": "Welcome to Zouk",
 		"community-guidelines": "Community Guidelines",
-		"who-are-we": "Who are we?"
+		"who-are-we": "Who are we?",
+		"courses": "Courses",
+		"beginner": "Beginner",
+		"head-movements": "Head Movements"
 	},
 	"who_are_we": {
 		"who_are_we_title": "Who are we?",
@@ -91,5 +94,13 @@
 		"hygiene_bullet_5": "If you're using a scent - perfume or cologne - are you sure you didn't put too much? It's enough for your partner to be able to enjoy the scent - the rest of the room shouldn't have to.",
 		"hygiene_p_2": "If in doubt whether you smell ok, feel free to ask somebody!",
 		"available_at_hdc": "These guidelines can also be found at Helsinki Dance Central website."
+	},
+	"zouk_o_saturday": {
+		"title": "Zouk O saturday",
+		"description": "Zouk O saturday is a social dance event organized by Helsinki Dance Central. It features Brazilian Zouk classes and social dancing."
+	},
+	"courses": {
+		"title": "Courses",
+		"description": "Courses are a way for dance schools to teach dance. They are a way for dance schools to teach dance. They are a way for dance schools to teach dance."
 	}
 }

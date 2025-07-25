@@ -34,7 +34,10 @@
 		"home": "Zouk Zero to Hero",
 		"welcome": "Tervetuloa tanssimaan zoukia",
 		"community-guidelines": "Yhteisön sosiaalitanssiohjeet",
-		"who-are-we": "Keitä me olemme?"
+		"who-are-we": "Keitä me olemme?",
+		"courses": "Kurssit",
+		"beginner": "Aloittelija",
+		"head-movements": "Pääliikkeet"
 	},
 	"who_are_we": {
 		"who_are_we_title": "Keitä me olemme?",
@@ -91,5 +94,13 @@
 		"hygiene_bullet_5": "Jos käytät tuoksua - hajuvettä tai kölninvettä - oletko varma, ettet laittanut sitä liikaa? Riittää, että kumppanisi voi nauttia tuoksusta – muun huoneen ei tarvitse!",
 		"hygiene_p_2": "Jos olet epävarma siitä tuoksutko ok:lta, kysy rohkeasti joltakulta!",
 		"available_at_hdc": "Nämä ohjeet löytyvät myös Helsinki Dance Centralin sivuilta"
+	},
+	"zouk_o_saturday": {
+		"title": "Zouk O saturday",
+		"description": "Zouk O saturday is a social dance event organized by Helsinki Dance Central. It features Brazilian Zouk classes and social dancing."
+	},
+	"courses": {
+		"title": "Courses",
+		"description": "Courses are a way for dance schools to teach dance. They are a way for dance schools to teach dance. They are a way for dance schools to teach dance."
 	}
 }
