@@ -17,7 +17,17 @@
 			"helsinki_zouk_instagram": "helsinki_zouk Instagram-tili"
 		},
 		"welcome_description_1": "Kesäisin meillä on oppitunnit ja ulkoilmatanssit joka keskiviikkoilta sään salliessa. Tule kokeilemaan! Et tarvitse aikaisempaa kokemusta tai omaa tanssiparia. Voit tarkistaa yksityiskohdat",
-		"welcome_description_2": "Facebook-tapahtumasta"
+		"welcome_description_2": "Facebook-tapahtumasta",
+		"beginner_courses_title": "Syksyn aloittelijakurssit",
+		"beginner_courses_description": "Syksyllä alkaa joukko aloittelijakursseja. Ne on listattu alla.",
+		"beginners_zzh": "Zouk Zero to Hero aloittelijakurssi",
+		"beginners_zzh_description": "Maanantaisin, 18:00-19:30, alkaa 1.9, Jukka ja Anna opettavat. Kuusi viikkoa.",
+		"welcome_beginners_hdc": "Helsinki Dance Centralin perusteet-kurssi",
+		"welcome_beginners_hdc_description": "Tiistaisin, 17:45-18:45, alkaa 26.8, Freddy ja Andressa opettavat. Syyslukukausi.",
+		"welcome_beginners_lds": "Latiff Brazilian Dance Schoolin aloittelijakurssi",
+		"welcome_beginners_lda_description": "Keskiviikkoisin, 18:00-19:30, alkaa 27.8, Hugo (&Gaëlle) opettaa. Syyslukukausi.",
+		"welcome_beginners_lambada": "LambadaHelsingin Lambada aloittelijakurssi",
+		"welcome_beginners_lambada_description": "Sunnuntaisin, alkaa 31.8, kuusi luokkaa."
 	},
 	"links_title": "Brasilialaisesta zoukista Helsingissä",
 	"links": {

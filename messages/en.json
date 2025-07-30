@@ -17,7 +17,17 @@
 			"helsinki_zouk_instagram": "helsinki_zouk Instagram account"
 		},
 		"welcome_description_1": "In the summer, we have outdoor classes every Wednesday evening, weather permitting. Come try it out! No previous dance experience or partner of your own needed. You can check the details in the",
-		"welcome_description_2": "Facebook event"
+		"welcome_description_2": "Facebook event",
+		"beginner_courses_title": "Autumn Beginner Courses",
+		"beginner_courses_description": "In the autumn, there's a bunch of beginner courses starting. They are listed below.",
+		"beginners_zzh": "Zouk Zero to Hero beginner course",
+		"beginners_zzh_description": "On Mondays, 18:00-19:30, starts 1.9, taught by Jukka and Anna. Six weeks.",
+		"welcome_beginners_hdc": "Helsinki Dance Central fundamentals course",
+		"welcome_beginners_hdc_description": "On Tuesdays, 17:45-18:45, starts 26.8, taught by Freddy and Andressa. Autumn semester.",
+		"welcome_beginners_lds": "Latiff Brazilian Dance School beginner course",
+		"welcome_beginners_lda_description": "On Wednesdays, 18:00-19:30, starts 27.8, taught by Hugo (&Gaëlle). Autumn semester.",
+		"welcome_beginners_lambada": "LambadaHelsinki Lambada beginner course",
+		"welcome_beginners_lambada_description": "On Sundays, starts 31.8, six classes."
 	},
 	"links_title": "Brazilian Zouk in Helsinki",
 	"links": {
