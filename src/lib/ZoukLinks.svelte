@@ -7,7 +7,7 @@
 			title: m['links.guidelines']()
 		},
 		{
-			href: 'https://calendar.google.com/calendar/u/0?cid=dWp1bGo4NzgyczBkcm1xYzlxcXI3b3E3MDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ',
+			href: 'https://calendar.google.com/calendar/embed?src=ujulj8782s0drmqc9qqr7oq708%40group.calendar.google.com&ctz=Europe%2FHelsinki',
 			title: m['links.calendar']()
 		},
 		{
