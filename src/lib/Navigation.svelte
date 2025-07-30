@@ -9,8 +9,9 @@
 	const navigationItems = [
 		{ href: '/', key: 'navigation.home' as const },
 		{ href: '/welcome', key: 'navigation.welcome' as const },
-		{ href: '/community-guidelines', key: 'navigation.community-guidelines' as const },
-		{ href: '/who-are-we', key: 'navigation.who-are-we' as const }
+		{ href: '/who-are-we', key: 'navigation.who-are-we' as const },
+		{ href: '/zouk-o-saturday', key: 'navigation.zouk-o-saturday' as const },
+		{ href: '/community-guidelines', key: 'navigation.community-guidelines' as const }
 	] as const;
 
 	// Courses sub-navigation items

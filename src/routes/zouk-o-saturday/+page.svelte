@@ -4,8 +4,11 @@
 
 <h1 class="md:text-4xl text-2xl font-bold mb-4">{m['zouk_o_saturday.title']()}</h1>
 
-<p class="mb-2">
+<p class="mb-4">
 	{m['zouk_o_saturday.description']()}
 </p>
+<a class="mb-2" href="https://fb.me/e/75VgeB4F8">
+	{m['zouk_o_saturday.fb_link']()}
+</a>
 
 
