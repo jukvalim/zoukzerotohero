@@ -112,4 +112,4 @@
 	{/if}
 </div>
 
-<p class="mt-8 mb-8 text-4xl font-bold">🙌 See you in class! 🙌</p>
+<p class="mt-8 mb-8 text-2xl font-bold">🙌 See you in class! 🙌</p>
