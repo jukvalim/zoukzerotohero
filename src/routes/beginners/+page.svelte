@@ -8,7 +8,7 @@
 <svelte:head>
 	<title>Zero to Zouk - Brazilian Zouk Beginner Course</title>
 	<meta property="og:title" content="Zero to Zouk - Brazilian Zouk Beginner Course" />
-	<meta property="og:description" content="Learn to Social Dance in 6 Weeks - We start 1.9." />
+	<meta property="og:description" content="Learn to social dance in 6 weeks. Monday evenings starting 1.9., no partner needed." />
 	<meta property="og:url" content="https://zoukzerotohero.com/beginners" />
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>

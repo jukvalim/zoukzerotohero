@@ -4,18 +4,16 @@
 </script>
 
 <svelte:head>
-	<title>Head Movements - Brazilian Zouk Course</title>
-	<meta property="og:title" content="Head Movements - Brazilian Zouk Course" />
-	<meta property="og:description" content="Learn Brazilian Zouk Head Movements" />
+	<title>Head Movements Course</title>
+	<meta property="og:title" content="Head Movements Course" />
+	<meta property="og:description" content="Learn Brazilian Zouk Head Movements, six weeks course" />
 	<meta property="og:url" content="https://zoukzerotohero.com/head-movements" />
 	<meta property="og:image" content={head_movements_image} />
 </svelte:head>
 
 <div class="grid grid-cols-12">
 	<div class="col-span-12 md:col-span-8 md:col-start-3">
-		<h1 class="mb-8 text-2xl font-bold md:text-4xl">
-			Head Movements &mdash; Brazilian Zouk Course
-		</h1>
+		<h1 class="mb-8 text-2xl font-bold md:text-4xl">Head Movements Course</h1>
 
 		<h2 class="mb-4 text-xl font-bold md:text-2xl">Learn Brazilian Zouk Head Movements</h2>
 
@@ -24,13 +22,16 @@
 			Brazilian Zouk. Would you like to learn them?
 		</p>
 
-		<img
-			src={head_movements_image}
-			alt="Head Movements - Brazilian Zouk Course"
-			class="mb-4 h-auto w-full md:w-1/2"
-		/>
+		<div class="flex flex-col items-center">
+			<img
+				src={head_movements_image}
+				alt="Head Movements - Brazilian Zouk Course"
+				class="mb-4 h-auto w-full rounded-lg shadow-lg md:w-3/4"
+			/>
+			<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
+		</div>
 
-		<p class="mb-2">
+		<p class="mt-4 mb-2">
 			In this course, we'll start from the very basics of head movements, and progress with
 			different types of head movements we use in Zouk:
 		</p>
