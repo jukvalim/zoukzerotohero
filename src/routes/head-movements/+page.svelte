@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages.js';
 </script>
 
-<h1 class="md:text-4xl text-2xl font-bold mb-8">Head Movements &dash; Brazilian Zouk Course</h1>
+<h1 class="md:text-4xl text-2xl font-bold mb-8">Head Movements &mdash; Brazilian Zouk Course</h1>
 
 <h2 class="md:text-2xl text-xl font-bold mb-4">Learn Brazilian Zouk Head Movements</h2>
 
