@@ -30,11 +30,11 @@
 
 		<p class="mb-4">We're here to prove you wrong&mdash;in the best way.</p>
 
-		<div class="flex w-full flex-col md:w-1/2">
+		<div class="flex flex-col items-center">
 			<img
 				src={partner_pose_portrait}
 				alt="Jukka and Anna"
-				class="mt-4 h-auto rounded-lg shadow-lg"
+				class="mt-4 h-auto w-full md:w-3/4 rounded-lg shadow-lg"
 			/>
 			<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
 		</div>
