@@ -2,6 +2,14 @@
 	import { m } from '$lib/paraglide/messages.js';
 </script>
 
+<svelte:head>
+	<title>Head Movements - Brazilian Zouk Course</title>
+	<meta property="og:title" content="Head Movements - Brazilian Zouk Course"/>
+	<meta property="og:description" content="Learn Brazilian Zouk Head Movements"/>
+	<meta property="og:url" content="https://zoukzerotohero.com/head-movements"/>
+	<!--<meta property="og:image"content=""/>-->
+</svelte:head>
+
 <h1 class="md:text-4xl text-2xl font-bold mb-8">Head Movements &mdash; Brazilian Zouk Course</h1>
 
 <h2 class="md:text-2xl text-xl font-bold mb-4">Learn Brazilian Zouk Head Movements</h2>

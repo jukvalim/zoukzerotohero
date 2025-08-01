@@ -4,6 +4,14 @@
 	let accordionOpen = $state(false);
 </script>
 
+<svelte:head>
+	<title>Zero to Zouk - Brazilian Zouk Beginner Course</title>
+	<meta property="og:title" content="Zero to Zouk - Brazilian Zouk Beginner Course"/>
+	<meta property="og:description" content="Learn to Social Dance in 6 Weeks - We start 1.9."/>
+	<meta property="og:url" content="https://zoukzerotohero.com/beginners"/>
+	<!--<meta property="og:image"content=""/>-->
+</svelte:head>
+
 <h1 class="md:text-4xl text-2xl font-bold mb-4">From Zero to Zouk &mdash; Brazilian Zouk Beginner Course</h1>
 
 <h2 class="md:text-2xl text-xl font-bold mb-4">Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before</h2>
