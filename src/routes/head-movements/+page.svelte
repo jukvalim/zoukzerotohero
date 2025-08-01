@@ -111,7 +111,7 @@
 				For each person who signs up using your code, you get:
 				<ul>
 					<li>A <b>20€ discount</b> on head movements course</li>
-					<li>Alternatively, a <b>15€ discount</b> on a private class with Jukka or Anna (1h)</li>
+					<li>Alternatively, a <b>15€ discount</b> on a private class with Jukka or Anna (1h), to be taken before end of the year</li>
 				</ul>
 			</li>
 			<li>
