@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages.js';
+	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 </script>
 
 <svelte:head>
@@ -7,15 +8,21 @@
 	<meta property="og:title" content="Head Movements - Brazilian Zouk Course"/>
 	<meta property="og:description" content="Learn Brazilian Zouk Head Movements"/>
 	<meta property="og:url" content="https://zoukzerotohero.com/head-movements"/>
-	<!--<meta property="og:image"content=""/>-->
+	<meta property="og:image"content={head_movements_image}/>
 </svelte:head>
 
 <h1 class="md:text-4xl text-2xl font-bold mb-8">Head Movements &mdash; Brazilian Zouk Course</h1>
 
 <h2 class="md:text-2xl text-xl font-bold mb-4">Learn Brazilian Zouk Head Movements</h2>
 
+<p class="mb-4">
+	Fluid and beautiful head movements are one of the most distinctive characteristics of Brazilian Zouk. Would you like to learn them?
+</p>
+
+<img src={head_movements_image} alt="Head Movements - Brazilian Zouk Course" class="w-full md:w-1/2 h-auto mb-4"/>
+
 <p class="mb-2">
-	Fluid and beautiful head movements are one of the most distinctive characteristics of Brazilian Zouk. Would you like to learn them? In this course, we’ll start from the very basics of head movements, and progress with different types of head movements we use in Zouk:
+	In this course, we'll start from the very basics of head movements, and progress with different types of head movements we use in Zouk:
 </p>
 
 <ul class="mb-2">
@@ -29,17 +36,17 @@
 	<b>This course is not for beginners.</b> As a prerequisite, you should be able to do the following movements: Basic step, Viradinha, Lateral, Preparation (aka Lunge), Simple Turn and Pião.
 </p>
 
-<h2 class="md:text-2xl text-xl font-bold mb-4">What You'll Get</h2>
+<h2 class="md:text-2xl text-xl font-bold mt-8">What You'll Get</h2>
 
-<ul class="mb-4">
+<ul>
 	<li>6 structured weekly classes (1.5 hours each, Mondays)</li>
 	<li>Recap videos after each class</li>
 	<li>Personalized feedback</li>
 </ul>
 
-<h2 class="md:text-2xl text-xl font-bold mb-4">Course Details</h2>
+<h2 class="md:text-2xl text-xl font-bold mb-4 mt-8">Course Details</h2>
 
-<ul class="mb-4">
+<ul>
 	<li><b>Teachers:</b> Jukka and Anna</li>
 	<li><b>Start date:</b> Monday, September 1st</li>
 	<li><b>Duration:</b> 6 weeks</li>
@@ -49,15 +56,15 @@
 	<li><b>Price:</b> 130€, couple registration 240€</li>
 </ul>
 
-<h2 class="md:text-2xl text-xl font-bold mb-6">Sign up Now</h2>
+<h2 class="md:text-2xl text-xl font-bold mb-6 mt-8">Sign up Now</h2>
 
-<a href="https://holvi.com/shop/zoukzerotohero/product/0a9af3fbd73e283bd0cbcd74d6aac55e/" class="bg-blue-500 text-white px-4 py-2 rounded-md m-4">Register as a follower</a>
-<br>
-<br>
-<a href="https://holvi.com/shop/zoukzerotohero/product/0cd1ff232e16afa16c99340f92527ba6/" class="bg-blue-500 text-white px-4 py-2 rounded-md m-4">Register as a leader</a>
-<br>
-<br>
-<a href="https://holvi.com/shop/zoukzerotohero/product/02ea8d3cc397c67d7b1c24e1ea176137" class="bg-blue-500 text-white px-4 py-2 rounded-md m-4">Couple registration</a>
+<div class="flex flex-col gap-4 max-w-md text-xl">
+	<a href="https://holvi.com/shop/zoukzerotohero/product/0a9af3fbd73e283bd0cbcd74d6aac55e/" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-center font-medium transition-colors duration-200 whitespace-nowrap">👉 Register as a follower</a>
+
+	<a href="https://holvi.com/shop/zoukzerotohero/product/0cd1ff232e16afa16c99340f92527ba6/" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-center font-medium transition-colors duration-200 whitespace-nowrap">👉 Register as a leader</a>
+
+	<a href="https://holvi.com/shop/zoukzerotohero/product/02ea8d3cc397c67d7b1c24e1ea176137" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-center font-medium transition-colors duration-200 whitespace-nowrap">👉 Couple registration</a>
+</div>
 
 
 <hr class="my-8">

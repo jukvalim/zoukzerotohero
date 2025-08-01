@@ -85,10 +85,11 @@
 <p class="mb-2">Make this the moment you finally start dancing.</p>
 <p class="mb-8">Join the course, show up, and if it's not working for you&mdash;we'll make it right.</p>
 
-<a href="https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/" class="bg-blue-500 text-white px-4 py-2 rounded-md m-4">👉 Register Now - as a leader</a>
-<br>
-<br>
-<a href="https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/" class="bg-blue-500 text-white px-4 py-2 rounded-md m-4">👉 Register Now - as a follower</a>
+<div class="flex flex-col gap-4 max-w-md text-xl">
+	<a href="https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-center font-medium transition-colors duration-200 whitespace-nowrap">👉 Register Now - as a leader</a>
+
+	<a href="https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-center font-medium transition-colors duration-200 whitespace-nowrap">👉 Register Now - as a follower</a>
+</div>
 
 <!-- Leader/Follower Accordion -->
 <div class="mb-8 mt-8 border border-gray-200 rounded-lg">
