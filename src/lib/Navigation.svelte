@@ -17,7 +17,7 @@
 	// Courses sub-navigation items
 	const coursesItems = [
 		{ href: '/beginners', key: 'navigation.beginner' as const },
-		{ href: '/courses/head-movements', key: 'navigation.head-movements' as const }
+		{ href: '/head-movements', key: 'navigation.head-movements' as const }
 	] as const;
 
 	function toggleMobileMenu() {
@@ -84,7 +84,6 @@
 	{/each}
 
 	<!-- Courses Dropdown -->
-	<!--
 	<div class="relative">
 		<button
 			onclick={toggleCoursesDropdown}
@@ -116,7 +115,6 @@
 			</div>
 		{/if}
 	</div>
-	-->
 </nav>
 
 <!-- Mobile Hamburger Button -->
