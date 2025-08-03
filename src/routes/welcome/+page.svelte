@@ -18,7 +18,7 @@
 
 <ul class="space-y-2 mb-8">
 	<li>
-		<a href="https://fb.me/e/6GvMQxHUa">
+		<a href="/beginners">
 			{m['welcome.beginners_zzh']()}
 		</a>
 		{m['welcome.beginners_zzh_description']()}
