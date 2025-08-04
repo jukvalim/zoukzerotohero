@@ -59,7 +59,7 @@
 		<h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">Course Details</h2>
 
 		<ul>
-			<li><b>Teachers:</b> Jukka and Anna</li>
+			<li><b>Teachers:</b> Jukka, Anna as assistant teacher</li>
 			<li><b>Start date:</b> Monday, September 1st</li>
 			<li><b>Duration:</b> 6 weeks</li>
 			<li><b>Time:</b> Mondays, 19:30-21:00</li>
