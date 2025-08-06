@@ -50,14 +50,16 @@
 
 		<ul>
 			<li><b>6 structured weekly classes</b> (1.5 hours each, Mondays)</li>
+			<li>
+				<a href="/zouk-o-saturday">Zouk'o'Saturdays included</a> &mdash; 5 Saturday socials with
+				drop-in classes and social dancing happen during the course run. You can attend as many of
+				these as you want.
+			</li>
 			<li><b>Recap & practice videos</b> after each class so you never fall behind</li>
 			<li>Bonus <b>solo practice materials</b> to improve at home, at your pace</li>
 			<li><b>Rotating partners</b> &mdash; you don’t need to bring your own</li>
 			<li><b>Inclusive, welcoming community</b> (and a WhatsApp group to stay connected)</li>
-			<li>
-				<a href="/zouk-o-saturday">Zouk'o'Saturdays included</a> &mdash; 5 social dancing events with
-				drop-in classes and social dancing
-			</li>
+
 			<li><b>Personalized feedback & confidence-building</b></li>
 			<li>Clear guidance on <b>how to start actually dancing at parties</b></li>
 			<li>
@@ -94,7 +96,7 @@
 			<li><b>Duration:</b> 6 weeks</li>
 			<li><b>Time:</b> Mondays, 18:00-19:30</li>
 			<li>
-				<b>Includes:</b> 5 <a href="/zouk-o-saturday">Zouk'o'Saturdays</a> during the course run
+				<b>Includes:</b> 5 optional <a href="/zouk-o-saturday">Zouk'o'Saturdays</a> during the course run
 			</li>
 		</ul>
 
@@ -114,8 +116,8 @@
 			</li>
 			<li>Course price:</li>
 			<ul>
-				<li>Regular: early bird price €280 until Sun 10.8, after that €300</li>
-				<li>Youth price (26 years old or less): early bird price €240, after that €260</li>
+				<li>Regular: early bird price <b>€280</b> until Sun 10.8, after that <b>€300</b></li>
+				<li>Youth price (26 years old or less): early bird price <b>€240</b>, after that <b>€260</b></li>
 			</ul>
 		</ul>
 
@@ -172,8 +174,8 @@
 					</p>
 					<p>
 						Traditionally, the leader has been a man and the follower a woman. But nowadays, it's
-						commonplace for a woman to dance as a leader or a man to dance as a follower. Feel free
-						to register as either role, regardless of your gender.
+						not that unusual for a woman to dance as a leader or a man to dance as a follower. Feel
+						free to register as either role, regardless of your gender.
 					</p>
 				</div>
 			{/if}
