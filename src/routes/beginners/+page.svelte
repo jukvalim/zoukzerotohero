@@ -68,6 +68,15 @@
 			</li>
 		</ul>
 
+		<div class="mt-8 text-center">
+			<button
+				onclick={() => document.getElementById('ready-to-join')?.scrollIntoView({ behavior: 'smooth' })}
+				class="rounded-md bg-green-500 px-8 py-4 text-xl font-medium text-white transition-colors duration-200 hover:bg-green-600"
+			>
+				🎉 Sign me up!
+			</button>
+		</div>
+
 		<h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">🙋 Who It's For</h2>
 
 		<ul>
@@ -123,7 +132,7 @@
 
 		<hr class="my-8" />
 
-		<h2 class="mb-4 text-xl font-bold md:text-2xl">🔗 Ready to Join?</h2>
+		<h2 id="ready-to-join" class="mb-4 text-xl font-bold md:text-2xl">🔗 Ready to Join?</h2>
 
 		<p class="mb-2">Make this the moment you finally start dancing.</p>
 		<p class="mb-8">
