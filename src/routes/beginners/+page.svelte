@@ -28,6 +28,19 @@
 	</p>
 </div>
 
+<iframe
+	class="mb-12 w-full rounded-xl shadow-2xl"
+	style="aspect-ratio: 16/9;"
+	width="100%"
+	src="https://www.youtube.com/embed/bFPCRmFNvjU?si=2_LukWGlPQeiNVja&autoplay=1&mute=1&loop=1&playlist=bFPCRmFNvjU&modestbranding=1&showinfo=0"
+	title="YouTube video player"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	referrerpolicy="strict-origin-when-cross-origin"
+	allowfullscreen
+
+></iframe>
+
 <!-- Opening Story -->
 <div
 	class="mb-12 rounded-xl border-l-4 border-purple-500 bg-gradient-to-br from-blue-50 to-purple-50 p-6"
