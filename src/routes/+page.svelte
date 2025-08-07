@@ -5,17 +5,23 @@
 </script>
 
 <h1 class="mb-4 text-2xl font-bold md:text-4xl">Zouk Zero to Hero</h1>
-<p class="mb-8">{m.zouk_zero_to_hero_description()}</p>
+<p class="mb-4">{m.zouk_zero_to_hero_description()}</p>
 
-<div class="flex flex-col mb-8">
-	<div>
-		<p>
+<a href="https://youtube.com/playlist?list=PLMobPDbOvaMSq0LnWI-Ue2r6i2ks3HoKw&si=VL8G04FbV3tLQKWd" class="underline">
+	{m.brazilian_zouk_youtube_playlist_link_text()}
+</a>
+
+<hr class="my-8" />
+
+<h2 class="mb-4 text-xl font-bold md:text-2xl">{m.beginners_course_title()}</h2>
+<div class="flex flex-col">
+
+		<p class="mb-2">
 			{m.beginners_course_description()}
-			<a href="/beginners" class="px-6 py-3 text-center font-medium whitespace-nowrap underline">
+			<a href="/beginners" class="underline">
 				{m.beginners_course_link_text()}
 			</a>
 		</p>
-	</div>
 	<a href="/beginners">
 		<img
 			src={beginners_course_image}
@@ -24,5 +30,7 @@
 		/>
 	</a>
 </div>
+
+<hr class="my-8" />
 
 <ZoukLinks />

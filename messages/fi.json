@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"hello_world": "Hello, {name} from fi!",
-	"zouk_zero_to_hero_description": "Järjestämme brasilialaisen zoukin oppitunteja ja sosiaalitansseja Helsingissä.",
+	"zouk_zero_to_hero_description": "Brasilialainen zouk on paritanssi jolle on tyypillistä sulavuus ja monipuolinen musiikki ja liike. Me järjestämme brasilialaisen zoukin oppitunteja ja sosiaalitansseja Helsingissä.",
 	"welcome": {
 		"welcome_title": "Haluatko oppia tanssimaan brasilialaista zoukia?",
 		"welcome_description": "Kesäisin meillä on oppitunnit ja ulkoilmatanssit joka keskiviikkoilta sään salliessa. Tule kokeilemaan! Et tarvitse aikaisempaa kokemusta tai omaa tanssiparia. Voit tarkistaa yksityiskohdat <a href=\"https://www.facebook.com/events/1949014439171820/\">Facebook-tapahtumasta</a>.",
@@ -116,5 +116,7 @@
 		"description": "Courses are a way for dance schools to teach dance. They are a way for dance schools to teach dance. They are a way for dance schools to teach dance."
 	},
 	"beginners_course_description": "Aloittalijakurssimme alkaa 1.9.2025.",
-	"beginners_course_link_text": "Lue lisää!"
+	"beginners_course_link_text": "Lue lisää!",
+	"brazilian_zouk_youtube_playlist_link_text": "Katso miltä brasilialainen zouk näyttää.",
+	"beginners_course_title": "Aloittelijakurssi"
 }
