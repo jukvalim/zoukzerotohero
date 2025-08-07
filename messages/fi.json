@@ -114,5 +114,7 @@
 	"courses": {
 		"title": "Courses",
 		"description": "Courses are a way for dance schools to teach dance. They are a way for dance schools to teach dance. They are a way for dance schools to teach dance."
-	}
+	},
+	"beginners_course_description": "Aloittalijakurssimme alkaa 1.9.2025.",
+	"beginners_course_link_text": "Lue lisää!"
 }

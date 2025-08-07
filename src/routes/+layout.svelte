@@ -53,7 +53,7 @@
 		</div>
 	</header>
 
-	<main class="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3">
+	<main class="col-span-10 col-start-2 md:col-span-6 md:col-start-4">
 		{@render children()}
 	</main>
 	<footer class="col-span-10 col-start-2 bg-white text-gray-800 mt-6">
