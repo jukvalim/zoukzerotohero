@@ -15,146 +15,284 @@
 
 <div class="grid grid-cols-12">
 	<div class="col-span-12 md:col-span-8 md:col-start-3">
-		<h1 class="mb-4 text-2xl font-bold md:text-4xl">
-			From Zero to Zouk &mdash; Brazilian Zouk Beginner Course
-		</h1>
+		<!-- Hero Section -->
+		<div class="mb-12 text-center">
+			<h1 class="mb-6 text-3xl font-bold md:text-5xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+				From Zero to Zouk
+			</h1>
+			<h2 class="mb-6 text-xl font-bold md:text-2xl text-gray-700">
+				Brazilian Zouk Beginner Course
+			</h2>
+			<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+				Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
+			</p>
+		</div>
 
-		<h2 class="mb-4 text-xl font-bold md:text-2xl">
-			Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
-		</h2>
+		<!-- Opening Story -->
+		<div class="mb-12 p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl border-l-4 border-purple-500">
+			<p class="mb-4 text-lg">
+				Have you ever seen Brazilian Zouk or another couple dance and thought, "That looks amazing...
+				but I could never do that"?
+			</p>
+			<p class="text-lg font-medium">We're here to prove you wrong&mdash;in the best way.</p>
+		</div>
 
-		<p class="mb-4">
-			Have you ever seen Brazilian Zouk or another couple dance and thought, "That looks amazing...
-			but I could never do that"?
-		</p>
-
-		<p class="mb-4">We're here to prove you wrong&mdash;in the best way.</p>
-
-		<div class="flex flex-col items-center">
+		<!-- Teacher Photo -->
+		<div class="flex flex-col items-center mb-12">
 			<img
 				src={partner_pose_portrait}
 				alt="Jukka and Anna"
-				class="mt-4 h-auto w-full md:w-3/4 rounded-lg shadow-lg"
+				class="h-auto w-full md:w-3/4 rounded-xl shadow-2xl"
 			/>
-			<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
+			<p class="mt-4 text-center text-sm text-gray-600">Jukka and Anna &mdash; course teachers</p>
 		</div>
 
-		<p class="mt-4">
-			Whether you're a complete beginner, have some experience but social dancing is still a
-			challenge or a dancer from another style, this course is designed to get you confidently
-			social dancing in just six weeks. No partner needed. No previous experience required. Just
-			curiosity, a willingness to try, and a bit of consistency.
-		</p>
+		<!-- Course Description -->
+		<div class="mb-12 p-6 bg-white rounded-xl shadow-lg border">
+			<p class="text-lg leading-relaxed">
+				Whether you're a complete beginner, have some experience but social dancing is still a
+				challenge or a dancer from another style, this course is designed to get you confidently
+				social dancing in just six weeks. No partner needed. No previous experience required. Just
+				curiosity, a willingness to try, and a bit of consistency.
+			</p>
+		</div>
 
-		<h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">🎁 What You'll Get</h2>
+		<!-- What You'll Get Section -->
+		<div class="mb-12">
+			<h2 class="mb-6 text-2xl font-bold md:text-3xl text-center">
+				<span class="inline-block p-2 bg-green-100 rounded-full mr-3">🎁</span>
+				What You'll Get
+			</h2>
 
-		<ul>
-			<li><b>6 structured weekly classes</b> (1.5 hours each, Mondays)</li>
-			<li>
-				<a href="/zouk-o-saturday">Zouk'o'Saturdays included</a> &mdash; 5 Saturday socials with
-				drop-in classes and social dancing happen during the course run. You can attend as many of
-				these as you want.
-			</li>
-			<li><b>Recap & practice videos</b> after each class so you never fall behind</li>
-			<li>Bonus <b>solo practice materials</b> to improve at home, at your pace</li>
-			<li><b>Rotating partners</b> &mdash; you don’t need to bring your own</li>
-			<li><b>Inclusive, welcoming community</b> (and a WhatsApp group to stay connected)</li>
+			<div class="grid md:grid-cols-2 gap-6">
+				<div class="bg-green-50 p-6 rounded-xl border border-green-200">
+					<h3 class="font-bold text-green-800 mb-3">📚 Core Learning</h3>
+					<ul class="space-y-2 text-green-700">
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span><b>6 structured weekly classes</b> (1.5 hours each, Mondays)</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span><a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays included</a> &mdash; 5 Saturday socials</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span><b>Recap & practice videos</b> after each class</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span>Bonus <b>solo practice materials</b></span>
+						</li>
+					</ul>
+				</div>
 
-			<li><b>Personalized feedback & confidence-building</b></li>
-			<li>Clear guidance on <b>how to start actually dancing at parties</b></li>
-			<li>
-				<b>Money-back guarantee</b>&mdash;if you show up, do the work, and still don't feel able to
-				dance socially, we'll refund you in full. Just let us know how we can improve.
-			</li>
-		</ul>
+				<div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+					<h3 class="font-bold text-blue-800 mb-3">🤝 Support</h3>
+					<ul class="space-y-2 text-blue-700">
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span><b>Rotating partners</b> &mdash; no need to bring your own</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span><b>Inclusive, welcoming community</b> + WhatsApp group</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span><b>Personalized feedback & confidence-building</b></span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
+							<span>Clear guidance on <b>how to start dancing at parties</b></span>
+						</li>
+					</ul>
+				</div>
+			</div>
 
-		<div class="mt-8 text-center">
+			<div class="mt-6 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
+				<div class="flex items-center mb-3">
+					<span class="text-2xl mr-3">🛡️</span>
+					<h3 class="font-bold text-yellow-800">Money-back guarantee</h3>
+				</div>
+				<p class="text-yellow-700">
+					If you show up, do the work, and still don't feel able to dance socially, we'll refund you in full.
+					Just let us know how we can improve.
+				</p>
+			</div>
+		</div>
+
+		<!-- CTA Button -->
+		<div class="mb-12 text-center">
 			<button
 				onclick={() => document.getElementById('ready-to-join')?.scrollIntoView({ behavior: 'smooth' })}
-				class="rounded-md bg-green-500 px-8 py-4 text-xl font-medium text-white transition-colors duration-200 hover:bg-green-600"
+				class="rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-6 text-2xl font-bold text-white transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:scale-105 shadow-lg hover:shadow-xl"
 			>
 				🎉 Sign me up!
 			</button>
 		</div>
 
-		<h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">🙋 Who It's For</h2>
+		<!-- Who It's For Section -->
+		<div class="mb-12">
+			<h2 class="mb-6 text-2xl font-bold md:text-3xl text-center">
+				<span class="inline-block p-2 bg-purple-100 rounded-full mr-3">🙋</span>
+				Who It's For
+			</h2>
 
-		<ul>
-			<li>Total beginners with no dance experience</li>
-			<li>Social dancers from other styles (salsa, bachata, tango…)</li>
-			<li>Anyone wanting to improve confidence, movement, and connection</li>
-			<li>People looking for a fun, low-pressure way to meet others</li>
-			<li>Those tired of “screen time” and looking to move their body in real life</li>
-		</ul>
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+					<div class="text-2xl mb-2">🆕</div>
+					<p class="font-medium text-purple-800 mb-2">Total beginners</p>
+					<p class="text-sm text-purple-700">With no dance experience whatsoever</p>
+				</div>
+				<div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+					<div class="text-2xl mb-2">💃</div>
+					<p class="font-medium text-purple-800 mb-2">Other dance styles</p>
+					<p class="text-sm text-purple-700">Social dancers from salsa, bachata, tango, etc.</p>
+				</div>
+				<div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+					<div class="text-2xl mb-2">🌟</div>
+					<p class="font-medium text-purple-800 mb-2">Confidence seekers</p>
+					<p class="text-sm text-purple-700">Wanting to improve movement and self-assurance</p>
+				</div>
+				<div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+					<div class="text-2xl mb-2">👥</div>
+					<p class="font-medium text-purple-800 mb-2">Community enthusiasts</p>
+					<p class="text-sm text-purple-700">Looking for a fun, low-pressure way to meet others</p>
+				</div>
+				<div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+					<div class="text-2xl mb-2">📱</div>
+					<p class="font-medium text-purple-800 mb-2">Screen time refugees</p>
+					<p class="text-sm text-purple-700">Fed up with all the screen time, wanting to move in real life</p>
+				</div>
+				<div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+					<div class="text-2xl mb-2">❤️</div>
+					<p class="font-medium text-purple-800 mb-2">Connection seekers</p>
+					<p class="text-sm text-purple-700">Craving meaningful human interaction and expression</p>
+				</div>
+			</div>
+		</div>
 
-		<p class="mt-4">
-			We believe partner dance—and Brazilian Zouk in particular—is more than just steps. It's about
-			connection, expression, and community.
-		</p>
-		<p>
-			This course is our way of bringing people together, inviting new people into our dance scene,
-			and doing things differently.
-		</p>
+		<!-- Philosophy Section -->
+		<div class="mb-12 p-8 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl text-center">
+			<p class="mb-4 text-lg font-medium">
+				We believe partner dance—and Brazilian Zouk in particular—is more than just steps.
+				It's about connection, expression, and community.
+			</p>
+			<p class="text-lg">
+				This course is our way of bringing people together, inviting new people into our dance scene,
+				and doing things differently.
+			</p>
+		</div>
 
-		<h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">🗓️ Course Details</h2>
+		<!-- Course Details Section -->
+		<div class="mb-12">
+			<h2 class="mb-6 text-2xl font-bold md:text-3xl text-center">
+				<span class="inline-block p-2 bg-blue-100 rounded-full mr-3">🗓️</span>
+				Course Details
+			</h2>
 
-		<ul>
-			<li><b>Start date:</b> Monday, September 1st</li>
-			<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
-			<li><b>Teachers:</b> Jukka & Anna</li>
-			<li><b>Duration:</b> 6 weeks</li>
-			<li><b>Time:</b> Mondays, 18:00-19:30</li>
-			<li>
-				<b>Includes:</b> 5 optional <a href="/zouk-o-saturday">Zouk'o'Saturdays</a> during the course run
-			</li>
-		</ul>
+			<div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+				<div class="grid md:grid-cols-2 gap-6">
+					<div>
+						<div class="flex items-center mb-3">
+							<span class="text-xl mr-3">📅</span>
+							<span class="font-bold">Schedule</span>
+						</div>
+						<ul class="space-y-2 text-blue-700">
+							<li><b>Start date:</b> Monday, September 1st</li>
+							<li><b>Duration:</b> 6 weeks</li>
+							<li><b>Time:</b> Mondays, 18:00-19:30</li>
+						</ul>
+					</div>
+					<div>
+						<div class="flex items-center mb-3">
+							<span class="text-xl mr-3">📍</span>
+							<span class="font-bold">Location & Team</span>
+						</div>
+						<ul class="space-y-2 text-blue-700">
+							<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
+							<li><b>Teachers:</b> Jukka & Anna</li>
+							<li><b>Includes:</b> 5 optional <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		<h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">💰 Pricing & Value</h2>
-		<p class="mb-4">We've packed this course with a ton of value:</p>
+		<!-- Pricing Section -->
+		<div class="mb-12">
+			<h2 class="mb-6 text-2xl font-bold md:text-3xl text-center">
+				<span class="inline-block p-2 bg-green-100 rounded-full mr-3">💰</span>
+				Pricing & Value
+			</h2>
 
-		<ul class="mb-4">
-			<li>You get: All the things listed above, including</li>
-			<li>
-				<ul>
-					<li>9 hours of course classes on Mondays</li>
-					<li>
-						15 extra <a href="/zouk-o-saturday">Zouk'o'Saturday</a> hours of drop-in classes and social
-						dancing
-					</li>
-				</ul>
-			</li>
-			<li>Course price:</li>
-			<ul>
-				<li>Regular: early bird price <b>€280</b> until Sun 10.8, after that <b>€300</b></li>
-				<li>Youth price (26 years old or less): early bird price <b>€240</b>, after that <b>€260</b></li>
-			</ul>
-		</ul>
+			<div class="bg-green-50 p-6 rounded-xl border border-green-200 mb-6">
+				<h3 class="font-bold text-green-800 mb-4 text-center">What's Included</h3>
+				<div class="grid md:grid-cols-2 gap-6">
+					<div class="text-center">
+						<div class="text-3xl font-bold text-green-600 mb-2">9</div>
+						<div class="text-green-700">Hours of course classes on Mondays</div>
+					</div>
+					<div class="text-center">
+						<div class="text-3xl font-bold text-green-600 mb-2">15</div>
+						<div class="text-green-700">Extra <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturday</a> hours</div>
+					</div>
+				</div>
+			</div>
 
-		<hr class="my-8" />
+			<div class="grid md:grid-cols-2 gap-6">
+				<div class="bg-white p-6 rounded-xl border border-gray-200 text-center">
+					<h3 class="font-bold text-gray-800 mb-3">Regular Price</h3>
+					<div class="text-3xl font-bold text-green-600 mb-2">€280</div>
+					<div class="text-sm text-gray-600 mb-3">Early bird until Sun 10.8</div>
+					<div class="text-2xl font-bold text-gray-800">€300</div>
+					<div class="text-sm text-gray-600">After early bird</div>
+				</div>
+				<div class="bg-white p-6 rounded-xl border border-gray-200 text-center">
+					<h3 class="font-bold text-gray-800 mb-3">Youth Price</h3>
+					<div class="text-sm text-gray-600 mb-1">(26 years old or less)</div>
+					<div class="text-3xl font-bold text-green-600 mb-2">€240</div>
+					<div class="text-sm text-gray-600 mb-3">Early bird until Sun 10.8</div>
+					<div class="text-2xl font-bold text-gray-800">€260</div>
+					<div class="text-sm text-gray-600">After early bird</div>
+				</div>
+			</div>
+		</div>
 
-		<h2 id="ready-to-join" class="mb-4 text-xl font-bold md:text-2xl">🔗 Ready to Join?</h2>
+		<hr class="my-12 border-gray-300" />
 
-		<p class="mb-2">Make this the moment you finally start dancing.</p>
-		<p class="mb-8">
-			Join the course, show up, and if it's not working for you&mdash;we'll make it right.
-		</p>
+		<!-- Ready to Join Section -->
+		<div id="ready-to-join" class="mb-12 text-center">
+			<h2 class="mb-6 text-2xl font-bold md:text-3xl">
+				<span class="inline-block p-2 bg-purple-100 rounded-full mr-3">🔗</span>
+				Ready to Join?
+			</h2>
 
-		<div class="flex max-w-md flex-col gap-4 text-xl">
-			<a
-				href="https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/"
-				class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600"
-				>👉 Register Now - leader</a
-			>
+			<div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-200 mb-8">
+				<p class="mb-4 text-lg font-medium">Make this the moment you finally start dancing.</p>
+				<p class="text-lg">
+					Join the course, show up, and if it's not working for you&mdash;we'll make it right.
+				</p>
+			</div>
 
-			<a
-				href="https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/"
-				class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600"
-				>👉 Register Now - follower</a
-			>
+			<div class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto">
+				<a
+					href="https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/"
+					class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:scale-105 shadow-lg hover:shadow-xl"
+					>👉 Register Now - leader</a
+				>
+
+				<a
+					href="https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/"
+					class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:scale-105 shadow-lg hover:shadow-xl"
+					>👉 Register Now - follower</a
+				>
+			</div>
 		</div>
 
 		<!-- Leader/Follower Accordion -->
-		<div class="mt-8 mb-8 rounded-lg border border-gray-200">
+		<div class="mb-12 rounded-xl border border-gray-200 overflow-hidden">
 			<button
 				onclick={() => (accordionOpen = !accordionOpen)}
 				onkeydown={(e) => {
@@ -163,25 +301,25 @@
 						accordionOpen = !accordionOpen;
 					}
 				}}
-				class="flex w-full items-center justify-between rounded-t-lg bg-gray-50 p-4 text-left transition-colors hover:bg-gray-100"
+				class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200"
 				tabindex="0"
 				aria-expanded={accordionOpen}
 			>
-				<h3 class="text-lg font-semibold">Leader? Follower? What are those?</h3>
+				<h3 class="text-xl font-semibold">Leader? Follower? What are those?</h3>
 				<div
-					class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-gray-700"
+					class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
 				>
-					<span class="text-sm font-bold">{accordionOpen ? '-' : '+'}</span>
+					<span class="text-lg font-bold">{accordionOpen ? '−' : '+'}</span>
 				</div>
 			</button>
 
 			{#if accordionOpen}
-				<div class="border-t border-gray-200 p-4">
-					<p class="mb-3">
+				<div class="border-t border-gray-200 p-6 bg-white">
+					<p class="mb-4 text-lg">
 						In partner dances like Brazilian Zouk, there are two roles that work together to create
 						the dance: leader and follower.
 					</p>
-					<p>
+					<p class="text-lg">
 						Traditionally, the leader has been a man and the follower a woman. But nowadays, it's
 						not that unusual for a woman to dance as a leader or a man to dance as a follower. Feel
 						free to register as either role, regardless of your gender.
@@ -190,6 +328,9 @@
 			{/if}
 		</div>
 
-		<p class="mt-8 mb-8 text-2xl font-bold">🙌 See you in class! 🙌</p>
+		<!-- Final CTA -->
+		<div class="text-center p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
+			<p class="text-3xl font-bold text-green-800 mb-2">🙌 See you in class! 🙌</p>
+		</div>
 	</div>
 </div>
