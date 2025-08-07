@@ -74,7 +74,7 @@
 						</li>
 						<li class="flex items-start">
 							<span class="mr-2">✓</span>
-							<span><a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays included</a> &mdash; 5 Saturday socials</span>
+							<span><a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays included</a> &mdash; 5 Saturday drop-in classes and socials</span>
 						</li>
 						<li class="flex items-start">
 							<span class="mr-2">✓</span>
