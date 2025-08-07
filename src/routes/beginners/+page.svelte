@@ -78,6 +78,10 @@
 						</li>
 						<li class="flex items-start">
 							<span class="mr-2">✓</span>
+							<span><b>Structured learning</b> &mdash; basics, variations and techniques selected to be useful for social dancing</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✓</span>
 							<span><b>Recap & practice videos</b> after each class</span>
 						</li>
 						<li class="flex items-start">
