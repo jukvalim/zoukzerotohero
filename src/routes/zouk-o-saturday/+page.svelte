@@ -7,7 +7,7 @@
 <p class="mb-4">
 	{m['zouk_o_saturday.description']()}
 </p>
-<a class="mb-2" href="https://fb.me/e/75VgeB4F8">
+<a class="mb-2 underline" href="https://fb.me/e/75VgeB4F8">
 	{m['zouk_o_saturday.fb_link']()}
 </a>
 

@@ -90,7 +90,7 @@
 </p>
 
 <p class="mt-6">
-	<a href="https://www.helsinkidancecentral.com/community-guidelines">
+	<a href="https://www.helsinkidancecentral.com/community-guidelines" class="underline">
 		{m['community_guidelines.available_at_hdc']()}
 	</a>
 </p>
