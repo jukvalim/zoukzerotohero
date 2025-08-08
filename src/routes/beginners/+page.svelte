@@ -90,8 +90,7 @@
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
 					<span
-						><a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays included</a> &mdash; 5 Saturday
-						drop-in classes and socials</span
+						><a href="/zouk-o-saturday" class="underline">5 Zouk'o'Saturdays included</a> (1.5 hours of drop-in classes + 1.5 hours of social dancing each)</span
 					>
 				</li>
 				<li class="flex items-start">
@@ -267,7 +266,7 @@
 			<div class="text-center">
 				<div class="mb-2 text-3xl font-bold text-green-600">15</div>
 				<div class="text-green-700">
-					Extra <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturday</a> hours
+					Extra <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturday</a> drop-in and social dancing hours
 				</div>
 			</div>
 		</div>
