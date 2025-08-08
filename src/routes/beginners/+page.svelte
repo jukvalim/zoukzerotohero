@@ -240,7 +240,7 @@
 					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
 					<li><b>Teachers:</b> Jukka & Anna</li>
 					<li>
-						<b>Includes:</b> 5 optional
+						<b>Includes: </b>5 optional
 						<a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays</a> with varying teachers
 					</li>
 				</ul>
@@ -308,7 +308,8 @@
 			</div>
 		</div>
 		<div class="mt-4 text-center text-sm text-blue-600">
-			* Without early bird discount
+			* Without early bird discount. Value breakdown doesn't account for things like
+			practice materials or money-back guarantee.
 		</div>
 	</div>
 </div>
