@@ -38,7 +38,6 @@
 	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 	referrerpolicy="strict-origin-when-cross-origin"
 	allowfullscreen
-
 ></iframe>
 
 <!-- Opening Story -->
@@ -90,7 +89,8 @@
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
 					<span
-						><a href="/zouk-o-saturday" class="underline">5 Zouk'o'Saturdays included</a> (1.5 hours of drop-in classes + 1.5 hours of social dancing each)</span
+						><a href="/zouk-o-saturday" class="underline">5 Zouk'o'Saturdays included</a> (1.5 hours
+						of drop-in classes + 1.5 hours of social dancing each)</span
 					>
 				</li>
 				<li class="flex items-start">
@@ -241,7 +241,7 @@
 					<li><b>Teachers:</b> Jukka & Anna</li>
 					<li>
 						<b>Includes:</b> 5 optional
-						<a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays</a>
+						<a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays</a> with varying teachers
 					</li>
 				</ul>
 			</div>
@@ -266,13 +266,14 @@
 			<div class="text-center">
 				<div class="mb-2 text-3xl font-bold text-green-600">15</div>
 				<div class="text-green-700">
-					Extra <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturday</a> drop-in and social dancing hours
+					Extra <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturday</a> drop-in and social dancing
+					hours
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="grid gap-6 md:grid-cols-2">
+	<div class="grid gap-6 md:grid-cols-2 mb-6">
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Regular Price</h3>
 			<div class="mb-2 text-3xl font-bold text-green-600">€280</div>
@@ -287,6 +288,27 @@
 			<div class="mb-3 text-sm text-gray-600">Early bird until Sun 10.8</div>
 			<div class="text-2xl font-bold text-gray-800">€260</div>
 			<div class="text-sm text-gray-600">After early bird</div>
+		</div>
+	</div>
+
+	<div class="rounded-xl border border-blue-200 bg-blue-50 p-6">
+		<h3 class="mb-4 text-center font-bold text-blue-800">Value Breakdown *</h3>
+		<div class="grid gap-4 md:grid-cols-3">
+			<div class="text-center">
+				<div class="mb-1 text-2xl font-bold text-blue-600">24</div>
+				<div class="text-sm text-blue-700">Total Hours</div>
+			</div>
+			<div class="text-center">
+				<div class="mb-1 text-2xl font-bold text-blue-600">€12.50</div>
+				<div class="text-sm text-blue-700">Per Hour (Regular)</div>
+			</div>
+			<div class="text-center">
+				<div class="mb-1 text-2xl font-bold text-blue-600">€10.83</div>
+				<div class="text-sm text-blue-700">Per Hour (Youth)</div>
+			</div>
+		</div>
+		<div class="mt-4 text-center text-sm text-blue-600">
+			* Without early bird discount
 		</div>
 	</div>
 </div>
