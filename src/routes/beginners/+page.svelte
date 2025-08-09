@@ -8,7 +8,6 @@
 	let valueBreakdownOpen = $state(false);
 	let teachersAccordionOpen = $state(false);
 	import { onMount, onDestroy } from 'svelte';
-	import { page } from '$app/stores';
 
 	// Early-bird countdown (Helsinki time). Update the date as needed.
 	const earlyBirdDeadline = new Date('2025-08-10T23:59:59+03:00');
@@ -49,12 +48,17 @@
 		return `${baseUrl}${sep}${qs}`;
 	}
 
-	const leaderUrl = $derived.by(() => buildUrlWithUtm(leaderBaseUrl, $page.url.searchParams));
-	const followerUrl = $derived.by(() => buildUrlWithUtm(followerBaseUrl, $page.url.searchParams));
+	let leaderUrl = $state(leaderBaseUrl);
+	let followerUrl = $state(followerBaseUrl);
 
 	onMount(() => {
 		updateCountdown();
 		intervalId = window.setInterval(updateCountdown, 30000);
+		try {
+			const params = new URLSearchParams(window.location.search);
+			leaderUrl = buildUrlWithUtm(leaderBaseUrl, params);
+			followerUrl = buildUrlWithUtm(followerBaseUrl, params);
+		} catch {}
 	});
 
 	onDestroy(() => {
