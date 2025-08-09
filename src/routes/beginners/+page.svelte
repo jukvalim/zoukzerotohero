@@ -2,6 +2,60 @@
 	import partner_pose_landscape from '$lib/assets/images/partner_pose_landscape.jpg';
 	import partner_pose_portrait from '$lib/assets/images/partner_pose_portrait.jpg';
 	let accordionOpen = $state(false);
+	let valueBreakdownOpen = $state(false);
+	import { onMount, onDestroy } from 'svelte';
+	import { page } from '$app/stores';
+
+	// Early-bird countdown (Helsinki time). Update the date as needed.
+	const earlyBirdDeadline = new Date('2025-08-10T23:59:59+03:00');
+	let remainingMs = 0;
+	let countdownVisible = $state(false);
+	let intervalId: number | undefined;
+
+	function updateCountdown() {
+		const now = Date.now();
+		const diff = earlyBirdDeadline.getTime() - now;
+		remainingMs = Math.max(0, diff);
+		countdownVisible = diff > 0;
+	}
+
+	function formatRemaining(ms: number): string {
+		const totalSeconds = Math.floor(ms / 1000);
+		const days = Math.floor(totalSeconds / 86400);
+		const hours = Math.floor((totalSeconds % 86400) / 3600);
+		const minutes = Math.floor((totalSeconds % 3600) / 60);
+		return `${days}d ${hours}h ${minutes}m`;
+	}
+
+	const leaderBaseUrl =
+		'https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/';
+	const followerBaseUrl =
+		'https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/';
+
+	function buildUrlWithUtm(baseUrl: string, searchParams: URLSearchParams): string {
+		const utm = new URLSearchParams();
+		for (const [key, value] of searchParams.entries()) {
+			if ((key.toLowerCase() === 'ref' || key.toLowerCase().startsWith('utm_')) && value) {
+				utm.append(key, value);
+			}
+		}
+		const qs = utm.toString();
+		if (!qs) return baseUrl;
+		const sep = baseUrl.includes('?') ? '&' : '?';
+		return `${baseUrl}${sep}${qs}`;
+	}
+
+	const leaderUrl = $derived.by(() => buildUrlWithUtm(leaderBaseUrl, $page.url.searchParams));
+	const followerUrl = $derived.by(() => buildUrlWithUtm(followerBaseUrl, $page.url.searchParams));
+
+	onMount(() => {
+		updateCountdown();
+		intervalId = window.setInterval(updateCountdown, 30000);
+	});
+
+	onDestroy(() => {
+		if (intervalId) clearInterval(intervalId);
+	});
 </script>
 
 <svelte:head>
@@ -16,20 +70,29 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<div class="mb-12 text-center">
+<div class="mb-6 text-center">
 	<h1
 		class="mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-3xl font-bold text-transparent md:text-5xl"
 	>
 		From Zero to Zouk
 	</h1>
-	<h2 class="mb-6 text-xl font-bold text-gray-700 md:text-2xl">Brazilian Zouk Beginner Course</h2>
+	<h2 class="mb-2 text-xl font-bold text-gray-700 md:text-2xl">Brazilian Zouk Beginner Course</h2>
 	<p class="mx-auto max-w-2xl text-lg text-gray-600">
 		Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
 	</p>
+	{#if countdownVisible}
+		<div
+			class="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-300 bg-yellow-50 px-4 py-2 text-sm text-yellow-800"
+		>
+			<span>⏳ Early bird ends in</span>
+			<span class="font-semibold">{formatRemaining(remainingMs)}</span>
+			<span>&mdash; save €20</span>
+		</div>
+	{/if}
 </div>
 
 <iframe
-	class="mb-12 w-full rounded-xl shadow-2xl"
+	class="mb-6 w-full rounded-xl shadow-2xl"
 	style="aspect-ratio: 16/9;"
 	width="100%"
 	src="https://www.youtube.com/embed/bFPCRmFNvjU?si=2_LukWGlPQeiNVja&autoplay=1&mute=1&loop=1&playlist=bFPCRmFNvjU&modestbranding=1&showinfo=0"
@@ -40,25 +103,51 @@
 	allowfullscreen
 ></iframe>
 
-<!-- Opening Story -->
-<div
-	class="mb-12 rounded-xl border-l-4 border-purple-500 bg-gradient-to-br from-blue-50 to-purple-50 p-6"
->
-	<p class="mb-4 text-lg">
-		Have you ever seen Brazilian Zouk or another couple dance and thought, "That looks amazing...
-		but I could never do that"?
-	</p>
-	<p class="text-lg font-medium">We're here to prove you wrong&mdash;in the best way.</p>
+<!-- CTA Buttons (Hero) -->
+<div class="mb-12 hidden md:block">
+	<div
+		class="mx-auto hidden max-w-md flex-col justify-center gap-4 text-center md:flex md:flex-row"
+	>
+		<a
+			href={leaderUrl}
+			target="_blank"
+			rel="noopener"
+			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
+		>
+			👉 Register – leader
+		</a>
+		<a
+			href={followerUrl}
+			target="_blank"
+			rel="noopener"
+			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
+		>
+			👉 Register – follower
+		</a>
+	</div>
 </div>
 
-<!-- Teacher Photo -->
-<div class="mb-12 flex flex-col items-center">
-	<img
-		src={partner_pose_portrait}
-		alt="Jukka and Anna"
-		class="h-auto w-full rounded-xl shadow-2xl md:w-3/4"
-	/>
-	<p class="mt-4 text-center text-sm text-gray-600">Jukka and Anna &mdash; course teachers</p>
+<!-- Story & Teacher Image -->
+<div class="mb-6 md:mb-12 md:grid md:grid-cols-2 md:items-center md:gap-8">
+	<div class="mb-4 p-6 md:mb-0">
+		<p class="mb-4 text-lg">
+			Have you ever seen Brazilian Zouk or another couple dance and thought, "That looks amazing...
+			but I could never do that"?
+		</p>
+		<p class="text-lg font-medium">We're here to prove you wrong&mdash;in the best way.</p>
+	</div>
+
+	<div class="flex flex-col items-center">
+		<picture>
+			<source srcset={partner_pose_landscape} media="(min-width: 768px)" />
+			<img
+				src={partner_pose_portrait}
+				alt="Jukka and Anna"
+				class="h-auto w-full max-w-sm rounded-xl shadow-2xl md:max-w-md"
+			/>
+		</picture>
+		<p class="mt-4 text-center text-sm text-gray-600">Jukka and Anna &mdash; course teachers</p>
+	</div>
 </div>
 
 <!-- Course Description -->
@@ -77,6 +166,17 @@
 		<span class="mr-3 inline-block rounded-full bg-green-100 p-2">🎁</span>
 		What You'll Get
 	</h2>
+
+	<div class="mt-6 mb-6 rounded-xl border border-yellow-200 bg-yellow-50 p-6">
+		<div class="mb-3 flex items-center">
+			<span class="mr-3 text-2xl">🛡️</span>
+			<h3 class="font-bold text-yellow-800">Money-back guarantee</h3>
+		</div>
+		<p class="text-yellow-700">
+			If you show up, do the work, and still don't feel able to dance socially, we'll refund you in
+			full. Just let us know how we can improve.
+		</p>
+	</div>
 
 	<div class="grid gap-6 md:grid-cols-2">
 		<div class="rounded-xl border border-green-200 bg-green-50 p-6">
@@ -120,7 +220,11 @@
 				</li>
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
-					<span><b>Inclusive, welcoming community</b> + WhatsApp group</span>
+					<span
+						><a href="/community-guidelines" target="_blank" rel="noopener" class="underline"
+							>Inclusive, welcoming community</a
+						> + WhatsApp group</span
+					>
 				</li>
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
@@ -133,27 +237,6 @@
 			</ul>
 		</div>
 	</div>
-
-	<div class="mt-6 rounded-xl border border-yellow-200 bg-yellow-50 p-6">
-		<div class="mb-3 flex items-center">
-			<span class="mr-3 text-2xl">🛡️</span>
-			<h3 class="font-bold text-yellow-800">Money-back guarantee</h3>
-		</div>
-		<p class="text-yellow-700">
-			If you show up, do the work, and still don't feel able to dance socially, we'll refund you in
-			full. Just let us know how we can improve.
-		</p>
-	</div>
-</div>
-
-<!-- CTA Button -->
-<div class="mb-12 text-center">
-	<button
-		onclick={() => document.getElementById('ready-to-join')?.scrollIntoView({ behavior: 'smooth' })}
-		class="rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-6 text-2xl font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-xl"
-	>
-		🎉 Sign me up!
-	</button>
 </div>
 
 <!-- Who It's For Section -->
@@ -241,7 +324,9 @@
 					<li><b>Teachers:</b> Jukka & Anna</li>
 					<li>
 						<b>Includes: </b>5 optional
-						<a href="/zouk-o-saturday" class="underline">Zouk'o'Saturdays</a> with varying teachers
+						<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
+							>Zouk'o'Saturdays</a
+						> with varying teachers
 					</li>
 				</ul>
 			</div>
@@ -266,14 +351,15 @@
 			<div class="text-center">
 				<div class="mb-2 text-3xl font-bold text-green-600">15</div>
 				<div class="text-green-700">
-					Extra <a href="/zouk-o-saturday" class="underline">Zouk'o'Saturday</a> drop-in and social dancing
-					hours
+					Extra <a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
+						>Zouk'o'Saturday</a
+					> drop-in and social dancing hours
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="grid gap-6 md:grid-cols-2 mb-6">
+	<div class="mb-6 grid gap-6 md:grid-cols-2">
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Regular Price</h3>
 			<div class="mb-2 text-3xl font-bold text-green-600">€280</div>
@@ -291,26 +377,49 @@
 		</div>
 	</div>
 
-	<div class="rounded-xl border border-blue-200 bg-blue-50 p-6">
-		<h3 class="mb-4 text-center font-bold text-blue-800">Value Breakdown *</h3>
-		<div class="grid gap-4 md:grid-cols-3">
-			<div class="text-center">
-				<div class="mb-1 text-2xl font-bold text-blue-600">24</div>
-				<div class="text-sm text-blue-700">Total Hours</div>
+	<div class="overflow-hidden rounded-xl border border-blue-200">
+		<button
+			onclick={() => (valueBreakdownOpen = !valueBreakdownOpen)}
+			onkeydown={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					valueBreakdownOpen = !valueBreakdownOpen;
+				}
+			}}
+			class="flex w-full items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 p-6 text-left transition-colors hover:from-blue-100 hover:to-blue-200"
+			tabindex="0"
+			aria-expanded={valueBreakdownOpen}
+		>
+			<h3 class="text-lg font-semibold text-blue-800">Value Breakdown *</h3>
+			<div
+				class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
+			>
+				<span class="text-lg font-bold">{valueBreakdownOpen ? '−' : '+'}</span>
 			</div>
-			<div class="text-center">
-				<div class="mb-1 text-2xl font-bold text-blue-600">€12.50</div>
-				<div class="text-sm text-blue-700">Per Hour (Regular)</div>
+		</button>
+
+		{#if valueBreakdownOpen}
+			<div class="border-t border-blue-200 bg-blue-50 p-6">
+				<div class="grid gap-4 md:grid-cols-3">
+					<div class="text-center">
+						<div class="mb-1 text-2xl font-bold text-blue-600">24</div>
+						<div class="text-sm text-blue-700">Total Hours</div>
+					</div>
+					<div class="text-center">
+						<div class="mb-1 text-2xl font-bold text-blue-600">€12.50</div>
+						<div class="text-sm text-blue-700">Per Hour (Regular)</div>
+					</div>
+					<div class="text-center">
+						<div class="mb-1 text-2xl font-bold text-blue-600">€10.83</div>
+						<div class="text-sm text-blue-700">Per Hour (Youth)</div>
+					</div>
+				</div>
+				<div class="mt-4 text-center text-sm text-blue-600">
+					* Without early bird discount. Value breakdown doesn't account for things like practice
+					materials or money-back guarantee.
+				</div>
 			</div>
-			<div class="text-center">
-				<div class="mb-1 text-2xl font-bold text-blue-600">€10.83</div>
-				<div class="text-sm text-blue-700">Per Hour (Youth)</div>
-			</div>
-		</div>
-		<div class="mt-4 text-center text-sm text-blue-600">
-			* Without early bird discount. Value breakdown doesn't account for things like
-			practice materials or money-back guarantee.
-		</div>
+		{/if}
 	</div>
 </div>
 
@@ -330,17 +439,26 @@
 		<p class="text-lg">
 			Join the course, show up, and if it's not working for you&mdash;we'll make it right.
 		</p>
+		{#if countdownVisible}
+			<p class="mt-4 text-base text-yellow-800">
+				⏳ Early bird ends in <span class="font-semibold">{formatRemaining(remainingMs)}</span>
+			</p>
+		{/if}
 	</div>
 
 	<div class="mx-auto flex max-w-md flex-col justify-center gap-4 md:flex-row">
 		<a
-			href="https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/"
+			href={leaderUrl}
+			target="_blank"
+			rel="noopener"
 			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
 			>👉 Register Now - leader</a
 		>
 
 		<a
-			href="https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/"
+			href={followerUrl}
+			target="_blank"
+			rel="noopener"
 			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
 			>👉 Register Now - follower</a
 		>
@@ -386,7 +504,31 @@
 
 <!-- Final CTA -->
 <div
-	class="rounded-xl border border-green-200 bg-gradient-to-r from-green-50 to-blue-50 p-8 text-center"
+	class="mb-24 rounded-xl border border-green-200 bg-gradient-to-r from-green-50 to-blue-50 p-8 text-center md:mb-12"
 >
 	<p class="mb-2 text-3xl font-bold text-green-800">🙌 See you in class! 🙌</p>
+</div>
+
+<!-- Sticky mobile CTA -->
+<div
+	class="fixed right-0 bottom-0 left-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur md:hidden"
+>
+	<div class="mx-auto flex max-w-xl items-center justify-center gap-3 p-3">
+		<a
+			href={leaderUrl}
+			target="_blank"
+			rel="noopener"
+			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
+		>
+			Register – Leader
+		</a>
+		<a
+			href={followerUrl}
+			target="_blank"
+			rel="noopener"
+			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
+		>
+			Register – Follower
+		</a>
+	</div>
 </div>
