@@ -1,8 +1,12 @@
 <script lang="ts">
 	import partner_pose_landscape from '$lib/assets/images/partner_pose_landscape.jpg';
 	import partner_pose_portrait from '$lib/assets/images/partner_pose_portrait.jpg';
+	import jukka from '$lib/assets/images/jukka.jpg';
+	import anna from '$lib/assets/images/anna.jpg';
+	import Introduction from '$lib/Introduction.svelte';
 	let accordionOpen = $state(false);
 	let valueBreakdownOpen = $state(false);
+	let teachersAccordionOpen = $state(false);
 	import { onMount, onDestroy } from 'svelte';
 	import { page } from '$app/stores';
 
@@ -466,7 +470,7 @@
 </div>
 
 <!-- Leader/Follower Accordion -->
-<div class="mb-12 overflow-hidden rounded-xl border border-gray-200">
+<div class="mb-2 overflow-hidden rounded-xl border border-gray-200">
 	<button
 		onclick={() => (accordionOpen = !accordionOpen)}
 		onkeydown={(e) => {
@@ -498,6 +502,43 @@
 				that unusual for a woman to dance as a leader or a man to dance as a follower. Feel free to
 				register as either role, regardless of your gender.
 			</p>
+		</div>
+	{/if}
+</div>
+
+<!-- Teachers Accordion -->
+<div class="mb-4 overflow-hidden rounded-xl border border-gray-200">
+	<button
+		onclick={() => (teachersAccordionOpen = !teachersAccordionOpen)}
+		onkeydown={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				teachersAccordionOpen = !teachersAccordionOpen;
+			}
+		}}
+		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200"
+		tabindex="0"
+		aria-expanded={teachersAccordionOpen}
+	>
+		<h3 class="text-xl font-semibold">Can you tell me more about the teachers?</h3>
+		<div class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md">
+			<span class="text-lg font-bold">{teachersAccordionOpen ? '−' : '+'}</span>
+		</div>
+	</button>
+
+	{#if teachersAccordionOpen}
+		<div class="border-t border-gray-200 bg-white p-6">
+			<section class="space-y-12">
+				<Introduction imgSrc={jukka} imgAlt="Jukka" name="Jukka Välimaa" alwaysExpanded>
+					<p class="mb-2">Jukka is the main organizer for Zouk Zero to Hero. He started learning Brazilian Zouk in 2010, never stopped, and does not intend to stop. The craft and the art of the dance - and of teaching the dance - is endlessly fascinating to him.</p>
+					<p class="mb-2">His main teachers have been Freddy and Andressa, and he taught for many years at Helsinki Dance Central. He teaches mostly in Helsinki, but has also taught in many other European countries over the years.</p>
+					</Introduction>
+
+				<Introduction imgSrc={anna} imgAlt="Anna" name="Anna Zahrmann" alwaysExpanded>
+					<p class="mb-2">Anna caught the Brazilian Zouk bug in 2020 (thanks, Jukka and Kristina!) — and quickly found herself hooked. Inspired by the creativity and freedom the dance offers, what began as a hobby soon grew into a deep passion. She started her journey learning from Jukka & Kristina and Freddy & Andressa, and later traveled across Europe to study with top international teachers and immerse herself in the global Zouk community.</p>
+					<p class="mb-2">Over time, Anna transitioned from student to assistant, and now teaches and organizes events in the local Zouk scene.</p>
+					</Introduction>
+			</section>
 		</div>
 	{/if}
 </div>
