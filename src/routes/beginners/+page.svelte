@@ -331,7 +331,7 @@
 					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
 					<li><b>Teachers:</b> Jukka & Anna</li>
 					<li>
-						<b>Includes: </b>5 optional
+						<b>Includes:</b> 5 optional
 						<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
 							>Zouk'o'Saturdays</a
 						> with varying teachers
