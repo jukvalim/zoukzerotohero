@@ -9,26 +9,7 @@
 	let teachersAccordionOpen = $state(false);
 	import { onMount, onDestroy } from 'svelte';
 
-	// Early-bird countdown (Helsinki time). Update the date as needed.
-	const earlyBirdDeadline = new Date('2025-08-10T23:59:59+03:00');
-	let remainingMs = 0;
-	let countdownVisible = $state(false);
-	let intervalId: number | undefined;
 
-	function updateCountdown() {
-		const now = Date.now();
-		const diff = earlyBirdDeadline.getTime() - now;
-		remainingMs = Math.max(0, diff);
-		countdownVisible = diff > 0;
-	}
-
-	function formatRemaining(ms: number): string {
-		const totalSeconds = Math.floor(ms / 1000);
-		const days = Math.floor(totalSeconds / 86400);
-		const hours = Math.floor((totalSeconds % 86400) / 3600);
-		const minutes = Math.floor((totalSeconds % 3600) / 60);
-		return `${days}d ${hours}h ${minutes}m`;
-	}
 
 	const leaderBaseUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/';
@@ -52,17 +33,11 @@
 	let followerUrl = $state(followerBaseUrl);
 
 	onMount(() => {
-		updateCountdown();
-		intervalId = window.setInterval(updateCountdown, 30000);
 		try {
 			const params = new URLSearchParams(window.location.search);
 			leaderUrl = buildUrlWithUtm(leaderBaseUrl, params);
 			followerUrl = buildUrlWithUtm(followerBaseUrl, params);
 		} catch {}
-	});
-
-	onDestroy(() => {
-		if (intervalId) clearInterval(intervalId);
 	});
 </script>
 
@@ -88,15 +63,6 @@
 	<p class="mx-auto max-w-2xl text-lg text-gray-600">
 		Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
 	</p>
-	{#if countdownVisible}
-		<div
-			class="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-300 bg-yellow-50 px-4 py-2 text-sm text-yellow-800"
-		>
-			<span>⏳ Early bird ends in</span>
-			<span class="font-semibold">{formatRemaining(remainingMs)}</span>
-			<span>&mdash; save €20</span>
-		</div>
-	{/if}
 </div>
 
 <iframe
@@ -370,18 +336,12 @@
 	<div class="mb-6 grid gap-6 md:grid-cols-2">
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Regular Price</h3>
-			<div class="mb-2 text-3xl font-bold text-green-600">€280</div>
-			<div class="mb-3 text-sm text-gray-600">Early bird until Sun 10.8</div>
 			<div class="text-2xl font-bold text-gray-800">€300</div>
-			<div class="text-sm text-gray-600">After early bird</div>
 		</div>
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Youth Price</h3>
 			<div class="mb-1 text-sm text-gray-600">(26 years old or less)</div>
-			<div class="mb-2 text-3xl font-bold text-green-600">€240</div>
-			<div class="mb-3 text-sm text-gray-600">Early bird until Sun 10.8</div>
 			<div class="text-2xl font-bold text-gray-800">€260</div>
-			<div class="text-sm text-gray-600">After early bird</div>
 		</div>
 	</div>
 
@@ -423,8 +383,7 @@
 					</div>
 				</div>
 				<div class="mt-4 text-center text-sm text-blue-600">
-					* Without early bird discount. Value breakdown doesn't account for things like practice
-					materials or money-back guarantee.
+					* Value breakdown doesn't account for things like practice materials or money-back guarantee.
 				</div>
 			</div>
 		{/if}
@@ -447,11 +406,6 @@
 		<p class="text-lg">
 			Join the course, show up, and if it's not working for you&mdash;we'll make it right.
 		</p>
-		{#if countdownVisible}
-			<p class="mt-4 text-base text-yellow-800">
-				⏳ Early bird ends in <span class="font-semibold">{formatRemaining(remainingMs)}</span>
-			</p>
-		{/if}
 	</div>
 
 	<div class="mx-auto flex max-w-md flex-col justify-center gap-4 md:flex-row">
