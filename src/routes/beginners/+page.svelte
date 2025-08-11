@@ -119,7 +119,7 @@
 					href={leaderUrl}
 					target="_blank"
 					rel="noopener"
-					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
+					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl plausible-event-name=LeaderRegistrationClick"
 				>
 					<span class="relative z-10 flex items-center justify-center">
 						<span class="mr-2">🎯</span>
@@ -133,7 +133,7 @@
 					href={followerUrl}
 					target="_blank"
 					rel="noopener"
-					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
+					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl plausible-event-name=FollowerRegistrationClick"
 				>
 					<span class="relative z-10 flex items-center justify-center">
 						<span class="mr-2">✨</span>
@@ -413,25 +413,25 @@
 	</div>
 
 	<div class="overflow-hidden rounded-xl border border-blue-200">
-		<button
-			onclick={() => (valueBreakdownOpen = !valueBreakdownOpen)}
-			onkeydown={(e) => {
-				if (e.key === 'Enter' || e.key === ' ') {
-					e.preventDefault();
-					valueBreakdownOpen = !valueBreakdownOpen;
-				}
-			}}
-			class="flex w-full items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 p-6 text-left transition-colors hover:from-blue-100 hover:to-blue-200"
-			tabindex="0"
-			aria-expanded={valueBreakdownOpen}
+			<button
+		onclick={() => (valueBreakdownOpen = !valueBreakdownOpen)}
+		onkeydown={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				valueBreakdownOpen = !valueBreakdownOpen;
+			}
+		}}
+		class="flex w-full items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 p-6 text-left transition-colors hover:from-blue-100 hover:to-blue-200 plausible-event-name=ValueBreakdownAccordionOpen"
+		tabindex="0"
+		aria-expanded={valueBreakdownOpen}
+	>
+		<h3 class="text-lg font-semibold text-blue-800">Value Breakdown *</h3>
+		<div
+			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
 		>
-			<h3 class="text-lg font-semibold text-blue-800">Value Breakdown *</h3>
-			<div
-				class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
-			>
-				<span class="text-lg font-bold">{valueBreakdownOpen ? '−' : '+'}</span>
-			</div>
-		</button>
+			<span class="text-lg font-bold">{valueBreakdownOpen ? '−' : '+'}</span>
+		</div>
+	</button>
 
 		{#if valueBreakdownOpen}
 			<div class="border-t border-blue-200 bg-blue-50 p-6">
@@ -481,7 +481,7 @@
 			href={leaderUrl}
 			target="_blank"
 			rel="noopener"
-			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
+			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl plausible-event-name=LeaderRegistrationClick"
 			>👉 Register Now - leader</a
 		>
 
@@ -489,7 +489,7 @@
 			href={followerUrl}
 			target="_blank"
 			rel="noopener"
-			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
+			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl plausible-event-name=FollowerRegistrationClick"
 			>👉 Register Now - follower</a
 		>
 	</div>
@@ -505,7 +505,7 @@
 				accordionOpen = !accordionOpen;
 			}
 		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200"
+		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200 plausible-event-name=LeaderFollowerAccordionOpen"
 		tabindex="0"
 		aria-expanded={accordionOpen}
 	>
@@ -542,7 +542,7 @@
 				teachersAccordionOpen = !teachersAccordionOpen;
 			}
 		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200"
+		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200 plausible-event-name=TeachersAccordionOpen"
 		tabindex="0"
 		aria-expanded={teachersAccordionOpen}
 	>
@@ -598,7 +598,7 @@
 				zoukSaturdaysAccordionOpen = !zoukSaturdaysAccordionOpen;
 			}
 		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200"
+		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200 plausible-event-name=ZoukSaturdaysAccordionOpen"
 		tabindex="0"
 		aria-expanded={zoukSaturdaysAccordionOpen}
 	>
@@ -644,7 +644,7 @@
 			href={leaderUrl}
 			target="_blank"
 			rel="noopener"
-			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
+			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md plausible-event-name=LeaderRegistrationClick"
 		>
 			Register – Leader
 		</a>
@@ -652,7 +652,7 @@
 			href={followerUrl}
 			target="_blank"
 			rel="noopener"
-			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
+			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md plausible-event-name=FollowerRegistrationClick"
 		>
 			Register – Follower
 		</a>
