@@ -628,11 +628,23 @@
 	{/if}
 </div>
 
-<!-- Final CTA -->
+<!-- Contact Information -->
+<p class="mb-4 text-center text-gray-600">
+	Any more questions? Contact us at
+	<a href="mailto:jukka@zoukzerotohero.com" class="underline">via email</a>
+	or
+	<a href="https://www.facebook.com/profile.php?id=61551733333069" target="_blank" rel="noopener" class="underline">with Facebook Messenger</a>.
+</p>
+
 <div
 	class="mb-24 rounded-xl border border-green-200 bg-gradient-to-r from-green-50 to-blue-50 p-8 text-center md:mb-12"
 >
+
+<div class="mb-6 text-center">
+
+</div>
 	<p class="mb-2 text-3xl font-bold text-green-800">🙌 See you in class! 🙌</p>
+
 </div>
 
 <!-- Sticky mobile CTA -->
