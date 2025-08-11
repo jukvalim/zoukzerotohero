@@ -7,9 +7,8 @@
 	let accordionOpen = $state(false);
 	let valueBreakdownOpen = $state(false);
 	let teachersAccordionOpen = $state(false);
-	import { onMount, onDestroy } from 'svelte';
-
-
+	let zoukSaturdaysAccordionOpen = $state(false);
+	import { onMount } from 'svelte';
 
 	const leaderBaseUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/';
@@ -53,51 +52,119 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<div class="mb-6 text-center">
-	<h1
-		class="mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-3xl font-bold text-transparent md:text-5xl"
-	>
-		From Zero to Zouk
-	</h1>
-	<h2 class="mb-2 text-xl font-bold text-gray-700 md:text-2xl">Brazilian Zouk Beginner Course</h2>
-	<p class="mx-auto max-w-2xl text-lg text-gray-600">
-		Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
-	</p>
+<div
+	class="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-4 md:p-12"
+>
+	<!-- Background Pattern -->
+	<div class="absolute inset-0 opacity-5">
+		<div class="absolute -top-4 -right-4 h-32 w-32 rounded-full bg-purple-400"></div>
+		<div class="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-pink-400"></div>
+		<div class="absolute top-1/2 right-1/4 h-16 w-16 rounded-full bg-blue-400"></div>
+	</div>
+
+	<div class="relative z-10">
+		<!-- Main Headline -->
+		<div class="mb-4 text-center">
+			<h1
+				class="mb-4 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-4xl font-bold text-transparent md:text-6xl lg:text-7xl"
+			>
+				From Zero to Zouk
+			</h1>
+			<h2 class="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">
+				Brazilian Zouk Beginner Course
+			</h2>
+			<p class="mx-auto max-w-3xl text-xl text-gray-600 md:text-2xl">
+				Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
+			</p>
+		</div>
+
+		<!-- Key Benefits Preview -->
+		<div class="mb-8 grid gap-4 md:grid-cols-3">
+			<div
+				class="flex items-center justify-center rounded-xl bg-white/80 p-4 text-center shadow-lg backdrop-blur"
+			>
+				<div class="flex flex-col items-center">
+					<span class="mb-2 text-3xl">💃</span>
+					<span class="font-semibold text-gray-800">No Partner Needed</span>
+				</div>
+			</div>
+			<div
+				class="flex items-center justify-center rounded-xl bg-white/80 p-4 text-center shadow-lg backdrop-blur"
+			>
+				<div class="flex flex-col items-center">
+					<span class="mb-2 text-3xl">🎁</span>
+					<span class="font-semibold text-gray-800">Money-Back Guarantee</span>
+				</div>
+			</div>
+			<div
+				class="flex items-center justify-center rounded-xl bg-white/80 p-4 text-center shadow-lg backdrop-blur"
+			>
+				<div class="flex flex-col items-center">
+					<span class="mb-2 text-3xl">🌟</span>
+					<span class="font-semibold text-gray-800">Structured learning & support videos</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Enhanced CTA Section -->
+		<div class="mb-4 text-center">
+			<div class="mb-4">
+				<p class="text-lg font-medium text-gray-700">
+					<span class="font-bold text-red-600">Starts Monday, September 1st</span>
+				</p>
+			</div>
+
+			<div class="mx-auto flex max-w-lg flex-col gap-4 md:flex-row md:justify-center">
+				<a
+					href={leaderUrl}
+					target="_blank"
+					rel="noopener"
+					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
+				>
+					<span class="relative z-10 flex items-center justify-center">
+						<span class="mr-2">🎯</span>
+						Register as Leader
+					</span>
+					<div
+						class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
+					></div>
+				</a>
+				<a
+					href={followerUrl}
+					target="_blank"
+					rel="noopener"
+					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
+				>
+					<span class="relative z-10 flex items-center justify-center">
+						<span class="mr-2">✨</span>
+						Register as Follower
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
 </div>
 
-<iframe
-	class="mb-6 w-full rounded-xl shadow-2xl"
-	style="aspect-ratio: 16/9;"
-	width="100%"
-	src="https://www.youtube.com/embed/bFPCRmFNvjU?si=2_LukWGlPQeiNVja&autoplay=1&mute=1&loop=1&playlist=bFPCRmFNvjU&modestbranding=1&showinfo=0"
-	title="YouTube video player"
-	frameborder="0"
-	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-	referrerpolicy="strict-origin-when-cross-origin"
-	allowfullscreen
-></iframe>
+<!-- Video Section -->
+<div class="mb-6">
+	<div class="mb-6 text-center">
+		<h3 class="mb-2 text-2xl font-bold text-gray-800">See What It's Like</h3>
+		<p class="text-gray-600">Here's some video from one of our Helsinki socials</p>
+	</div>
 
-<!-- CTA Buttons (Hero) -->
-<div class="mb-12 hidden md:block">
-	<div
-		class="mx-auto hidden max-w-md flex-col justify-center gap-4 text-center md:flex md:flex-row"
-	>
-		<a
-			href={leaderUrl}
-			target="_blank"
-			rel="noopener"
-			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
-		>
-			👉 Register – leader
-		</a>
-		<a
-			href={followerUrl}
-			target="_blank"
-			rel="noopener"
-			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl"
-		>
-			👉 Register – follower
-		</a>
+	<div class="relative">
+		<iframe
+			class="w-full rounded-xl shadow-2xl"
+			style="aspect-ratio: 16/9;"
+			width="100%"
+			src="https://www.youtube.com/embed/bFPCRmFNvjU?si=2_LukWGlPQeiNVja&autoplay=1&mute=1&loop=1&playlist=bFPCRmFNvjU&modestbranding=1&showinfo=0"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		></iframe>
+
 	</div>
 </div>
 
@@ -383,7 +450,8 @@
 					</div>
 				</div>
 				<div class="mt-4 text-center text-sm text-blue-600">
-					* Value breakdown doesn't account for things like practice materials or money-back guarantee.
+					* Value breakdown doesn't account for things like practice materials or money-back
+					guarantee.
 				</div>
 			</div>
 		{/if}
@@ -479,7 +547,9 @@
 		aria-expanded={teachersAccordionOpen}
 	>
 		<h3 class="text-xl font-semibold">Can you tell me more about the teachers?</h3>
-		<div class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md">
+		<div
+			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
+		>
 			<span class="text-lg font-bold">{teachersAccordionOpen ? '−' : '+'}</span>
 		</div>
 	</button>
@@ -488,15 +558,72 @@
 		<div class="border-t border-gray-200 bg-white p-6">
 			<section class="space-y-12">
 				<Introduction imgSrc={jukka} imgAlt="Jukka" name="Jukka Välimaa" alwaysExpanded>
-					<p class="mb-2">Jukka is the main organizer for Zouk Zero to Hero. He started learning Brazilian Zouk in 2010, never stopped, and does not intend to stop. The craft and the art of the dance - and of teaching the dance - is endlessly fascinating to him.</p>
-					<p class="mb-2">His main teachers have been Freddy and Andressa, and he taught for many years at Helsinki Dance Central. He teaches mostly in Helsinki, but has also taught in many other European countries over the years.</p>
-					</Introduction>
+					<p class="mb-2">
+						Jukka is the main organizer for Zouk Zero to Hero. He started learning Brazilian Zouk in
+						2010, never stopped, and does not intend to stop. The craft and the art of the dance -
+						and of teaching the dance - is endlessly fascinating to him.
+					</p>
+					<p class="mb-2">
+						His main teachers have been Freddy and Andressa, and he taught for many years at
+						Helsinki Dance Central. He teaches mostly in Helsinki, but has also taught in many other
+						European countries over the years.
+					</p>
+				</Introduction>
 
 				<Introduction imgSrc={anna} imgAlt="Anna" name="Anna Zahrmann" alwaysExpanded>
-					<p class="mb-2">Anna caught the Brazilian Zouk bug in 2020 (thanks, Jukka and Kristina!) — and quickly found herself hooked. Inspired by the creativity and freedom the dance offers, what began as a hobby soon grew into a deep passion. She started her journey learning from Jukka & Kristina and Freddy & Andressa, and later traveled across Europe to study with top international teachers and immerse herself in the global Zouk community.</p>
-					<p class="mb-2">Over time, Anna transitioned from student to assistant, and now teaches and organizes events in the local Zouk scene.</p>
-					</Introduction>
+					<p class="mb-2">
+						Anna caught the Brazilian Zouk bug in 2020 (thanks, Jukka and Kristina!) — and quickly
+						found herself hooked. Inspired by the creativity and freedom the dance offers, what
+						began as a hobby soon grew into a deep passion. She started her journey learning from
+						Jukka & Kristina and Freddy & Andressa, and later traveled across Europe to study with
+						top international teachers and immerse herself in the global Zouk community.
+					</p>
+					<p class="mb-2">
+						Over time, Anna transitioned from student to assistant, and now teaches and organizes
+						events in the local Zouk scene.
+					</p>
+				</Introduction>
 			</section>
+		</div>
+	{/if}
+</div>
+
+<!-- Zouk'o'Saturdays Accordion -->
+<div class="mb-4 overflow-hidden rounded-xl border border-gray-200">
+	<button
+		onclick={() => (zoukSaturdaysAccordionOpen = !zoukSaturdaysAccordionOpen)}
+		onkeydown={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				zoukSaturdaysAccordionOpen = !zoukSaturdaysAccordionOpen;
+			}
+		}}
+		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200"
+		tabindex="0"
+		aria-expanded={zoukSaturdaysAccordionOpen}
+	>
+		<h3 class="text-xl font-semibold">Do I need to go to all the included Saturdays?</h3>
+		<div
+			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
+		>
+			<span class="text-lg font-bold">{zoukSaturdaysAccordionOpen ? '−' : '+'}</span>
+		</div>
+	</button>
+
+	{#if zoukSaturdaysAccordionOpen}
+		<div class="border-t border-gray-200 bg-white p-6">
+			<p class="mb-2 text-lg">
+				No. You don't have to attend all the
+				<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
+					>Zouk'o'Saturdays</a
+				>. They are included, but how many you attend is up to you.
+			</p>
+
+			<p class="text-lg">
+				That said, we encourage you to go to as many as you can! When learning a new skill, the more
+				practice you get, the better. Also, our money-back guarantee only applies if you attend at
+				least two of them.
+			</p>
 		</div>
 	{/if}
 </div>
