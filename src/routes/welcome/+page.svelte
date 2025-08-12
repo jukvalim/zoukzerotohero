@@ -42,7 +42,7 @@
 		{m['welcome.welcome_beginners_lda_description']()}
 	</li>
 	<li>
-		<a href="https://www.instagram.com/p/DMK2X5SI0Y5">
+		<a href="https://fb.me/e/51eF5Ji9M">
 			{m['welcome.welcome_beginners_lambada']()}
 		</a>
 		{m['welcome.welcome_beginners_lambada_description']()}
