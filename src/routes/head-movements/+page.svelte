@@ -72,10 +72,10 @@
 <h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
 <div class="flex max-w-md flex-col gap-4 text-xl">
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/product/0a9af3fbd73e283bd0cbcd74d6aac55e/"
-		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600"
-		>👉 Register as a follower</a
+	<span
+		class="disabled:opacity-50 rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-gray-600 cursor-not-allowed"
+		aria-disabled="true"
+		><span class="line-through">👉 Register as a follower</span> (Sold out)</span
 	>
 
 	<a
