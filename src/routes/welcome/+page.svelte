@@ -4,6 +4,12 @@
 </script>
 
 <h1 class="md:text-4xl text-2xl font-bold mb-4">{m['welcome.welcome_title']()}</h1>
+
+<p class="mb-4">
+	{m['welcome.welcome_have_a_look']()}
+	<a href="https://youtube.com/playlist?list=PLMobPDbOvaMSq0LnWI-Ue2r6i2ks3HoKw&si=VL8G04FbV3tLQKWd">{m['welcome.welcome_have_a_look_link']()}</a>.
+</p>
+
 <p class="mb-8">
 	{m['welcome.welcome_description_1']()} <a href="https://www.facebook.com/events/1949014439171820/">{m['welcome.welcome_description_2']()}</a>.
 </p>
