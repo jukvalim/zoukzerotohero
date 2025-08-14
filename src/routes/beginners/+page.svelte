@@ -14,6 +14,8 @@
 		'https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/';
 	const followerBaseUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/';
+	const coupleBaseUrl =
+		'https://holvi.com/shop/zoukzerotohero/product/f0b8a2bc25afa3179c1929b774d7b496/';
 
 	function buildUrlWithUtm(baseUrl: string, searchParams: URLSearchParams): string {
 		const utm = new URLSearchParams();
@@ -30,12 +32,14 @@
 
 	let leaderUrl = $state(leaderBaseUrl);
 	let followerUrl = $state(followerBaseUrl);
+	let coupleUrl = $state(coupleBaseUrl);
 
 	onMount(() => {
 		try {
 			const params = new URLSearchParams(window.location.search);
 			leaderUrl = buildUrlWithUtm(leaderBaseUrl, params);
 			followerUrl = buildUrlWithUtm(followerBaseUrl, params);
+			coupleUrl = buildUrlWithUtm(coupleBaseUrl, params);
 		} catch {}
 	});
 </script>
@@ -421,7 +425,7 @@
 		</div>
 	</div>
 
-	<div class="mb-6 grid gap-6 md:grid-cols-2">
+	<div class="mb-6 grid gap-6 md:grid-cols-3">
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Regular Price</h3>
 			<div class="text-2xl font-bold text-gray-800">€300</div>
@@ -430,6 +434,11 @@
 			<h3 class="mb-3 font-bold text-gray-800">Youth Price</h3>
 			<div class="mb-1 text-sm text-gray-600">(26 years old or less)</div>
 			<div class="text-2xl font-bold text-gray-800">€260</div>
+		</div>
+		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
+			<h3 class="mb-3 font-bold text-gray-800">Couple Price</h3>
+			<div class="mb-1 text-sm text-gray-600">(Two people together)</div>
+			<div class="text-2xl font-bold text-gray-800">€540</div>
 		</div>
 	</div>
 
@@ -497,22 +506,42 @@
 		</p>
 	</div>
 
-	<div class="mx-auto flex max-w-md flex-col justify-center gap-4 md:flex-row">
+	<div class="mx-auto flex max-w-4xl flex-col justify-center gap-4 md:flex-row">
 		<a
 			href={leaderUrl}
 			target="_blank"
 			rel="noopener"
-			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl plausible-event-name=LeaderRegistrationClick"
-			>👉 Register Now - leader</a
+			class="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl plausible-event-name=LeaderRegistrationClick"
 		>
+			<span class="relative z-10 flex items-center justify-center">
+				🎯&nbsp;&nbsp;Register as Leader
+			</span>
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
+			></div>
+		</a>
 
 		<a
 			href={followerUrl}
 			target="_blank"
 			rel="noopener"
-			class="rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl plausible-event-name=FollowerRegistrationClick"
-			>👉 Register Now - follower</a
+			class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl plausible-event-name=FollowerRegistrationClick"
 		>
+			<span class="relative z-10 flex items-center justify-center">
+				✨&nbsp;&nbsp;Register as Follower
+			</span>
+		</a>
+
+		<a
+			href={coupleUrl}
+			target="_blank"
+			rel="noopener"
+			class="group relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl plausible-event-name=CoupleRegistrationClick"
+		>
+			<span class="relative z-10 flex items-center justify-center">
+				👥&nbsp;&nbsp;Register as Couple
+			</span>
+		</a>
 	</div>
 </div>
 
