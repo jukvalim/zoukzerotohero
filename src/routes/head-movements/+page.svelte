@@ -84,10 +84,10 @@
 		>👉 Register as a leader</a
 	>
 
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/product/02ea8d3cc397c67d7b1c24e1ea176137"
-		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600"
-		>👉 Couple registration</a
+	<span
+		class="disabled:opacity-50 rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-gray-600 cursor-not-allowed"
+		aria-disabled="true"
+		><span class="line-through">👉 Couple registration</span> (Sold out)</span
 	>
 </div>
 
