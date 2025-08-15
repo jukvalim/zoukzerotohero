@@ -112,7 +112,7 @@
 
 		<!-- Enhanced CTA Section -->
 		<div class="mb-4 text-center">
-			<!-- Try it out this Thursday CTA -->
+			<!-- Try it out this Thursday CTA
 			<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4">
 				<p class="mb-3 text-lg font-medium text-orange-800">
 					<span class="font-bold text-orange-600">🎉 Try it out this Thursday!</span>
@@ -132,6 +132,7 @@
 					</span>
 				</a>
 			</div>
+			-->
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
