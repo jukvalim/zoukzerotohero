@@ -10,6 +10,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	// Plausible analytics global function
+	interface Window {
+		plausible?: (eventName: string, options?: { props?: Record<string, string> }) => void;
+	}
 }
 
 export {};

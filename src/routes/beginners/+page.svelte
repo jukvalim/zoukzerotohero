@@ -4,11 +4,21 @@
 	import jukka from '$lib/assets/images/jukka.jpg';
 	import anna from '$lib/assets/images/anna.jpg';
 	import Introduction from '$lib/Introduction.svelte';
+	import { onMount } from 'svelte';
+
 	let accordionOpen = $state(false);
 	let valueBreakdownOpen = $state(false);
 	let teachersAccordionOpen = $state(false);
 	let zoukSaturdaysAccordionOpen = $state(false);
-	import { onMount } from 'svelte';
+
+	// A/B Testing for headline
+	const headlineVariants = {
+		beginner: 'Brazilian Zouk Beginner Course',
+		basics: 'Brazilian Zouk Basics Course'
+	};
+
+	let chosenHeadline = $state(headlineVariants.beginner); // Default fallback
+	let headlineVariant = $state('beginner'); // Track which variant was chosen
 
 	const leaderBaseUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/';
@@ -30,12 +40,45 @@
 		return `${baseUrl}${sep}${qs}`;
 	}
 
+	// A/B Testing function
+	function getHeadlineVariant(): string {
+		if (typeof window === 'undefined') return 'beginner'; // SSR fallback
+
+		const storageKey = 'zouk-headline-variant';
+		let variant = localStorage.getItem(storageKey);
+
+		if (!variant) {
+			// Randomly assign variant (50/50 split)
+			variant = Math.random() < 0.5 ? 'beginner' : 'basics';
+			localStorage.setItem(storageKey, variant);
+		}
+
+		return variant;
+	}
+
+	// Send variant to Plausible analytics
+	function trackHeadlineVariant(variant: string) {
+		if (typeof window === 'undefined' || !window.plausible) return;
+
+		window.plausible('HeadlineVariant', {
+			props: {
+				variant: variant
+			}
+		});
+	}
+
 	let leaderUrl = $state(leaderBaseUrl);
 	let followerUrl = $state(followerBaseUrl);
 	let coupleUrl = $state(coupleBaseUrl);
 
 	onMount(() => {
 		try {
+			// A/B Testing setup
+			headlineVariant = getHeadlineVariant();
+			chosenHeadline = headlineVariants[headlineVariant as keyof typeof headlineVariants];
+			trackHeadlineVariant(headlineVariant);
+
+			// URL building
 			const params = new URLSearchParams(window.location.search);
 			leaderUrl = buildUrlWithUtm(leaderBaseUrl, params);
 			followerUrl = buildUrlWithUtm(followerBaseUrl, params);
@@ -45,7 +88,7 @@
 </script>
 
 <svelte:head>
-	<title>Zero to Zouk - Brazilian Zouk Beginner Course</title>
+	<title>Zero to Zouk - {chosenHeadline}</title>
 	<meta property="og:title" content="Zero to Zouk - Brazilian Zouk Beginner Course" />
 	<meta
 		property="og:description"
@@ -75,7 +118,7 @@
 				From Zero to Zouk
 			</h1>
 			<h2 class="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">
-				Brazilian Zouk Beginner Course
+				{chosenHeadline}
 			</h2>
 			<p class="mx-auto max-w-3xl text-xl text-gray-600 md:text-2xl">
 				Learn to Social Dance in 6 Weeks &mdash; Even If You've Never Danced Before
