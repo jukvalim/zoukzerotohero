@@ -3,13 +3,8 @@
 	import partner_pose_portrait from '$lib/assets/images/partner_pose_portrait.jpg';
 	import jukka from '$lib/assets/images/jukka.jpg';
 	import anna from '$lib/assets/images/anna.jpg';
-	import Introduction from '$lib/Introduction.svelte';
+	import { Introduction, Accordion } from '$lib';
 	import { onMount } from 'svelte';
-
-	let accordionOpen = $state(false);
-	let valueBreakdownOpen = $state(false);
-	let teachersAccordionOpen = $state(false);
-	let zoukSaturdaysAccordionOpen = $state(false);
 
 	// A/B Testing for headline
 	const headlineVariants = {
@@ -188,7 +183,7 @@
 					href={leaderUrl}
 					target="_blank"
 					rel="noopener"
-					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl plausible-event-name=LeaderRegistrationClick"
+					class="group plausible-event-name=LeaderRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
 				>
 					<span class="relative z-10 flex items-center justify-center">
 						<span class="mr-2">🎯</span>
@@ -202,7 +197,7 @@
 					href={followerUrl}
 					target="_blank"
 					rel="noopener"
-					class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl plausible-event-name=FollowerRegistrationClick"
+					class="group plausible-event-name=FollowerRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
 				>
 					<span class="relative z-10 flex items-center justify-center">
 						<span class="mr-2">✨</span>
@@ -233,7 +228,6 @@
 			referrerpolicy="strict-origin-when-cross-origin"
 			allowfullscreen
 		></iframe>
-
 	</div>
 </div>
 
@@ -486,50 +480,31 @@
 		</div>
 	</div>
 
-	<div class="overflow-hidden rounded-xl border border-blue-200">
-			<button
-		onclick={() => (valueBreakdownOpen = !valueBreakdownOpen)}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				valueBreakdownOpen = !valueBreakdownOpen;
-			}
-		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 p-6 text-left transition-colors hover:from-blue-100 hover:to-blue-200 plausible-event-name=ValueBreakdownAccordionOpen"
-		tabindex="0"
-		aria-expanded={valueBreakdownOpen}
+	<Accordion
+		title="Value Breakdown *"
+		analyticsEvent="ValueBreakdownAccordionOpen"
+		buttonClass="bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200"
+		contentClass="bg-blue-50"
+		titleClass="text-lg font-semibold text-blue-800"
 	>
-		<h3 class="text-lg font-semibold text-blue-800">Value Breakdown *</h3>
-		<div
-			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
-		>
-			<span class="text-lg font-bold">{valueBreakdownOpen ? '−' : '+'}</span>
-		</div>
-	</button>
-
-		{#if valueBreakdownOpen}
-			<div class="border-t border-blue-200 bg-blue-50 p-6">
-				<div class="grid gap-4 md:grid-cols-3">
-					<div class="text-center">
-						<div class="mb-1 text-2xl font-bold text-blue-600">24</div>
-						<div class="text-sm text-blue-700">Total Hours</div>
-					</div>
-					<div class="text-center">
-						<div class="mb-1 text-2xl font-bold text-blue-600">€12.50</div>
-						<div class="text-sm text-blue-700">Per Hour (Regular)</div>
-					</div>
-					<div class="text-center">
-						<div class="mb-1 text-2xl font-bold text-blue-600">€10.83</div>
-						<div class="text-sm text-blue-700">Per Hour (Youth)</div>
-					</div>
-				</div>
-				<div class="mt-4 text-center text-sm text-blue-600">
-					* Value breakdown doesn't account for things like practice materials or money-back
-					guarantee.
-				</div>
+		<div class="grid gap-4 md:grid-cols-3">
+			<div class="text-center">
+				<div class="mb-1 text-2xl font-bold text-blue-600">24</div>
+				<div class="text-sm text-blue-700">Total Hours</div>
 			</div>
-		{/if}
-	</div>
+			<div class="text-center">
+				<div class="mb-1 text-2xl font-bold text-blue-600">€12.50</div>
+				<div class="text-sm text-blue-700">Per Hour (Regular)</div>
+			</div>
+			<div class="text-center">
+				<div class="mb-1 text-2xl font-bold text-blue-600">€10.83</div>
+				<div class="text-sm text-blue-700">Per Hour (Youth)</div>
+			</div>
+		</div>
+		<div class="mt-4 text-center text-sm text-blue-600">
+			* Value breakdown doesn't account for things like practice materials or money-back guarantee.
+		</div>
+	</Accordion>
 </div>
 
 <hr class="my-12 border-gray-300" />
@@ -555,7 +530,7 @@
 			href={leaderUrl}
 			target="_blank"
 			rel="noopener"
-			class="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl plausible-event-name=LeaderRegistrationClick"
+			class="group plausible-event-name=LeaderRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
 		>
 			<span class="relative z-10 flex items-center justify-center">
 				🎯&nbsp;&nbsp;Register as Leader
@@ -569,7 +544,7 @@
 			href={followerUrl}
 			target="_blank"
 			rel="noopener"
-			class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl plausible-event-name=FollowerRegistrationClick"
+			class="group plausible-event-name=FollowerRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
 		>
 			<span class="relative z-10 flex items-center justify-center">
 				✨&nbsp;&nbsp;Register as Follower
@@ -580,7 +555,7 @@
 			href={coupleUrl}
 			target="_blank"
 			rel="noopener"
-			class="group relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl plausible-event-name=CoupleRegistrationClick"
+			class="group plausible-event-name=CoupleRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
 		>
 			<span class="relative z-10 flex items-center justify-center">
 				👥&nbsp;&nbsp;Register as Couple
@@ -590,176 +565,140 @@
 </div>
 
 <!-- Leader/Follower Accordion -->
-<div class="mb-2 overflow-hidden rounded-xl border border-gray-200">
-	<button
-		onclick={() => (accordionOpen = !accordionOpen)}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				accordionOpen = !accordionOpen;
-			}
-		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200 plausible-event-name=LeaderFollowerAccordionOpen"
-		tabindex="0"
-		aria-expanded={accordionOpen}
-	>
-		<h3 class="text-xl font-semibold">Leader? Follower? What are those?</h3>
-		<div
-			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
-		>
-			<span class="text-lg font-bold">{accordionOpen ? '−' : '+'}</span>
-		</div>
-	</button>
-
-	{#if accordionOpen}
-		<div class="border-t border-gray-200 bg-white p-6">
-			<p class="mb-4 text-lg">
-				In partner dances like Brazilian Zouk, there are two roles that work together to create the
-				dance: leader and follower.
-			</p>
-			<p class="text-lg">
-				Traditionally, the leader has been a man and the follower a woman. But nowadays, it's not
-				that unusual for a woman to dance as a leader or a man to dance as a follower. Feel free to
-				register as either role, regardless of your gender.
-			</p>
-		</div>
-	{/if}
-</div>
+<Accordion title="Leader? Follower? What are those?" analyticsEvent="LeaderFollowerAccordionOpen">
+	<p class="mb-4 text-lg">
+		In partner dances like Brazilian Zouk, there are two roles that work together to create the
+		dance: leader and follower.
+	</p>
+	<p class="text-lg">
+		Traditionally, the leader has been a man and the follower a woman. But nowadays, it's not that
+		unusual for a woman to dance as a leader or a man to dance as a follower. Feel free to register
+		as either role, regardless of your gender.
+	</p>
+</Accordion>
 
 <!-- Teachers Accordion -->
-<div class="mb-4 overflow-hidden rounded-xl border border-gray-200">
-	<button
-		onclick={() => (teachersAccordionOpen = !teachersAccordionOpen)}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				teachersAccordionOpen = !teachersAccordionOpen;
-			}
-		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200 plausible-event-name=TeachersAccordionOpen"
-		tabindex="0"
-		aria-expanded={teachersAccordionOpen}
-	>
-		<h3 class="text-xl font-semibold">Can you tell me more about the teachers?</h3>
-		<div
-			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
-		>
-			<span class="text-lg font-bold">{teachersAccordionOpen ? '−' : '+'}</span>
+<Accordion title="Can you tell me more about the teachers?" analyticsEvent="TeachersAccordionOpen">
+	<!-- Teacher Introduction Video -->
+	<div class="mb-8">
+		<div class="mb-4 text-center">
+			<h4 class="mb-2 text-lg font-semibold text-gray-800">Meet Your Teachers</h4>
+			<p class="text-gray-600">Get to know Jukka and Anna</p>
 		</div>
-	</button>
-
-	{#if teachersAccordionOpen}
-		<div class="border-t border-gray-200 bg-white p-6">
-			<!-- Teacher Introduction Video -->
-			<div class="mb-8">
-				<div class="mb-4 text-center">
-					<h4 class="mb-2 text-lg font-semibold text-gray-800">Meet Your Teachers</h4>
-					<p class="text-gray-600">Get to know Jukka and Anna</p>
-				</div>
-				<div class="relative">
-					<iframe
-						class="w-full rounded-xl shadow-lg md:aspect-video"
-						style="aspect-ratio: 9/16;"
-						width="100%"
-						src="https://www.youtube.com/embed/Vx7Wm4mq9Qw?si=2_LukWGlPQeiNVja&modestbranding=1&showinfo=0"
-						title="Meet Your Teachers - Jukka and Anna"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin"
-						allowfullscreen
-					></iframe>
-				</div>
-			</div>
-
-			<section class="space-y-12">
-				<Introduction imgSrc={jukka} imgAlt="Jukka" name="Jukka Välimaa" alwaysExpanded>
-					<p class="mb-2">
-						Jukka is the main organizer for Zouk Zero to Hero. He started learning Brazilian Zouk in
-						2010, never stopped, and does not intend to stop. The craft and the art of the dance -
-						and of teaching the dance - is endlessly fascinating to him.
-					</p>
-					<p class="mb-2">
-						His main teachers have been Freddy and Andressa, and he taught for many years at
-						Helsinki Dance Central. He teaches mostly in Helsinki, but has also taught in many other
-						European countries over the years.
-					</p>
-				</Introduction>
-
-				<Introduction imgSrc={anna} imgAlt="Anna" name="Anna Zahrmann" alwaysExpanded>
-					<p class="mb-2">
-						Anna caught the Brazilian Zouk bug in 2020 (thanks, Jukka and Kristina!) — and quickly
-						found herself hooked. Inspired by the creativity and freedom the dance offers, what
-						began as a hobby soon grew into a deep passion. She started her journey learning from
-						Jukka & Kristina and Freddy & Andressa, and later traveled across Europe to study with
-						top international teachers and immerse herself in the global Zouk community.
-					</p>
-					<p class="mb-2">
-						Over time, Anna transitioned from student to assistant, and now teaches and organizes
-						events in the local Zouk scene.
-					</p>
-				</Introduction>
-			</section>
+		<div class="relative">
+			<iframe
+				class="w-full rounded-xl shadow-lg md:aspect-video"
+				style="aspect-ratio: 9/16;"
+				width="100%"
+				src="https://www.youtube.com/embed/Vx7Wm4mq9Qw?si=2_LukWGlPQeiNVja&modestbranding=1&showinfo=0"
+				title="Meet Your Teachers - Jukka and Anna"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
 		</div>
-	{/if}
-</div>
+	</div>
+
+	<section class="space-y-12">
+		<Introduction imgSrc={jukka} imgAlt="Jukka" name="Jukka Välimaa" alwaysExpanded>
+			<p class="mb-2">
+				Jukka is the main organizer for Zouk Zero to Hero. He started learning Brazilian Zouk in
+				2010, never stopped, and does not intend to stop. The craft and the art of the dance - and
+				of teaching the dance - is endlessly fascinating to him.
+			</p>
+			<p class="mb-2">
+				His main teachers have been Freddy and Andressa, and he taught for many years at Helsinki
+				Dance Central. He teaches mostly in Helsinki, but has also taught in many other European
+				countries over the years.
+			</p>
+		</Introduction>
+
+		<Introduction imgSrc={anna} imgAlt="Anna" name="Anna Zahrmann" alwaysExpanded>
+			<p class="mb-2">
+				Anna caught the Brazilian Zouk bug in 2020 (thanks, Jukka and Kristina!) — and quickly found
+				herself hooked. Inspired by the creativity and freedom the dance offers, what began as a
+				hobby soon grew into a deep passion. She started her journey learning from Jukka & Kristina
+				and Freddy & Andressa, and later traveled across Europe to study with top international
+				teachers and immerse herself in the global Zouk community.
+			</p>
+			<p class="mb-2">
+				Over time, Anna transitioned from student to assistant, and now teaches and organizes events
+				in the local Zouk scene.
+			</p>
+		</Introduction>
+	</section>
+</Accordion>
 
 <!-- Zouk'o'Saturdays Accordion -->
-<div class="mb-4 overflow-hidden rounded-xl border border-gray-200">
-	<button
-		onclick={() => (zoukSaturdaysAccordionOpen = !zoukSaturdaysAccordionOpen)}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				zoukSaturdaysAccordionOpen = !zoukSaturdaysAccordionOpen;
-			}
-		}}
-		class="flex w-full items-center justify-between bg-gradient-to-r from-gray-50 to-gray-100 p-6 text-left transition-colors hover:from-gray-100 hover:to-gray-200 plausible-event-name=ZoukSaturdaysAccordionOpen"
-		tabindex="0"
-		aria-expanded={zoukSaturdaysAccordionOpen}
-	>
-		<h3 class="text-xl font-semibold">Do I need to go to all the included Saturdays?</h3>
-		<div
-			class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-700 shadow-md"
+<Accordion
+	title="Do I need to go to all the included Saturdays?"
+	analyticsEvent="ZoukSaturdaysAccordionOpen"
+>
+	<p class="mb-2 text-lg">
+		No. You don't have to attend all the
+		<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline">Zouk'o'Saturdays</a
+		>. They are included, but how many you attend is up to you.
+	</p>
+
+	<p class="text-lg">
+		That said, we encourage you to go to as many as you can! When learning a new skill, the more
+		practice you get, the better. Also, our money-back guarantee only applies if you attend at least
+		two of them.
+	</p>
+</Accordion>
+
+<!-- Can I benefit Accordion -->
+<Accordion
+	title="I've attended many Brazilian Zouk drop-in classes already. Can I benefit from this course?"
+	analyticsEvent="CanIBenefitAccordionOpen"
+>
+	<p class="mb-2 text-lg">
+		Yes. Drop-in classes can be great for getting a feel for the dance, but they don't usually go
+		deep into details or technique.
+	</p>
+	<p class="mb-2 text-lg">
+		Usually, when we teach introductory drop-in classes, we teach enough basics for people to get
+		by, but there is no time to go deep. It's not that we wouldn't like to, but we have to move fast for
+		the class to fit everyone.
+	</p>
+
+	<p class="mb-2 text-lg">
+		In this course, we will work not only on teaching you enough basics to dance, but also on making
+		those basics work as well possible. This will improve your dance more in the short
+		and long run than just collecting new moves.
+	</p>
+	<p class="text-lg">
+		You may want to check out this article by Jukka that went viral in the global Zouk community more than 10 years ago:
+		<a
+			href="https://zouksidedown.wordpress.com/2014/04/20/zouk-back-to-basics/"
+			target="_blank"
+			rel="noopener"
+			class="underline"
 		>
-			<span class="text-lg font-bold">{zoukSaturdaysAccordionOpen ? '−' : '+'}</span>
-		</div>
-	</button>
-
-	{#if zoukSaturdaysAccordionOpen}
-		<div class="border-t border-gray-200 bg-white p-6">
-			<p class="mb-2 text-lg">
-				No. You don't have to attend all the
-				<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
-					>Zouk'o'Saturdays</a
-				>. They are included, but how many you attend is up to you.
-			</p>
-
-			<p class="text-lg">
-				That said, we encourage you to go to as many as you can! When learning a new skill, the more
-				practice you get, the better. Also, our money-back guarantee only applies if you attend at
-				least two of them.
-			</p>
-		</div>
-	{/if}
-</div>
+			Zouk: Back to Basics (2014)
+		</a>
+	</p>
+</Accordion>
 
 <!-- Contact Information -->
 <p class="mb-4 text-center text-gray-600">
 	Any more questions? Contact us at
 	<a href="mailto:jukka@zoukzerotohero.com" class="underline">via email</a>
 	or
-	<a href="https://www.facebook.com/profile.php?id=61551733333069" target="_blank" rel="noopener" class="underline">with Facebook Messenger</a>.
+	<a
+		href="https://www.facebook.com/profile.php?id=61551733333069"
+		target="_blank"
+		rel="noopener"
+		class="underline">with Facebook Messenger</a
+	>.
 </p>
 
 <div
 	class="mb-24 rounded-xl border border-green-200 bg-gradient-to-r from-green-50 to-blue-50 p-8 text-center md:mb-12"
 >
-
-<div class="mb-6 text-center">
-
-</div>
+	<div class="mb-6 text-center"></div>
 	<p class="mb-2 text-3xl font-bold text-green-800">🙌 See you in class! 🙌</p>
-
 </div>
 
 <!-- Sticky mobile CTA -->
@@ -771,7 +710,7 @@
 			href={leaderUrl}
 			target="_blank"
 			rel="noopener"
-			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md plausible-event-name=LeaderRegistrationClick"
+			class="plausible-event-name=LeaderRegistrationClick flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
 		>
 			Register – Leader
 		</a>
@@ -779,7 +718,7 @@
 			href={followerUrl}
 			target="_blank"
 			rel="noopener"
-			class="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md plausible-event-name=FollowerRegistrationClick"
+			class="plausible-event-name=FollowerRegistrationClick flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
 		>
 			Register – Follower
 		</a>
