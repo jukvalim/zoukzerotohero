@@ -650,6 +650,27 @@
 
 	{#if teachersAccordionOpen}
 		<div class="border-t border-gray-200 bg-white p-6">
+			<!-- Teacher Introduction Video -->
+			<div class="mb-8">
+				<div class="mb-4 text-center">
+					<h4 class="mb-2 text-lg font-semibold text-gray-800">Meet Your Teachers</h4>
+					<p class="text-gray-600">Get to know Jukka and Anna</p>
+				</div>
+				<div class="relative">
+					<iframe
+						class="w-full rounded-xl shadow-lg md:aspect-video"
+						style="aspect-ratio: 9/16;"
+						width="100%"
+						src="https://www.youtube.com/embed/Vx7Wm4mq9Qw?si=2_LukWGlPQeiNVja&modestbranding=1&showinfo=0"
+						title="Meet Your Teachers - Jukka and Anna"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen
+					></iframe>
+				</div>
+			</div>
+
 			<section class="space-y-12">
 				<Introduction imgSrc={jukka} imgAlt="Jukka" name="Jukka Välimaa" alwaysExpanded>
 					<p class="mb-2">
