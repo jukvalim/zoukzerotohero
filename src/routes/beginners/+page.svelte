@@ -150,27 +150,27 @@
 
 		<!-- Enhanced CTA Section -->
 		<div class="mb-4 text-center">
-			<!-- Try it out this Thursday CTA
+			<!-- Try it out on Monday CTA -->
 			<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4">
 				<p class="mb-3 text-lg font-medium text-orange-800">
-					<span class="font-bold text-orange-600">🎉 Try it out this Thursday!</span>
+					<span class="font-bold text-orange-600">🎉 Try it out next Monday, 18:00!</span>
 				</p>
 				<p class="mb-4 text-sm text-orange-700">
-					Free try-out class at Night of the Arts (Taiteiden yö)
+					Free outdoors try-out class in Kallio
 				</p>
 				<a
-					href="https://helsinkifestival.fi/taiteidenyo/en/event/come-and-try-out-brazilian-zouk/"
+					href="https://fb.me/e/51JqpTsSp"
 					target="_blank"
 					rel="noopener"
 					class="inline-block rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl plausible-event-name=TryItOutThursdayClick"
 				>
 					<span class="flex items-center justify-center">
 						<span class="mr-2">🎪</span>
-						Join Free Class - Thursday 16:30
+						Join Free Class
 					</span>
 				</a>
 			</div>
-			-->
+
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
