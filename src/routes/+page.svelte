@@ -4,7 +4,10 @@
 	import beginners_course_image from '$lib/assets/images/beginners_course.jpeg';
 </script>
 
-<h1 class="mb-4 text-2xl font-bold md:text-4xl">Zouk Zero to Hero</h1>
+<div class="flex items-center mb-4">
+	<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="h-12 mr-4" />
+	<h1 class="text-2xl font-bold md:text-4xl">Zouk Zero to Hero</h1>
+</div>
 <p class="mb-4">{m.zouk_zero_to_hero_description()}</p>
 
 <a href="https://youtube.com/playlist?list=PLMobPDbOvaMSq0LnWI-Ue2r6i2ks3HoKw&si=VL8G04FbV3tLQKWd" class="underline">

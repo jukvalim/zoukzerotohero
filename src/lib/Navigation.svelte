@@ -75,10 +75,14 @@
 <!-- Desktop Navigation -->
 <nav class="hidden items-center space-x-6 md:flex">
 	{#each navigationItems as { href, key }}
+
 		<a
 			{href}
-			class="transition-colors hover:text-gray-600 {getActiveClasses(href)}"
+			class="flex items-center transition-colors hover:text-gray-600 {getActiveClasses(href)}"
 		>
+			{#if key === 'navigation.home'}
+				<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="h-8 mr-2" />
+			{/if}
 			{getMessage(key)}
 		</a>
 	{/each}
@@ -159,15 +163,19 @@
 		>
 			<nav class="flex flex-col space-y-4">
 				{#each navigationItems as { href, key }, index}
+
 					<a
 						{href}
-						class="py-2 transition-colors hover:text-gray-600 {index === 0 ? 'border-b border-gray-200' : ''}"
+						class="flex items-center py-2 transition-colors hover:text-gray-600 {index === 0 ? 'border-b border-gray-200' : ''}"
 						class:text-gray-800={!isActive(href)}
 						class:text-blue-600={isActive(href)}
 						class:font-semibold={isActive(href)}
 						onclick={closeMobileMenu}
 						onkeydown={(e) => handleMobileKeydown(e, href)}
 					>
+						{#if key === 'navigation.home'}
+							<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="h-8 mr-2" />
+						{/if}
 						{getMessage(key)}
 					</a>
 				{/each}
