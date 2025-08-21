@@ -520,8 +520,11 @@
 		class="mb-8 rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-8"
 	>
 		<p class="mb-4 text-lg font-medium">Make this the moment you finally start dancing.</p>
-		<p class="text-lg">
+		<p class="mb-4 text-lg">
 			Join the course, show up, and if it's not working for you&mdash;we'll make it right.
+		</p>
+		<p class="text-lg">
+			Due to space limitations, places are limited.
 		</p>
 	</div>
 
