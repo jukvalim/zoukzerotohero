@@ -11,7 +11,7 @@
 	<meta property="og:image" content={head_movements_image} />
 </svelte:head>
 
-<h1 class="mb-8 text-2xl font-bold md:text-4xl">Head Movements Course</h1>
+<h1 class="mb-8 text-2xl font-bold md:text-4xl">Head Movements Course (SOLD OUT)</h1>
 
 <h2 class="mb-4 text-xl font-bold md:text-2xl">Learn Brazilian Zouk Head Movements</h2>
 
@@ -78,10 +78,10 @@
 		><span class="line-through">👉 Register as a follower</span> (Sold out)</span
 	>
 
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/product/0cd1ff232e16afa16c99340f92527ba6/"
-		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600"
-		>👉 Register as a leader</a
+	<span
+		class="disabled:opacity-50 rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-gray-600 cursor-not-allowed"
+		aria-disabled="true"
+		><span class="line-through">👉 Register as a leader</span> (Sold out)</span
 	>
 
 	<span
