@@ -150,7 +150,7 @@
 
 		<!-- Enhanced CTA Section -->
 		<div class="mb-4 text-center">
-			<!-- Try it out on Monday CTA -->
+			<!-- Try it out on Monday CTA
 			<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4">
 				<p class="mb-3 text-lg font-medium text-orange-800">
 					<span class="font-bold text-orange-600">🎉 Want to try out Zouk before joining the course?</span>
@@ -169,7 +169,7 @@
 						Tell me more!
 					</span>
 				</a>
-			</div>
+			</div> -->
 
 
 			<div class="mb-4">
