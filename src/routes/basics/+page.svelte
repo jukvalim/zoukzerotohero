@@ -206,6 +206,46 @@
 	</div>
 </div>
 
+<!-- Course Details Section -->
+<div class="mb-12">
+	<h2 class="mb-6 text-center text-2xl font-bold md:text-3xl">
+		<span class="mr-3 inline-block rounded-full bg-blue-100 p-2">🗓️</span>
+		Course Details
+	</h2>
+
+	<div class="rounded-xl border border-blue-200 bg-blue-50 p-6">
+		<div class="grid gap-6 md:grid-cols-2">
+			<div>
+				<div class="mb-3 flex items-center">
+					<span class="mr-3 text-xl">📅</span>
+					<span class="font-bold">Schedule</span>
+				</div>
+				<ul class="space-y-2 text-blue-700">
+					<li><b>Start date:</b> Monday, October 13th</li>
+					<li><b>Duration:</b> 6 weeks</li>
+					<li><b>Time:</b> Mondays, 19:30-21:00</li>
+				</ul>
+			</div>
+			<div>
+				<div class="mb-3 flex items-center">
+					<span class="mr-3 text-xl">📍</span>
+					<span class="font-bold">Location & Team</span>
+				</div>
+				<ul class="space-y-2 text-blue-700">
+					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
+					<li><b>Teachers:</b> Jukka & Anna</li>
+					<li>
+						<b>All In package includes:</b> 5 optional
+						<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
+							>Zouk'o'Saturdays</a
+						> with varying teachers + money-back guarantee
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Video Section -->
 <div class="mb-6">
 	<div class="mb-6 text-center">
@@ -353,7 +393,7 @@
 	</div>
 </div>
 
-<!-- Who It's For Section -->
+<!-- Who It's For Section
 <div class="mb-12">
 	<h2 class="mb-6 text-center text-2xl font-bold md:text-3xl">
 		<span class="mr-3 inline-block rounded-full bg-purple-100 p-2">🙋</span>
@@ -394,7 +434,7 @@
 			<p class="text-sm text-purple-700">Craving meaningful human interaction and expression</p>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- Philosophy Section -->
 <div class="mb-12 rounded-xl bg-gradient-to-r from-pink-50 to-purple-50 p-8 text-center">
@@ -408,45 +448,6 @@
 	</p>
 </div>
 
-<!-- Course Details Section -->
-<div class="mb-12">
-	<h2 class="mb-6 text-center text-2xl font-bold md:text-3xl">
-		<span class="mr-3 inline-block rounded-full bg-blue-100 p-2">🗓️</span>
-		Course Details
-	</h2>
-
-	<div class="rounded-xl border border-blue-200 bg-blue-50 p-6">
-		<div class="grid gap-6 md:grid-cols-2">
-			<div>
-				<div class="mb-3 flex items-center">
-					<span class="mr-3 text-xl">📅</span>
-					<span class="font-bold">Schedule</span>
-				</div>
-				<ul class="space-y-2 text-blue-700">
-					<li><b>Start date:</b> Monday, October 13th</li>
-					<li><b>Duration:</b> 6 weeks</li>
-					<li><b>Time:</b> Mondays, 19:30-21:00</li>
-				</ul>
-			</div>
-			<div>
-				<div class="mb-3 flex items-center">
-					<span class="mr-3 text-xl">📍</span>
-					<span class="font-bold">Location & Team</span>
-				</div>
-				<ul class="space-y-2 text-blue-700">
-					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
-					<li><b>Teachers:</b> Jukka & Anna</li>
-					<li>
-						<b>All In package includes:</b> 5 optional
-						<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
-							>Zouk'o'Saturdays</a
-						> with varying teachers + money-back guarantee
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
 
 <!-- Pricing Section
 <div class="mb-12">
@@ -754,7 +755,7 @@
 	</section>
 </Accordion>
 
-<!-- Zouk'o'Saturdays Accordion -->
+<!-- Zouk'o'Saturdays Accordion
 <Accordion
 	title="Do I need to go to all the included Saturdays?"
 	analyticsEvent="ZoukSaturdaysAccordionOpen"
@@ -770,7 +771,7 @@
 		practice you get, the better. Also, our money-back guarantee only applies if you attend at least
 		two of them.
 	</p>
-</Accordion>
+</Accordion> -->
 
 <!-- Can I benefit Accordion -->
 <Accordion
