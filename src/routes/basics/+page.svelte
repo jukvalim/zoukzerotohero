@@ -99,8 +99,8 @@
 </script>
 
 <svelte:head>
-	<title>Zero to Zouk - {chosenHeadline}</title>
-	<meta property="og:title" content="Zero to Zouk - Brazilian Zouk Basics Course" />
+	<title>From Zero to Zouk - {chosenHeadline}</title>
+	<meta property="og:title" content="From Zero to Zouk - Brazilian Zouk Basics Course" />
 	<meta
 		property="og:description"
 		content="Learn to social dance in 6 weeks. Monday evenings starting 13.10., no partner needed."
