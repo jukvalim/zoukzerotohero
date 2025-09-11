@@ -9,13 +9,12 @@
 	// Fixed headline
 	const chosenHeadline = 'Brazilian Zouk Basics Course';
 
-	// TODO: Replace these placeholder URLs with actual Holvi product URLs
-	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/step-in-leader/';
-	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/step-in-follower/';
-	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/step-in-couple/';
-	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/all-in-leader/';
-	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/all-in-follower/';
-	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/all-in-couple/';
+	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/d14df989171d0a27e22db1445cb5a219/';
+	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/d3190ef0b2b70f0a024bc2c6e8fad64b/';
+	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/ab3cba2db5de1cb1983fc1172bebc554/';
+	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/b3f6366bbc30090790e5a54a7d7e8a6b/';
+	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/4680985e5441903eca881188eb716dd4/';
+	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/c234c3c3a840073e48eb4926f6d68f6e/';
 
 	function buildUrlWithUtm(baseUrl: string, searchParams: URLSearchParams): string {
 		const utm = new URLSearchParams();
