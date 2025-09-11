@@ -16,7 +16,8 @@
 
 	// Courses sub-navigation items
 	const coursesItems = [
-		{ href: '/beginners', key: 'navigation.beginner' as const },
+		{ href: '/basics', key: 'navigation.basics' as const },
+		{ href: '/basics-2', key: 'navigation.basics-2' as const },
 		{ href: '/head-movements', key: 'navigation.head-movements' as const }
 	] as const;
 

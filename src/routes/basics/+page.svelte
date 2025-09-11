@@ -6,21 +6,16 @@
 	import { Introduction, Accordion } from '$lib';
 	import { onMount } from 'svelte';
 
-	// A/B Testing for headline
-	const headlineVariants = {
-		beginner: 'Brazilian Zouk Beginner Course',
-		basics: 'Brazilian Zouk Basics Course'
-	};
+	// Fixed headline
+	const chosenHeadline = 'Brazilian Zouk Basics Course';
 
-	let chosenHeadline = $state(headlineVariants.beginner); // Default fallback
-	let headlineVariant = $state('beginner'); // Track which variant was chosen
-
-	const leaderBaseUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/4a08997da8a56995f96a05afc1966fe4/';
-	const followerBaseUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/d9d2beb1cd72ca822f2bf2c971a77a43/';
-	const coupleBaseUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/f0b8a2bc25afa3179c1929b774d7b496/';
+	// TODO: Replace these placeholder URLs with actual Holvi product URLs
+	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/step-in-leader/';
+	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/step-in-follower/';
+	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/step-in-couple/';
+	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/all-in-leader/';
+	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/all-in-follower/';
+	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/all-in-couple/';
 
 	function buildUrlWithUtm(baseUrl: string, searchParams: URLSearchParams): string {
 		const utm = new URLSearchParams();
@@ -35,59 +30,80 @@
 		return `${baseUrl}${sep}${qs}`;
 	}
 
-	// A/B Testing function
-	function getHeadlineVariant(): string {
-		if (typeof window === 'undefined') return 'beginner'; // SSR fallback
 
-		const storageKey = 'zouk-headline-variant';
-		let variant = localStorage.getItem(storageKey);
+	// State for registration flow
+	let selectedRole: string | null = $state(null); // 'leader', 'follower', or 'couple'
+	let selectedPackage: string | null = $state(null); // 'step-in' or 'all-in'
+	let finalRegistrationUrl = $state('');
 
-		if (!variant) {
-			// Randomly assign variant (50/50 split)
-			variant = Math.random() < 0.5 ? 'beginner' : 'basics';
-			localStorage.setItem(storageKey, variant);
-		}
-
-		return variant;
-	}
-
-	// Send variant to Plausible analytics
-	function trackHeadlineVariant(variant: string) {
-		if (typeof window === 'undefined' || !window.plausible) return;
-
-		window.plausible('HeadlineVariant', {
-			props: {
-				variant: variant
-			}
-		});
-	}
-
-	let leaderUrl = $state(leaderBaseUrl);
-	let followerUrl = $state(followerBaseUrl);
-	let coupleUrl = $state(coupleBaseUrl);
+	// Build URLs with UTM parameters
+	let stepInLeaderUrlFinal = $state(stepInLeaderUrl);
+	let stepInFollowerUrlFinal = $state(stepInFollowerUrl);
+	let stepInCoupleUrlFinal = $state(stepInCoupleUrl);
+	let allInLeaderUrlFinal = $state(allInLeaderUrl);
+	let allInFollowerUrlFinal = $state(allInFollowerUrl);
+	let allInCoupleUrlFinal = $state(allInCoupleUrl);
 
 	onMount(() => {
 		try {
-			// A/B Testing setup
-			headlineVariant = getHeadlineVariant();
-			chosenHeadline = headlineVariants[headlineVariant as keyof typeof headlineVariants];
-			trackHeadlineVariant(headlineVariant);
-
-			// URL building
+			// URL building with UTM parameters
 			const params = new URLSearchParams(window.location.search);
-			leaderUrl = buildUrlWithUtm(leaderBaseUrl, params);
-			followerUrl = buildUrlWithUtm(followerBaseUrl, params);
-			coupleUrl = buildUrlWithUtm(coupleBaseUrl, params);
+			stepInLeaderUrlFinal = buildUrlWithUtm(stepInLeaderUrl, params);
+			stepInFollowerUrlFinal = buildUrlWithUtm(stepInFollowerUrl, params);
+			stepInCoupleUrlFinal = buildUrlWithUtm(stepInCoupleUrl, params);
+			allInLeaderUrlFinal = buildUrlWithUtm(allInLeaderUrl, params);
+			allInFollowerUrlFinal = buildUrlWithUtm(allInFollowerUrl, params);
+			allInCoupleUrlFinal = buildUrlWithUtm(allInCoupleUrl, params);
 		} catch {}
 	});
+
+	// Function to select role
+	function selectRole(role: string) {
+		selectedRole = role;
+		selectedPackage = null; // Reset package selection
+	}
+
+	// Function to select package and set final URL
+	function selectPackage(packageType: string) {
+		selectedPackage = packageType;
+
+		// Set the final registration URL based on selections
+		if (selectedRole === 'leader' && packageType === 'step-in') {
+			finalRegistrationUrl = stepInLeaderUrlFinal;
+		} else if (selectedRole === 'leader' && packageType === 'all-in') {
+			finalRegistrationUrl = allInLeaderUrlFinal;
+		} else if (selectedRole === 'follower' && packageType === 'step-in') {
+			finalRegistrationUrl = stepInFollowerUrlFinal;
+		} else if (selectedRole === 'follower' && packageType === 'all-in') {
+			finalRegistrationUrl = allInFollowerUrlFinal;
+		} else if (selectedRole === 'couple' && packageType === 'step-in') {
+			finalRegistrationUrl = stepInCoupleUrlFinal;
+		} else if (selectedRole === 'couple' && packageType === 'all-in') {
+			finalRegistrationUrl = allInCoupleUrlFinal;
+		}
+	}
+
+	// Function to reset selections
+	function resetSelections() {
+		selectedRole = null;
+		selectedPackage = null;
+		finalRegistrationUrl = '';
+	}
+
+	function scrollToRegistration() {
+		const element = document.getElementById('ready-to-join');
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
 <svelte:head>
 	<title>Zero to Zouk - {chosenHeadline}</title>
-	<meta property="og:title" content="Zero to Zouk - Brazilian Zouk Beginner Course" />
+	<meta property="og:title" content="Zero to Zouk - Brazilian Zouk Basics Course" />
 	<meta
 		property="og:description"
-		content="Learn to social dance in 6 weeks. Monday evenings starting 1.9., no partner needed."
+		content="Learn to social dance in 6 weeks. Monday evenings starting 13.10., no partner needed."
 	/>
 	<meta property="og:url" content="https://zoukzerotohero.com/beginners" />
 	<meta property="og:image" content={partner_pose_landscape} />
@@ -134,8 +150,8 @@
 				class="flex items-center justify-center rounded-xl bg-white/80 p-4 text-center shadow-lg backdrop-blur"
 			>
 				<div class="flex flex-col items-center">
-					<span class="mb-2 text-3xl">🎁</span>
-					<span class="font-semibold text-gray-800">Money-Back Guarantee</span>
+					<span class="mb-2 text-3xl">👣</span>
+					<span class="font-semibold text-gray-800">No previous dance experience needed</span>
 				</div>
 			</div>
 			<div
@@ -143,7 +159,7 @@
 			>
 				<div class="flex flex-col items-center">
 					<span class="mb-2 text-3xl">🌟</span>
-					<span class="font-semibold text-gray-800">Structured learning & support videos</span>
+					<span class="font-semibold text-gray-800">Structured learning in classes & support videos</span>
 				</div>
 			</div>
 		</div>
@@ -174,36 +190,17 @@
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
-					<span class="font-bold text-red-600">Starts Monday, September 1st</span>
+					<span class="font-bold text-red-600">Starts Monday, October 13th</span>
 				</p>
 			</div>
 
-			<div class="mx-auto flex max-w-lg flex-col gap-4 md:flex-row md:justify-center">
-				<a
-					href={leaderUrl}
-					target="_blank"
-					rel="noopener"
-					class="group plausible-event-name=LeaderRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
+			<div class="mx-auto flex max-w-lg justify-center">
+				<button
+					onclick={scrollToRegistration}
+					class="plausible-event-name=TopRegistrationClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
 				>
-					<span class="relative z-10 flex items-center justify-center">
-						<span class="mr-2">🎯</span>
-						Register as Leader
-					</span>
-					<div
-						class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
-					></div>
-				</a>
-				<a
-					href={followerUrl}
-					target="_blank"
-					rel="noopener"
-					class="group plausible-event-name=FollowerRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
-				>
-					<span class="relative z-10 flex items-center justify-center">
-						<span class="mr-2">✨</span>
-						Register as Follower
-					</span>
-				</a>
+					Register Now
+				</button>
 			</div>
 		</div>
 	</div>
@@ -271,17 +268,6 @@
 		What You'll Get
 	</h2>
 
-	<div class="mt-6 mb-6 rounded-xl border border-yellow-200 bg-yellow-50 p-6">
-		<div class="mb-3 flex items-center">
-			<span class="mr-3 text-2xl">🛡️</span>
-			<h3 class="font-bold text-yellow-800">Money-back guarantee</h3>
-		</div>
-		<p class="text-yellow-700">
-			If you show up, do the work, and still don't feel able to dance socially, we'll refund you in
-			full. Just let us know how we can improve.
-		</p>
-	</div>
-
 	<div class="grid gap-6 md:grid-cols-2">
 		<div class="rounded-xl border border-green-200 bg-green-50 p-6">
 			<h3 class="mb-3 font-bold text-green-800">📚 Core Learning</h3>
@@ -289,13 +275,6 @@
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
 					<span><b>6 structured weekly classes</b> (1.5 hours each, Mondays)</span>
-				</li>
-				<li class="flex items-start">
-					<span class="mr-2">✓</span>
-					<span
-						><a href="/zouk-o-saturday" class="underline">5 Zouk'o'Saturdays included</a> (1.5 hours
-						of drop-in classes + 1.5 hours of social dancing each)</span
-					>
 				</li>
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
@@ -310,7 +289,7 @@
 				</li>
 				<li class="flex items-start">
 					<span class="mr-2">✓</span>
-					<span>Bonus <b>solo practice materials</b></span>
+					<span>Bonus <b>practice materials</b></span>
 				</li>
 			</ul>
 		</div>
@@ -339,6 +318,37 @@
 					<span>Clear guidance on <b>how to start dancing at parties</b></span>
 				</li>
 			</ul>
+		</div>
+	</div>
+
+	<!-- Optional Package Section -->
+	<div class="mt-6 rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-6">
+		<div class="mb-3 flex items-center">
+			<span class="mr-3 text-2xl">⭐</span>
+			<h3 class="font-bold text-purple-800">Optional: All In Package</h3>
+		</div>
+		<p class="mb-4 text-purple-700">
+			Want to maximize your learning? Add these extras to your core course:
+		</p>
+		<div class="grid gap-4 md:grid-cols-2">
+			<div class="rounded-lg border border-purple-200 bg-white/50 p-4">
+				<div class="mb-2 flex items-center">
+					<span class="mr-2 text-xl">🎪</span>
+					<span class="font-semibold text-purple-800">Zouk'o'Saturdays</span>
+				</div>
+				<p class="text-sm text-purple-700">
+					<a href="/zouk-o-saturday" class="underline">5 additional sessions</a> (1.5 hours of drop-in classes + 1.5 hours of social dancing each)
+				</p>
+			</div>
+			<div class="rounded-lg border border-purple-200 bg-white/50 p-4">
+				<div class="mb-2 flex items-center">
+					<span class="mr-2 text-xl">🛡️</span>
+					<span class="font-semibold text-purple-800">Money-back guarantee</span>
+				</div>
+				<p class="text-sm text-purple-700">
+					If you show up, do the work, and still don't feel able to dance socially, we'll refund you in full.
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
@@ -413,9 +423,9 @@
 					<span class="font-bold">Schedule</span>
 				</div>
 				<ul class="space-y-2 text-blue-700">
-					<li><b>Start date:</b> Monday, September 1st</li>
+					<li><b>Start date:</b> Monday, October 13th</li>
 					<li><b>Duration:</b> 6 weeks</li>
-					<li><b>Time:</b> Mondays, 18:00-19:30</li>
+					<li><b>Time:</b> Mondays, 19:30-21:00</li>
 				</ul>
 			</div>
 			<div>
@@ -427,10 +437,10 @@
 					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
 					<li><b>Teachers:</b> Jukka & Anna</li>
 					<li>
-						<b>Includes:</b> 5 optional
+						<b>All In package includes:</b> 5 optional
 						<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
 							>Zouk'o'Saturdays</a
-						> with varying teachers
+						> with varying teachers + money-back guarantee
 					</li>
 				</ul>
 			</div>
@@ -438,7 +448,7 @@
 	</div>
 </div>
 
-<!-- Pricing Section -->
+<!-- Pricing Section
 <div class="mb-12">
 	<h2 class="mb-6 text-center text-2xl font-bold md:text-3xl">
 		<span class="mr-3 inline-block rounded-full bg-green-100 p-2">💰</span>
@@ -463,15 +473,11 @@
 		</div>
 	</div>
 
+
 	<div class="mb-6 grid gap-6 md:grid-cols-3">
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Regular Price</h3>
 			<div class="text-2xl font-bold text-gray-800">€300</div>
-		</div>
-		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
-			<h3 class="mb-3 font-bold text-gray-800">Youth Price</h3>
-			<div class="mb-1 text-sm text-gray-600">(26 years old or less)</div>
-			<div class="text-2xl font-bold text-gray-800">€260</div>
 		</div>
 		<div class="rounded-xl border border-gray-200 bg-white p-6 text-center">
 			<h3 class="mb-3 font-bold text-gray-800">Couple Price</h3>
@@ -496,10 +502,6 @@
 				<div class="mb-1 text-2xl font-bold text-blue-600">€12.50</div>
 				<div class="text-sm text-blue-700">Per Hour (Regular)</div>
 			</div>
-			<div class="text-center">
-				<div class="mb-1 text-2xl font-bold text-blue-600">€10.83</div>
-				<div class="text-sm text-blue-700">Per Hour (Youth)</div>
-			</div>
 		</div>
 		<div class="mt-4 text-center text-sm text-blue-600">
 			* Value breakdown doesn't account for things like practice materials or money-back guarantee.
@@ -508,6 +510,7 @@
 </div>
 
 <hr class="my-12 border-gray-300" />
+-->
 
 <!-- Ready to Join Section -->
 <div id="ready-to-join" class="mb-12 text-center">
@@ -528,43 +531,161 @@
 		</p>
 	</div>
 
-	<div class="mx-auto flex max-w-4xl flex-col justify-center gap-4 md:flex-row">
-		<a
-			href={leaderUrl}
-			target="_blank"
-			rel="noopener"
-			class="group plausible-event-name=LeaderRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
-		>
-			<span class="relative z-10 flex items-center justify-center">
-				🎯&nbsp;&nbsp;Register as Leader
-			</span>
-			<div
-				class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
-			></div>
-		</a>
+	<!-- Step 1: Choose Your Role -->
+	{#if !selectedRole}
+		<div class="mb-8">
+			<h3 class="mb-6 text-xl font-bold text-gray-800">Step 1: Choose Your Role</h3>
+			<div class="mx-auto flex max-w-4xl flex-col justify-center gap-4 md:flex-row">
+				<button
+					onclick={() => selectRole('leader')}
+					class="group plausible-event-name=LeaderRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
+				>
+					<span class="relative z-10 flex items-center justify-center">
+						➤&nbsp;&nbsp;Register as Leader
+					</span>
+					<div
+						class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
+					></div>
+				</button>
 
-		<a
-			href={followerUrl}
-			target="_blank"
-			rel="noopener"
-			class="group plausible-event-name=FollowerRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
-		>
-			<span class="relative z-10 flex items-center justify-center">
-				✨&nbsp;&nbsp;Register as Follower
-			</span>
-		</a>
+				<button
+					onclick={() => selectRole('follower')}
+					class="group plausible-event-name=FollowerRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
+				>
+					<span class="relative z-10 flex items-center justify-center">
+						➤&nbsp;&nbsp;Register as Follower
+					</span>
+				</button>
 
-		<a
-			href={coupleUrl}
-			target="_blank"
-			rel="noopener"
-			class="group plausible-event-name=CoupleRegistrationClick relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
-		>
-			<span class="relative z-10 flex items-center justify-center">
-				👥&nbsp;&nbsp;Register as Couple
-			</span>
-		</a>
-	</div>
+				<button
+					onclick={() => selectRole('couple')}
+					class="group plausible-event-name=CoupleRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
+				>
+					<span class="relative z-10 flex items-center justify-center">
+						➤&nbsp;&nbsp;Register as Couple
+					</span>
+				</button>
+			</div>
+		</div>
+	{/if}
+
+	<!-- Step 2: Choose Your Package -->
+	{#if selectedRole && !selectedPackage}
+		<div class="mb-8">
+			<div class="mb-4 flex items-center justify-center">
+				<button
+					onclick={resetSelections}
+					class="mr-4 text-sm text-gray-500 hover:text-gray-700 underline"
+				>
+					← Back to role selection
+				</button>
+				<h3 class="text-xl font-bold text-gray-800">
+					Step 2: Choose Your Package for {selectedRole === 'couple' ? 'Couple' : selectedRole === 'leader' ? 'Leader' : 'Follower'} Registration
+				</h3>
+			</div>
+
+			<div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+				<!-- Step In Package -->
+				<div class="flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 text-left transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+					<div class="mb-4">
+						<h4 class="text-2xl font-bold text-gray-800">Step In</h4>
+						<div class="text-3xl font-bold text-blue-600">
+							€{selectedRole === 'couple' ? '400' : '220'}
+						</div>
+					</div>
+					<ul class="mb-6 space-y-2 text-gray-700">
+						<li class="flex items-start">
+							<span class="mr-2 text-green-500">✓</span>
+							Weekly Monday classes (6 weeks)
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2 text-green-500">✓</span>
+							Recap materials &mdash; videos and materials to help you practice what you learn in classes
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2 text-green-500">✓</span>
+							Bonus materials &mdash; additional videos and materials that go beyond what is taught in classes. If you want to go deeper and learn more at home,
+							we're happy to help you out.
+						</li>
+					</ul>
+					<button
+						onclick={() => selectPackage('step-in')}
+						class="mt-auto w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl plausible-event-name=StepInPackageClick"
+					>
+						Choose Step In
+					</button>
+				</div>
+
+				<!-- All In Package -->
+				<div class="flex flex-col rounded-xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-6 text-left transition-all duration-300 hover:border-purple-300 hover:shadow-lg relative">
+					<div class="mb-4">
+						<h4 class="text-2xl font-bold text-gray-800">All In</h4>
+						<div class="text-3xl font-bold text-purple-600">
+							€{selectedRole === 'couple' ? '560' : '300'}
+						</div>
+					</div>
+					<ul class="mb-6 space-y-2 text-gray-700">
+						<li class="flex items-start">
+							<span class="mr-2 text-green-500">✓</span>
+							Everything in Step In
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2 text-green-500">✓</span>
+							<span><a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline">Zouk'o'Saturdays</a> (5 additional sessions)</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2 text-green-500">✓</span>
+							Money-back guarantee &mdash; If you attend all the Mondays and at least two of the Zouk'o'Saturdays, but still don't feel able to dance socially, we'll refund you in full.
+						</li>
+					</ul>
+					<button
+						onclick={() => selectPackage('all-in')}
+						class="mt-auto w-full rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-xl plausible-event-name=AllInPackageClick"
+					>
+						Choose All In
+					</button>
+				</div>
+			</div>
+		</div>
+	{/if}
+
+	<!-- Final Registration Button -->
+	{#if selectedRole && selectedPackage && finalRegistrationUrl}
+		<div class="mb-8">
+			<div class="mb-4 flex items-center justify-center">
+				<button
+					onclick={resetSelections}
+					class="mr-4 text-sm text-gray-500 hover:text-gray-700 underline"
+				>
+					← Back to package selection
+				</button>
+				<h3 class="text-xl font-bold text-gray-800">Complete Your Registration</h3>
+			</div>
+
+			<div class="mb-6 rounded-xl border border-green-200 bg-green-50 p-6">
+				<p class="mb-2 text-lg font-medium text-green-800">
+					{selectedRole === 'couple' ? 'Couple' : selectedRole === 'leader' ? 'Leader' : 'Follower'} Registration - {selectedPackage === 'step-in' ? 'Step In' : 'All In'} Package
+				</p>
+				<p class="text-2xl font-bold text-green-600">
+					€{selectedRole === 'couple' ? (selectedPackage === 'step-in' ? '400' : '560') : (selectedPackage === 'step-in' ? '220' : '300')}
+				</p>
+			</div>
+
+			<a
+				href={finalRegistrationUrl}
+				target="_blank"
+				rel="noopener"
+				class="group plausible-event-name=FinalRegistrationClick relative mx-auto block max-w-md overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
+			>
+				<span class="relative z-10 flex items-center justify-center">
+					➤&nbsp;&nbsp;Complete Registration
+				</span>
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 transition-opacity group-hover:opacity-100"
+				></div>
+			</a>
+		</div>
+	{/if}
 </div>
 
 <!-- Leader/Follower Accordion -->
@@ -708,22 +829,12 @@
 <div
 	class="fixed right-0 bottom-0 left-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur md:hidden"
 >
-	<div class="mx-auto flex max-w-xl items-center justify-center gap-3 p-3">
-		<a
-			href={leaderUrl}
-			target="_blank"
-			rel="noopener"
-			class="plausible-event-name=LeaderRegistrationClick flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
+	<div class="mx-auto flex max-w-xl items-center justify-center p-3">
+		<button
+			onclick={scrollToRegistration}
+			class="plausible-event-name=MobileCTAClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg"
 		>
-			Register – Leader
-		</a>
-		<a
-			href={followerUrl}
-			target="_blank"
-			rel="noopener"
-			class="plausible-event-name=FollowerRegistrationClick flex-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3 text-center text-sm font-bold text-white shadow-md"
-		>
-			Register – Follower
-		</a>
+			Register now
+		</button>
 	</div>
 </div>
