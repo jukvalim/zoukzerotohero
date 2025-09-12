@@ -28,11 +28,6 @@
 	<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
 </div>
 
-<p class="mt-4 mb-2">
-	In this course, we'll start from the very basics of head movements, and progress with different
-	types of head movements we use in Zouk:
-</p>
-
 <h2 class="mt-8 text-xl font-bold md:text-2xl mb-4">What You'll Get</h2>
 
 <ul>
