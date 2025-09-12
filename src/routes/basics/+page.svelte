@@ -3,7 +3,7 @@
 	import partner_pose_portrait from '$lib/assets/images/partner_pose_portrait.jpg';
 	import jukka from '$lib/assets/images/jukka.jpg';
 	import anna from '$lib/assets/images/anna.jpg';
-	import { Introduction, Accordion } from '$lib';
+	import { Introduction, Accordion, Modal } from '$lib';
 	import { onMount } from 'svelte';
 
 	// Fixed headline
@@ -34,6 +34,9 @@
 	let selectedRole: string | null = $state(null); // 'leader', 'follower', or 'couple'
 	let selectedPackage: string | null = $state(null); // 'step-in' or 'all-in'
 	let finalRegistrationUrl = $state('');
+
+	// State for teacher modal
+	let isTeacherModalOpen = $state(false);
 
 	// Early bird pricing configuration
 	const earlyBirdDeadline = 'Sunday, September 28th';
@@ -110,6 +113,15 @@
 		if (element) {
 			element.scrollIntoView({ behavior: 'smooth' });
 		}
+	}
+
+	// Teacher modal functions
+	function openTeacherModal() {
+		isTeacherModalOpen = true;
+	}
+
+	function closeTeacherModal() {
+		isTeacherModalOpen = false;
 	}
 </script>
 
@@ -248,7 +260,14 @@
 				</div>
 				<ul class="space-y-2 text-blue-700">
 					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
-					<li><b>Teachers:</b> Jukka & Anna</li>
+					<li><b>Teachers:</b> Jukka & Anna
+						<button
+							onclick={openTeacherModal}
+							class="ml-2 text-blue-600 underline hover:text-blue-800"
+						>
+							Learn more
+						</button>
+					</li>
 				</ul>
 			</div>
 			<div>
@@ -310,6 +329,12 @@
 			/>
 		</picture>
 		<p class="mt-4 text-center text-sm text-gray-600">Jukka and Anna &mdash; course teachers</p>
+		<button
+			onclick={openTeacherModal}
+			class="mt-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg"
+		>
+			Learn more about your teachers
+		</button>
 	</div>
 </div>
 
@@ -779,13 +804,12 @@
 	</p>
 </Accordion>
 
-<!-- Teachers Accordion -->
-<Accordion title="Can you tell me more about the teachers?" analyticsEvent="TeachersAccordionOpen">
+<!-- Teacher Modal -->
+<Modal isOpen={isTeacherModalOpen} title="Meet Your Teachers" size="xl" on:close={closeTeacherModal}>
 	<!-- Teacher Introduction Video -->
 	<div class="mb-8">
 		<div class="mb-4 text-center">
-			<h4 class="mb-2 text-lg font-semibold text-gray-800">Meet Your Teachers</h4>
-			<p class="text-gray-600">Get to know Jukka and Anna</p>
+			<h4 class="mb-2 text-lg font-semibold text-gray-800">Get to know Jukka and Anna</h4>
 		</div>
 		<div class="relative">
 			<iframe
@@ -830,7 +854,7 @@
 			</p>
 		</Introduction>
 	</section>
-</Accordion>
+</Modal>
 
 <!-- Zouk'o'Saturdays Accordion
 <Accordion
