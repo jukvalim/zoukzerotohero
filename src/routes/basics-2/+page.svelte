@@ -28,6 +28,12 @@
 	<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
 </div>
 
+<p class="mt-4 mb-2">
+	It's also possible to take this course without doing basics I (From Zero to Zouk) first, if you have previous experience with Zouk from elsewhere.
+	If you have the option of taking either course, for most people taking basics I first is a good idea &mdash;
+	dance is build on foundations, and the foundations in basics I are the most important.
+</p>
+
 <h2 class="mt-8 text-xl font-bold md:text-2xl mb-4">What You'll Get</h2>
 
 <ul>
