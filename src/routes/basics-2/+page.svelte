@@ -1,5 +1,22 @@
 <script lang="ts">
 	import partner_pose_landscape from '$lib/assets/images/partner_pose_landscape.jpg';
+
+	// Early bird pricing configuration
+	const earlyBirdDeadline = 'Sunday, September 28th';
+	const isEarlyBirdActive = true; // Set to false when early bird period ends
+	const earlyBirdDiscount = 30; // €30 off
+
+	// Pricing structure
+	const pricing = {
+		individual: {
+			regular: 220,
+			earlyBird: 220 - earlyBirdDiscount
+		},
+		couple: {
+			regular: 400,
+			earlyBird: 400 - earlyBirdDiscount
+		}
+	};
 </script>
 
 <svelte:head>
@@ -15,7 +32,7 @@
 <h2 class="mb-4 text-xl font-bold md:text-2xl">Expand your knowledge of Brazilian Zouk Basics and foundations</h2>
 
 <p class="mb-4">
-	After completing the basics course, you will have a solid foundation of the basics of Brazilian Zouk.
+	After completing the basics I (From Zero to Zouk) course, you will have a solid foundation of the basics of Brazilian Zouk.
 	This course will help you expand your knowledge and foundations with new variations and techniques.
 </p>
 
@@ -59,26 +76,73 @@
 		Sörnaisten Rantatie 33 C, 4th Floor
 	</li>
 	<li><b>Teaching language:</b> English</li>
-	<li><b>Price:</b> 220€, couple registration 400€</li>
+	<li>
+		<b>Price:</b>
+		{#if isEarlyBirdActive}
+			<span class="text-green-600 font-semibold">€{pricing.individual.earlyBird}</span>
+			<span class="line-through text-gray-500 ml-1">€{pricing.individual.regular}</span>
+			<span class="text-sm text-green-600 ml-2">(Early Bird - Save €{earlyBirdDiscount}!)</span>
+			, couple registration
+			<span class="text-green-600 font-semibold">€{pricing.couple.earlyBird}</span>
+			<span class="line-through text-gray-500 ml-1">€{pricing.couple.regular}</span>
+		{:else}
+			€{pricing.individual.regular}, couple registration €{pricing.couple.regular}
+		{/if}
+	</li>
 </ul>
+
+{#if isEarlyBirdActive}
+	<div class="mt-8 mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4 text-center">
+		<p class="text-lg font-semibold text-orange-800">
+			🎉 Early Bird Pricing Active!
+		</p>
+		<p class="text-sm text-orange-700">
+			Save €{earlyBirdDiscount} by registering before {earlyBirdDeadline}
+		</p>
+	</div>
+{/if}
 
 <h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
 <div class="flex max-w-md flex-col gap-4 text-xl">
-	<span
+	<a
+		href="https://holvi.com/shop/zoukzerotohero/product/967cf98db6ce73ddb81798d07254aec1/"
+		target="_blank"
+		rel="noopener noreferrer"
 		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600 cursor-pointer"
-		><span >👉 Register as a follower</span></span
-	>
+		><span >👉 Register as a follower</span>
+		{#if isEarlyBirdActive}
+			<div class="text-sm font-normal mt-1">
+				€{pricing.individual.earlyBird} <span class="line-through opacity-75">€{pricing.individual.regular}</span>
+			</div>
+		{/if}
+	</a>
 
-	<span
+	<a
+		href="https://holvi.com/shop/zoukzerotohero/product/a0279b5c4a696f494cbffd1526c45c8b/"
+		target="_blank"
+		rel="noopener noreferrer"
 		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600 cursor-pointer"
-		><span >👉 Register as a leader</span></span
-	>
+		><span >👉 Register as a leader</span>
+		{#if isEarlyBirdActive}
+			<div class="text-sm font-normal mt-1">
+				€{pricing.individual.earlyBird} <span class="line-through opacity-75">€{pricing.individual.regular}</span>
+			</div>
+		{/if}
+	</a>
 
-	<span
+	<a
+		href="https://holvi.com/shop/zoukzerotohero/product/a422913cb4086d036f0f41a3f656e029/"
+		target="_blank"
+		rel="noopener noreferrer"
 		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600 cursor-pointer"
-		><span >👉 Couple registration</span></span
-	>
+		><span >👉 Couple registration</span>
+		{#if isEarlyBirdActive}
+			<div class="text-sm font-normal mt-1">
+				€{pricing.couple.earlyBird} <span class="line-through opacity-75">€{pricing.couple.regular}</span>
+			</div>
+		{/if}
+	</a>
 </div>
 
 <hr class="my-8" />
