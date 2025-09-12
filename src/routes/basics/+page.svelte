@@ -35,6 +35,22 @@
 	let selectedPackage: string | null = $state(null); // 'step-in' or 'all-in'
 	let finalRegistrationUrl = $state('');
 
+	// Early bird pricing configuration
+	const earlyBirdDeadline = 'Sunday, September 28th';
+	const isEarlyBirdActive = true; // Set to false when early bird period ends
+
+	// Pricing structure
+	const pricing = {
+		stepIn: {
+			earlyBird: { individual: 190, couple: 340 },
+			regular: { individual: 220, couple: 400 }
+		},
+		allIn: {
+			earlyBird: { individual: 270, couple: 500 },
+			regular: { individual: 300, couple: 560 }
+		}
+	};
+
 	// Build URLs with UTM parameters
 	let stepInLeaderUrlFinal = $state(stepInLeaderUrl);
 	let stepInFollowerUrlFinal = $state(stepInFollowerUrl);
@@ -233,12 +249,19 @@
 				<ul class="space-y-2 text-blue-700">
 					<li><b>Location:</b> Helsinki Dance Central, Sörnäisten Rantatie 33 C, 4th Floor</li>
 					<li><b>Teachers:</b> Jukka & Anna</li>
-					<li>
-						<b>All In package includes:</b> 5 optional
-						<a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline"
-							>Zouk'o'Saturdays</a
-						> with varying teachers + money-back guarantee
-					</li>
+				</ul>
+			</div>
+			<div>
+				<div class="mb-3 flex items-center">
+					<span class="mr-3 text-xl">💰</span>
+					<span class="font-bold">Price</span>
+				</div>
+				<ul class="space-y-2 text-blue-700">
+					<li><b>Early bird price</b> until Sun 28th	of September</li>
+					<li><b>Step In package</b>: <span class="line-through">220€</span> 190€</li>
+					<li><b>All In package</b>: <span class="line-through">300€</span> 270€, includes Saturday classes & socials and money-back guarantee</li>
+					<li>Lower prices for couple registration</li>
+					<li>More details available when choosing package</li>
 				</ul>
 			</div>
 		</div>
@@ -584,14 +607,37 @@
 				</h3>
 			</div>
 
+			{#if isEarlyBirdActive}
+				<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4 text-center">
+					<p class="text-lg font-semibold text-orange-800">
+						🎉 Early Bird Pricing Active!
+					</p>
+					<p class="text-sm text-orange-700">
+						Save money by registering before {earlyBirdDeadline}
+					</p>
+				</div>
+			{/if}
+
 			<div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
 				<!-- Step In Package -->
 				<div class="flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 text-left transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
 					<div class="mb-4">
 						<h4 class="text-2xl font-bold text-gray-800">Step In</h4>
-						<div class="text-3xl font-bold text-blue-600">
-							€{selectedRole === 'couple' ? '400' : '220'}
-						</div>
+						{#if isEarlyBirdActive}
+							<div class="mb-2">
+								<div class="text-3xl font-bold text-blue-600">
+									€{selectedRole === 'couple' ? pricing.stepIn.earlyBird.couple : pricing.stepIn.earlyBird.individual}
+								</div>
+								<div class="text-lg text-gray-500">
+									<span class="line-through">€{selectedRole === 'couple' ? pricing.stepIn.regular.couple : pricing.stepIn.regular.individual}</span>
+									<span class="ml-2 text-sm text-green-600 font-semibold">Early Bird Price</span>
+								</div>
+							</div>
+						{:else}
+							<div class="text-3xl font-bold text-blue-600">
+								€{selectedRole === 'couple' ? pricing.stepIn.regular.couple : pricing.stepIn.regular.individual}
+							</div>
+						{/if}
 					</div>
 					<ul class="mb-6 space-y-2 text-gray-700">
 						<li class="flex items-start">
@@ -620,9 +666,21 @@
 				<div class="flex flex-col rounded-xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-6 text-left transition-all duration-300 hover:border-purple-300 hover:shadow-lg relative">
 					<div class="mb-4">
 						<h4 class="text-2xl font-bold text-gray-800">All In</h4>
-						<div class="text-3xl font-bold text-purple-600">
-							€{selectedRole === 'couple' ? '560' : '300'}
-						</div>
+						{#if isEarlyBirdActive}
+							<div class="mb-2">
+								<div class="text-3xl font-bold text-purple-600">
+									€{selectedRole === 'couple' ? pricing.allIn.earlyBird.couple : pricing.allIn.earlyBird.individual}
+								</div>
+								<div class="text-lg text-gray-500">
+									<span class="line-through">€{selectedRole === 'couple' ? pricing.allIn.regular.couple : pricing.allIn.regular.individual}</span>
+									<span class="ml-2 text-sm text-green-600 font-semibold">Early Bird Price</span>
+								</div>
+							</div>
+						{:else}
+							<div class="text-3xl font-bold text-purple-600">
+								€{selectedRole === 'couple' ? pricing.allIn.regular.couple : pricing.allIn.regular.individual}
+							</div>
+						{/if}
 					</div>
 					<ul class="mb-6 space-y-2 text-gray-700">
 						<li class="flex items-start">
@@ -666,9 +724,29 @@
 				<p class="mb-2 text-lg font-medium text-green-800">
 					{selectedRole === 'couple' ? 'Couple' : selectedRole === 'leader' ? 'Leader' : 'Follower'} Registration - {selectedPackage === 'step-in' ? 'Step In' : 'All In'} Package
 				</p>
-				<p class="text-2xl font-bold text-green-600">
-					€{selectedRole === 'couple' ? (selectedPackage === 'step-in' ? '400' : '560') : (selectedPackage === 'step-in' ? '220' : '300')}
-				</p>
+				{#if isEarlyBirdActive}
+					<div class="mb-2">
+						<p class="text-2xl font-bold text-green-600">
+							€{selectedRole === 'couple' ?
+								(selectedPackage === 'step-in' ? pricing.stepIn.earlyBird.couple : pricing.allIn.earlyBird.couple) :
+								(selectedPackage === 'step-in' ? pricing.stepIn.earlyBird.individual : pricing.allIn.earlyBird.individual)
+							}
+						</p>
+						<p class="text-sm text-green-700">
+							Early Bird Price (Save €{selectedRole === 'couple' ?
+								(selectedPackage === 'step-in' ? pricing.stepIn.regular.couple - pricing.stepIn.earlyBird.couple : pricing.allIn.regular.couple - pricing.allIn.earlyBird.couple) :
+								(selectedPackage === 'step-in' ? pricing.stepIn.regular.individual - pricing.stepIn.earlyBird.individual : pricing.allIn.regular.individual - pricing.allIn.earlyBird.individual)
+							}!)
+						</p>
+					</div>
+				{:else}
+					<p class="text-2xl font-bold text-green-600">
+						€{selectedRole === 'couple' ?
+							(selectedPackage === 'step-in' ? pricing.stepIn.regular.couple : pricing.allIn.regular.couple) :
+							(selectedPackage === 'step-in' ? pricing.stepIn.regular.individual : pricing.allIn.regular.individual)
+						}
+					</p>
+				{/if}
 			</div>
 
 			<a
