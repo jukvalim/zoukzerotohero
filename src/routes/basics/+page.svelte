@@ -564,7 +564,7 @@
 					class="group plausible-event-name=LeaderRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
 				>
 					<span class="relative z-10 flex items-center justify-center">
-						➤&nbsp;&nbsp;Register as Leader
+						👉 &nbsp;Register as Leader
 					</span>
 					<div
 						class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
@@ -576,7 +576,7 @@
 					class="group plausible-event-name=FollowerRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
 				>
 					<span class="relative z-10 flex items-center justify-center">
-						➤&nbsp;&nbsp;Register as Follower
+						👉 &nbsp;Register as Follower
 					</span>
 				</button>
 
@@ -585,7 +585,7 @@
 					class="group plausible-event-name=CoupleRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
 				>
 					<span class="relative z-10 flex items-center justify-center">
-						➤&nbsp;&nbsp;Register as Couple
+						👉 &nbsp;Register as Couple
 					</span>
 				</button>
 			</div>
@@ -756,7 +756,7 @@
 				class="group plausible-event-name=FinalRegistrationClick relative mx-auto block max-w-md overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
 			>
 				<span class="relative z-10 flex items-center justify-center">
-					➤&nbsp;&nbsp;Complete Registration
+					👉 &nbsp;&nbsp;Complete Registration
 				</span>
 				<div
 					class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 transition-opacity group-hover:opacity-100"
