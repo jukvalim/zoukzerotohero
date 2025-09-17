@@ -3,7 +3,7 @@
 	import { Accordion } from '$lib';
 
 	// Early bird pricing configuration
-	const earlyBirdDeadline = 'Sunday, September 28th';
+	const earlyBirdDeadline = 'Wednesday, October 1st';
 	const isEarlyBirdActive = true; // Set to false when early bird period ends
 	const earlyBirdDiscount = 30; // €30 off
 
@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Head Movements Course</title>
+	<title>Brazilian Zouk Basics Course II</title>
 	<meta property="og:title" content="Brazilian Zouk Basics Course II" />
 	<meta property="og:description" content="Brazilian Zouk Basics II, six weeks course" />
 	<meta property="og:url" content="https://zoukzerotohero.com/basics-2" />
@@ -46,11 +46,6 @@
 	<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
 </div>
 
-<p class="mt-4 mb-2">
-	It's also possible to take this course without doing basics I (From Zero to Zouk) first, if you have previous experience with Zouk from elsewhere.
-	If you have the option of taking either course, for most people taking basics I first is a good idea &mdash;
-	dance is build on foundations, and the foundations in basics I are the most important.
-</p>
 
 <h2 class="mt-8 text-xl font-bold md:text-2xl mb-4">What You'll Get</h2>
 
@@ -147,6 +142,16 @@
 </div>
 
 <!-- FAQ Accordion -->
+<Accordion title="Do I need to take Basics I first?" analyticsEvent="BasicsIPrerequisiteAccordionOpen">
+	<p class="mb-4 text-lg">
+		It's also possible to take this course without doing Basics I (From Zero to Zouk) first, if you have previous experience with Zouk from elsewhere.
+	</p>
+	<p class="text-lg">
+		If you're struggling with decision on which to take, for most people taking Basics I first is a good idea &mdash;
+		dance is build on foundations, and the foundations in Basics I are the most important.
+	</p>
+</Accordion>
+
 <Accordion title="What about after Basics II?" analyticsEvent="AfterBasicsIIAccordionOpen">
 	<p class="mb-4 text-lg">
 		We're not currently planning any courses progressing from Basics II.
@@ -156,6 +161,8 @@
 		Our basics courses have been designed to be compatible with HDC fundamentals course, so you can continue with HDC improver's course.
 	</p>
 </Accordion>
+
+
 
 <hr class="my-8" />
 
