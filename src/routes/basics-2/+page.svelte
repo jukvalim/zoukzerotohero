@@ -1,5 +1,6 @@
 <script lang="ts">
 	import partner_pose_landscape from '$lib/assets/images/partner_pose_landscape.jpg';
+	import { Accordion } from '$lib';
 
 	// Early bird pricing configuration
 	const earlyBirdDeadline = 'Sunday, September 28th';
@@ -104,7 +105,7 @@
 
 <h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
-<div class="flex max-w-md flex-col gap-4 text-xl">
+<div class="flex max-w-md flex-col gap-4 text-xl mb-8">
 	<a
 		href="https://holvi.com/shop/zoukzerotohero/product/967cf98db6ce73ddb81798d07254aec1/"
 		target="_blank"
@@ -144,6 +145,17 @@
 		{/if}
 	</a>
 </div>
+
+<!-- FAQ Accordion -->
+<Accordion title="What about after Basics II?" analyticsEvent="AfterBasicsIIAccordionOpen">
+	<p class="mb-4 text-lg">
+		We're not currently planning any courses progressing from Basics II.
+	</p>
+	<p class="text-lg">
+		However, you can continue your learning journey with <a href="https://www.helsinkidancecentral.com/courses-events/zoukprogressivecourses" target="_blank" rel="noopener" class="underline">Helsinki Dance Central's courses</a>.
+		Our basics courses have been designed to be compatible with HDC fundamentals course, so you can continue with HDC improver's course.
+	</p>
+</Accordion>
 
 <hr class="my-8" />
 
