@@ -23,7 +23,7 @@
 <svelte:head>
 	<title>Brazilian Zouk Basics Course II</title>
 	<meta property="og:title" content="Brazilian Zouk Basics Course II" />
-	<meta property="og:description" content="Brazilian Zouk Basics II, six weeks course" />
+	<meta property="og:description" content="Brazilian Zouk Basics II, six weeks course. Monday evenings starting 13.10." />
 	<meta property="og:url" content="https://zoukzerotohero.com/basics-2" />
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
