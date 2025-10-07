@@ -136,6 +136,22 @@
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
 
+<!-- Course Cancellation Notice -->
+<div class="mb-8 rounded-xl border-2 border-red-200 bg-gradient-to-r from-red-50 to-orange-50 p-6 text-center">
+	<div class="mb-4">
+		<span class="text-4xl">😔</span>
+	</div>
+	<h2 class="mb-3 text-2xl font-bold text-red-800">
+		Course Update
+	</h2>
+	<p class="mb-4 text-lg text-red-700">
+		Unfortunately, we're not organizing this course again this autumn after all.
+	</p>
+	<p class="text-lg font-medium text-red-800">
+		Please stay tuned for spring! 🌸
+	</p>
+</div>
+
 <!-- Hero Section -->
 <div
 	class="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-4 md:p-12"
@@ -223,10 +239,10 @@
 
 			<div class="mx-auto flex max-w-lg justify-center">
 				<button
-					onclick={scrollToRegistration}
-					class="plausible-event-name=TopRegistrationClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
+					disabled
+					class="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 px-8 py-4 font-bold text-white shadow-xl cursor-not-allowed opacity-60"
 				>
-					Register Now
+					Registration Closed
 				</button>
 			</div>
 		</div>
@@ -560,235 +576,38 @@
 <hr class="my-12 border-gray-300" />
 -->
 
-<!-- Ready to Join Section -->
+<!-- Course Cancelled Section -->
 <div id="ready-to-join" class="mb-12 text-center">
 	<h2 class="mb-6 text-2xl font-bold md:text-3xl">
-		<span class="mr-3 inline-block rounded-full bg-purple-100 p-2">🔗</span>
-		Ready to Join?
+		<span class="mr-3 inline-block rounded-full bg-gray-100 p-2">❌</span>
+		Course Cancelled
 	</h2>
 
 	<div
-		class="mb-8 rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-8"
+		class="mb-8 rounded-xl border border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-8"
 	>
-		<p class="mb-4 text-lg font-medium">Make this the moment you finally start dancing.</p>
-		<p class="mb-4 text-lg">
-			Join the course, show up, and if it's not working for you&mdash;we'll make it right.
+		<p class="mb-4 text-lg font-medium text-gray-700">Unfortunately, this course has been cancelled for autumn 2024.</p>
+		<p class="mb-4 text-lg text-gray-600">
+			We apologize for any inconvenience this may cause.
 		</p>
-		<p class="text-lg">
-			Due to space limitations, places are limited.
+		<p class="text-lg font-medium text-gray-800">
+			Please stay tuned for our spring course announcement! 🌸
 		</p>
 	</div>
 
-	<!-- Step 1: Choose Your Role -->
-	{#if !selectedRole}
-		<div class="mb-8">
-			<h3 class="mb-6 text-xl font-bold text-gray-800">Step 1: Choose Your Role</h3>
-			<div class="mx-auto flex max-w-4xl flex-col justify-center gap-4 md:flex-row">
-				<button
-					onclick={() => selectRole('leader')}
-					class="group plausible-event-name=LeaderRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
-				>
-					<span class="relative z-10 flex items-center justify-center">
-						👉 &nbsp;Register as Leader
-					</span>
-					<div
-						class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 transition-opacity group-hover:opacity-100"
-					></div>
-				</button>
-
-				<button
-					onclick={() => selectRole('follower')}
-					class="group plausible-event-name=FollowerRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-2xl"
-				>
-					<span class="relative z-10 flex items-center justify-center">
-						👉 &nbsp;Register as Follower
-					</span>
-				</button>
-
-				<button
-					onclick={() => selectRole('couple')}
-					class="group plausible-event-name=CoupleRoleClick relative overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
-				>
-					<span class="relative z-10 flex items-center justify-center">
-						👉 &nbsp;Register as Couple
-					</span>
-				</button>
-			</div>
+	<!-- Registration Disabled Message -->
+	<div class="mb-8 rounded-xl border border-gray-300 bg-gray-100 p-8 text-center">
+		<div class="mb-4">
+			<span class="text-5xl">🚫</span>
 		</div>
-	{/if}
-
-	<!-- Step 2: Choose Your Package -->
-	{#if selectedRole && !selectedPackage}
-		<div class="mb-8">
-			<div class="mb-4 flex items-center justify-center">
-				<button
-					onclick={resetSelections}
-					class="mr-4 text-sm text-gray-500 hover:text-gray-700 underline"
-				>
-					← Back to role selection
-				</button>
-				<h3 class="text-xl font-bold text-gray-800">
-					Step 2: Choose Your Package for {selectedRole === 'couple' ? 'Couple' : selectedRole === 'leader' ? 'Leader' : 'Follower'} Registration
-				</h3>
-			</div>
-
-			{#if isEarlyBirdActive}
-				<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4 text-center">
-					<p class="text-lg font-semibold text-orange-800">
-						🎉 Early Bird Pricing Active!
-					</p>
-					<p class="text-sm text-orange-700">
-						Save money by registering before {earlyBirdDeadline}
-					</p>
-				</div>
-			{/if}
-
-			<div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-				<!-- Step In Package -->
-				<div class="flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 text-left transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
-					<div class="mb-4">
-						<h4 class="text-2xl font-bold text-gray-800">Step In</h4>
-						{#if isEarlyBirdActive}
-							<div class="mb-2">
-								<div class="text-3xl font-bold text-blue-600">
-									€{selectedRole === 'couple' ? pricing.stepIn.earlyBird.couple : pricing.stepIn.earlyBird.individual}
-								</div>
-								<div class="text-lg text-gray-500">
-									<span class="line-through">€{selectedRole === 'couple' ? pricing.stepIn.regular.couple : pricing.stepIn.regular.individual}</span>
-									<span class="ml-2 text-sm text-green-600 font-semibold">Early Bird Price</span>
-								</div>
-							</div>
-						{:else}
-							<div class="text-3xl font-bold text-blue-600">
-								€{selectedRole === 'couple' ? pricing.stepIn.regular.couple : pricing.stepIn.regular.individual}
-							</div>
-						{/if}
-					</div>
-					<ul class="mb-6 space-y-2 text-gray-700">
-						<li class="flex items-start">
-							<span class="mr-2 text-green-500">✓</span>
-							Weekly Monday classes (6 weeks)
-						</li>
-						<li class="flex items-start">
-							<span class="mr-2 text-green-500">✓</span>
-							Recap materials &mdash; videos and materials to help you practice what you learn in classes
-						</li>
-						<li class="flex items-start">
-							<span class="mr-2 text-green-500">✓</span>
-							Bonus materials &mdash; additional videos and materials that go beyond what is taught in classes. If you want to go deeper and learn more at home,
-							we're happy to help you out.
-						</li>
-					</ul>
-					<button
-						onclick={() => selectPackage('step-in')}
-						class="mt-auto w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-xl plausible-event-name=StepInPackageClick"
-					>
-						Choose Step In
-					</button>
-				</div>
-
-				<!-- All In Package -->
-				<div class="flex flex-col rounded-xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-6 text-left transition-all duration-300 hover:border-purple-300 hover:shadow-lg relative">
-					<div class="mb-4">
-						<h4 class="text-2xl font-bold text-gray-800">All In</h4>
-						{#if isEarlyBirdActive}
-							<div class="mb-2">
-								<div class="text-3xl font-bold text-purple-600">
-									€{selectedRole === 'couple' ? pricing.allIn.earlyBird.couple : pricing.allIn.earlyBird.individual}
-								</div>
-								<div class="text-lg text-gray-500">
-									<span class="line-through">€{selectedRole === 'couple' ? pricing.allIn.regular.couple : pricing.allIn.regular.individual}</span>
-									<span class="ml-2 text-sm text-green-600 font-semibold">Early Bird Price</span>
-								</div>
-							</div>
-						{:else}
-							<div class="text-3xl font-bold text-purple-600">
-								€{selectedRole === 'couple' ? pricing.allIn.regular.couple : pricing.allIn.regular.individual}
-							</div>
-						{/if}
-					</div>
-					<ul class="mb-6 space-y-2 text-gray-700">
-						<li class="flex items-start">
-							<span class="mr-2 text-green-500">✓</span>
-							Everything in Step In
-						</li>
-						<li class="flex items-start">
-							<span class="mr-2 text-green-500">✓</span>
-							<span><a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline">Zouk'o'Saturdays</a> (5 additional sessions)</span>
-						</li>
-						<li class="flex items-start">
-							<span class="mr-2 text-green-500">✓</span>
-							Money-back guarantee &mdash; If you attend all the Mondays and at least two of the Zouk'o'Saturdays, but still don't feel able to dance socially, we'll refund you in full.
-						</li>
-					</ul>
-					<button
-						onclick={() => selectPackage('all-in')}
-						class="mt-auto w-full rounded-full bg-gradient-to-r from-purple-500 to-purple-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-700 hover:shadow-xl plausible-event-name=AllInPackageClick"
-					>
-						Choose All In
-					</button>
-				</div>
-			</div>
-		</div>
-	{/if}
-
-	<!-- Final Registration Button -->
-	{#if selectedRole && selectedPackage && finalRegistrationUrl}
-		<div class="mb-8">
-			<div class="mb-4 flex items-center justify-center">
-				<button
-					onclick={resetSelections}
-					class="mr-4 text-sm text-gray-500 hover:text-gray-700 underline"
-				>
-					← Back to package selection
-				</button>
-				<h3 class="text-xl font-bold text-gray-800">Complete Your Registration</h3>
-			</div>
-
-			<div class="mb-6 rounded-xl border border-green-200 bg-green-50 p-6">
-				<p class="mb-2 text-lg font-medium text-green-800">
-					{selectedRole === 'couple' ? 'Couple' : selectedRole === 'leader' ? 'Leader' : 'Follower'} Registration - {selectedPackage === 'step-in' ? 'Step In' : 'All In'} Package
-				</p>
-				{#if isEarlyBirdActive}
-					<div class="mb-2">
-						<p class="text-2xl font-bold text-green-600">
-							€{selectedRole === 'couple' ?
-								(selectedPackage === 'step-in' ? pricing.stepIn.earlyBird.couple : pricing.allIn.earlyBird.couple) :
-								(selectedPackage === 'step-in' ? pricing.stepIn.earlyBird.individual : pricing.allIn.earlyBird.individual)
-							}
-						</p>
-						<p class="text-sm text-green-700">
-							Early Bird Price (Save €{selectedRole === 'couple' ?
-								(selectedPackage === 'step-in' ? pricing.stepIn.regular.couple - pricing.stepIn.earlyBird.couple : pricing.allIn.regular.couple - pricing.allIn.earlyBird.couple) :
-								(selectedPackage === 'step-in' ? pricing.stepIn.regular.individual - pricing.stepIn.earlyBird.individual : pricing.allIn.regular.individual - pricing.allIn.earlyBird.individual)
-							}!)
-						</p>
-					</div>
-				{:else}
-					<p class="text-2xl font-bold text-green-600">
-						€{selectedRole === 'couple' ?
-							(selectedPackage === 'step-in' ? pricing.stepIn.regular.couple : pricing.allIn.regular.couple) :
-							(selectedPackage === 'step-in' ? pricing.stepIn.regular.individual : pricing.allIn.regular.individual)
-						}
-					</p>
-				{/if}
-			</div>
-
-			<a
-				href={finalRegistrationUrl}
-				target="_blank"
-				rel="noopener"
-				class="group plausible-event-name=FinalRegistrationClick relative mx-auto block max-w-md overflow-hidden rounded-full bg-gradient-to-r from-green-500 to-green-600 px-12 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
-			>
-				<span class="relative z-10 flex items-center justify-center">
-					👉 &nbsp;&nbsp;Complete Registration
-				</span>
-				<div
-					class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 transition-opacity group-hover:opacity-100"
-				></div>
-			</a>
-		</div>
-	{/if}
+		<h3 class="mb-4 text-xl font-bold text-gray-700">Registration is currently closed</h3>
+		<p class="text-lg text-gray-600">
+			We're not accepting new registrations for this course.
+		</p>
+		<p class="mt-4 text-lg font-medium text-gray-800">
+			Stay tuned for our spring course announcement! 🌸
+		</p>
+	</div>
 </div>
 
 <!-- Leader/Follower Accordion -->
@@ -933,10 +752,10 @@
 >
 	<div class="mx-auto flex max-w-xl items-center justify-center p-3">
 		<button
-			onclick={scrollToRegistration}
-			class="plausible-event-name=MobileCTAClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg"
+			disabled
+			class="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 px-6 py-3 text-center text-sm font-bold text-white shadow-md cursor-not-allowed opacity-60"
 		>
-			Register now
+			Registration Closed
 		</button>
 	</div>
 </div>
