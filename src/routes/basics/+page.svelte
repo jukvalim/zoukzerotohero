@@ -147,6 +147,13 @@
 	<p class="mb-4 text-lg text-red-700">
 		Unfortunately, we're not organizing this course again this autumn after all.
 	</p>
+	<p class="mb-4 text-lg text-red-700">
+		But you can still try out Brazilian Zouk at our
+		<a href="/zouk-o-saturday" class="font-semibold text-red-800 underline hover:text-red-900">
+			Zouk'o'Saturday events
+		</a>!
+		We have drop-in classes every Saturday that start from the very basics - no partner needed.
+	</p>
 	<p class="text-lg font-medium text-red-800">
 		Please stay tuned for spring! 🌸
 	</p>
