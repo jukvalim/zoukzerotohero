@@ -4,7 +4,7 @@
 
 	// Early bird pricing configuration
 	const earlyBirdDeadline = 'Wednesday, October 1st';
-	const isEarlyBirdActive = true; // Set to false when early bird period ends
+	const isEarlyBirdActive = false; // Set to false when early bird period ends
 	const earlyBirdDiscount = 30; // €30 off
 
 	// Pricing structure
