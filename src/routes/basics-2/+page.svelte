@@ -100,45 +100,46 @@
 
 <h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
-<div class="flex max-w-md flex-col gap-4 text-xl mb-8">
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/product/967cf98db6ce73ddb81798d07254aec1/"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600 cursor-pointer"
+<div class="mb-8 rounded-xl border border-gray-300 bg-gray-100 p-8 text-center">
+	<div class="mb-4">
+		<span class="text-5xl">⏳</span>
+	</div>
+	<h3 class="mb-4 text-xl font-bold text-gray-700">Registration will open later</h3>
+</div>
+
+<div class="flex max-w-md flex-col gap-4 text-xl mb-8 opacity-60">
+	<button
+		disabled
+		class="rounded-md bg-gray-400 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
 		><span >👉 Register as a follower</span>
 		{#if isEarlyBirdActive}
 			<div class="text-sm font-normal mt-1">
 				€{pricing.individual.earlyBird} <span class="line-through opacity-75">€{pricing.individual.regular}</span>
 			</div>
 		{/if}
-	</a>
+	</button>
 
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/product/a0279b5c4a696f494cbffd1526c45c8b/"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600 cursor-pointer"
+	<button
+		disabled
+		class="rounded-md bg-gray-400 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
 		><span >👉 Register as a leader</span>
 		{#if isEarlyBirdActive}
 			<div class="text-sm font-normal mt-1">
 				€{pricing.individual.earlyBird} <span class="line-through opacity-75">€{pricing.individual.regular}</span>
 			</div>
 		{/if}
-	</a>
+	</button>
 
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/product/a422913cb4086d036f0f41a3f656e029/"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-600 cursor-pointer"
+	<button
+		disabled
+		class="rounded-md bg-gray-400 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
 		><span >👉 Couple registration</span>
 		{#if isEarlyBirdActive}
 			<div class="text-sm font-normal mt-1">
 				€{pricing.couple.earlyBird} <span class="line-through opacity-75">€{pricing.couple.regular}</span>
 			</div>
 		{/if}
-	</a>
+	</button>
 </div>
 
 <!-- FAQ Accordion -->

@@ -249,7 +249,7 @@
 					disabled
 					class="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 px-8 py-4 font-bold text-white shadow-xl cursor-not-allowed opacity-60"
 				>
-					Registration Closed
+					Registration will open soon
 				</button>
 			</div>
 		</div>
@@ -606,14 +606,11 @@
 	<!-- Registration Disabled Message -->
 	<div class="mb-8 rounded-xl border border-gray-300 bg-gray-100 p-8 text-center">
 		<div class="mb-4">
-			<span class="text-5xl">🚫</span>
+			<span class="text-5xl">⏳</span>
 		</div>
-		<h3 class="mb-4 text-xl font-bold text-gray-700">Registration is currently closed</h3>
+		<h3 class="mb-4 text-xl font-bold text-gray-700">Registration will open soon</h3>
 		<p class="text-lg text-gray-600">
-			We're not accepting new registrations for this course.
-		</p>
-		<p class="mt-4 text-lg font-medium text-gray-800">
-			Stay tuned for our spring course announcement! 🌸
+			We're preparing to open registrations. Check back soon!
 		</p>
 	</div>
 </div>
@@ -763,7 +760,7 @@
 			disabled
 			class="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 px-6 py-3 text-center text-sm font-bold text-white shadow-md cursor-not-allowed opacity-60"
 		>
-			Registration Closed
+			Registration will open soon
 		</button>
 	</div>
 </div>
