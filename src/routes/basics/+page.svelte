@@ -136,28 +136,6 @@
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
 
-<!-- Course Cancellation Notice -->
-<div class="mb-8 rounded-xl border-2 border-red-200 bg-gradient-to-r from-red-50 to-orange-50 p-6 text-center">
-	<div class="mb-4">
-		<span class="text-4xl">😔</span>
-	</div>
-	<h2 class="mb-3 text-2xl font-bold text-red-800">
-		Course Update
-	</h2>
-	<p class="mb-4 text-lg text-red-700">
-		Unfortunately, we're not organizing this course again this autumn after all.
-	</p>
-	<p class="mb-4 text-lg text-red-700">
-		But you can still try out Brazilian Zouk at our
-		<a href="/zouk-o-saturday" class="font-semibold text-red-800 underline hover:text-red-900">
-			Zouk'o'Saturday events
-		</a>!
-		We have drop-in classes every Saturday that start from the very basics - no partner needed.
-	</p>
-	<p class="text-lg font-medium text-red-800">
-		Please stay tuned for spring! 🌸
-	</p>
-</div>
 
 <!-- Hero Section -->
 <div
