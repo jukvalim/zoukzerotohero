@@ -39,7 +39,7 @@
 	let isTeacherModalOpen = $state(false);
 
 	// Early bird pricing configuration
-	const earlyBirdDeadline = 'Wednesday, October 1st';
+	const earlyBirdDeadline = 'Sunday, February 15th';
 	const isEarlyBirdActive = true; // Set to false when early bird period ends
 
 	// Pricing structure
@@ -278,7 +278,7 @@
 					<span class="font-bold">Price</span>
 				</div>
 				<ul class="space-y-2 text-blue-700">
-					<li><b>Early bird price</b> until Sun 28th	of September</li>
+					<li><b>Early bird price</b> until Sunday, February 15th</li>
 					<li><b>Step In package</b>: <span class="line-through">220€</span> 190€</li>
 					<li><b>All In package</b>: <span class="line-through">300€</span> 270€, includes Saturday classes & socials and money-back guarantee</li>
 					<li>Lower prices for couple registration</li>
