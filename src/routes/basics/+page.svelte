@@ -130,7 +130,7 @@
 	<meta property="og:title" content="From Zero to Zouk - Brazilian Zouk Basics Course" />
 	<meta
 		property="og:description"
-		content="Learn to social dance in 6 weeks. Monday evenings starting 13.10., no partner needed."
+		content="Learn to social dance in 6 weeks. Monday evenings starting March 2nd, no partner needed."
 	/>
 	<meta property="og:url" content="https://zoukzerotohero.com/beginners" />
 	<meta property="og:image" content={partner_pose_landscape} />
@@ -240,7 +240,7 @@
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
-					<span class="font-bold text-red-600">Starts Monday, October 13th</span>
+					<span class="font-bold text-red-600">Starts Monday, March 2nd</span>
 				</p>
 			</div>
 
@@ -271,7 +271,8 @@
 					<span class="font-bold">Schedule</span>
 				</div>
 				<ul class="space-y-2 text-blue-700">
-					<li><b>Start date:</b> Monday, October 13th</li>
+					<li><b>Start date:</b> Monday, March 2nd</li>
+					<li><b>End date:</b> Monday, April 6th</li>
 					<li><b>Duration:</b> 6 weeks</li>
 					<li><b>Time:</b> Mondays, 19:30-21:00</li>
 				</ul>

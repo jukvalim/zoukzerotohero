@@ -23,7 +23,7 @@
 <svelte:head>
 	<title>Brazilian Zouk Basics Course II</title>
 	<meta property="og:title" content="Brazilian Zouk Basics Course II" />
-	<meta property="og:description" content="Brazilian Zouk Basics II, six weeks course. Monday evenings starting 13.10." />
+	<meta property="og:description" content="Brazilian Zouk Basics II, six weeks course. Monday evenings starting April 13th." />
 	<meta property="og:url" content="https://zoukzerotohero.com/basics-2" />
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
@@ -64,7 +64,7 @@
 
 <ul>
 	<li><b>Teachers:</b> Jukka & Anna</li>
-	<li><b>Start date:</b> Monday, September 1st</li>
+	<li><b>Start date:</b> Monday, April 13th</li>
 	<li><b>Duration:</b> 6 weeks</li>
 	<li><b>Time:</b> Mondays, 18:00-19:30</li>
 	<li>
