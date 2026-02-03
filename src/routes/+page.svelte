@@ -21,14 +21,14 @@
 
 		<p class="mb-2">
 			{m.beginners_course_description()}
-			<a href="/beginners" class="underline">
+			<a href="/basics" class="underline">
 				{m.beginners_course_link_text()}
 			</a>
 		</p>
-	<a href="/beginners">
+	<a href="/basics">
 		<img
 			src={beginners_course_image}
-			alt="Beginners course"
+			alt="Basics course"
 			class="w-full rounded-lg shadow-lg md:w-1/2"
 		/>
 	</a>
