@@ -564,22 +564,6 @@
 
 <!-- Course Cancelled Section -->
 <div id="ready-to-join" class="mb-12 text-center">
-	<h2 class="mb-6 text-2xl font-bold md:text-3xl">
-		<span class="mr-3 inline-block rounded-full bg-gray-100 p-2">❌</span>
-		Course Cancelled
-	</h2>
-
-	<div
-		class="mb-8 rounded-xl border border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-8"
-	>
-		<p class="mb-4 text-lg font-medium text-gray-700">Unfortunately, this course has been cancelled for autumn 2024.</p>
-		<p class="mb-4 text-lg text-gray-600">
-			We apologize for any inconvenience this may cause.
-		</p>
-		<p class="text-lg font-medium text-gray-800">
-			Please stay tuned for our spring course announcement! 🌸
-		</p>
-	</div>
 
 	<!-- Registration Disabled Message -->
 	<div class="mb-8 rounded-xl border border-gray-300 bg-gray-100 p-8 text-center">
