@@ -9,12 +9,12 @@
 	// Fixed headline
 	const chosenHeadline = 'Brazilian Zouk Basics Course';
 
-	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/d14df989171d0a27e22db1445cb5a219/';
-	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/d3190ef0b2b70f0a024bc2c6e8fad64b/';
-	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/ab3cba2db5de1cb1983fc1172bebc554/';
-	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/b3f6366bbc30090790e5a54a7d7e8a6b/';
-	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/4680985e5441903eca881188eb716dd4/';
-	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/c234c3c3a840073e48eb4926f6d68f6e/';
+	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/2189868ca4f59624859e2f836d9d8554/';
+	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/e2c5a1215a52f174c15d2fa8bb97b813/';
+	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/9a727f744ad3833ef24f1b8cced70107/';
+	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/1f698bafa0833fcb7256820cf28b2da1/';
+	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/ecac527e59c5d927f5da64b93d0f4ff9/';
+	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/472a3a06296e256e071a099198656794/';
 
 	function buildUrlWithUtm(baseUrl: string, searchParams: URLSearchParams): string {
 		const utm = new URLSearchParams();
@@ -224,10 +224,10 @@
 
 			<div class="mx-auto flex max-w-lg justify-center">
 				<button
-					disabled
-					class="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 px-8 py-4 font-bold text-white shadow-xl cursor-not-allowed opacity-60"
+					onclick={scrollToRegistration}
+					class="w-full rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 hover:shadow-2xl"
 				>
-					Registration will open soon
+					Register Now
 				</button>
 			</div>
 		</div>
@@ -562,19 +562,121 @@
 <hr class="my-12 border-gray-300" />
 -->
 
-<!-- Course Cancelled Section -->
-<div id="ready-to-join" class="mb-12 text-center">
+<!-- Registration Section -->
+<div id="ready-to-join" class="mb-12">
+	<h2 class="mb-6 text-center text-2xl font-bold md:text-3xl">
+		<span class="mr-3 inline-block rounded-full bg-green-100 p-2">🎯</span>
+		Ready to Join?
+	</h2>
 
-	<!-- Registration Disabled Message -->
-	<div class="mb-8 rounded-xl border border-gray-300 bg-gray-100 p-8 text-center">
-		<div class="mb-4">
-			<span class="text-5xl">⏳</span>
+	{#if !selectedRole}
+		<!-- Role Selection -->
+		<div class="mb-8 grid gap-4 md:grid-cols-3">
+			<button
+				onclick={() => selectRole('leader')}
+				class="rounded-xl border-2 border-blue-200 bg-blue-50 p-6 text-center transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:bg-blue-100 hover:shadow-lg"
+			>
+				<div class="mb-3 text-4xl">👨</div>
+				<h3 class="mb-2 text-xl font-bold text-blue-800">Leader</h3>
+				<p class="text-sm text-blue-700">I want to lead the dance</p>
+			</button>
+			<button
+				onclick={() => selectRole('follower')}
+				class="rounded-xl border-2 border-pink-200 bg-pink-50 p-6 text-center transition-all duration-300 hover:scale-105 hover:border-pink-400 hover:bg-pink-100 hover:shadow-lg"
+			>
+				<div class="mb-3 text-4xl">👩</div>
+				<h3 class="mb-2 text-xl font-bold text-pink-800">Follower</h3>
+				<p class="text-sm text-pink-700">I want to follow the dance</p>
+			</button>
+			<button
+				onclick={() => selectRole('couple')}
+				class="rounded-xl border-2 border-purple-200 bg-purple-50 p-6 text-center transition-all duration-300 hover:scale-105 hover:border-purple-400 hover:bg-purple-100 hover:shadow-lg"
+			>
+				<div class="mb-3 text-4xl">👫</div>
+				<h3 class="mb-2 text-xl font-bold text-purple-800">Couple</h3>
+				<p class="text-sm text-purple-700">We're registering together</p>
+			</button>
 		</div>
-		<h3 class="mb-4 text-xl font-bold text-gray-700">Registration will open soon</h3>
-		<p class="text-lg text-gray-600">
-			We're preparing to open registrations. Check back soon!
-		</p>
-	</div>
+	{:else if !selectedPackage}
+		<!-- Package Selection -->
+		<div class="mb-8">
+			<div class="mb-4 flex items-center justify-between">
+				<h3 class="text-xl font-bold text-gray-800">Choose Your Package</h3>
+				<button
+					onclick={resetSelections}
+					class="text-sm text-gray-600 underline hover:text-gray-800"
+				>
+					Change role
+				</button>
+			</div>
+			<div class="grid gap-4 md:grid-cols-2">
+				<button
+					onclick={() => selectPackage('step-in')}
+					class="rounded-xl border-2 border-green-200 bg-green-50 p-6 text-left transition-all duration-300 hover:scale-105 hover:border-green-400 hover:bg-green-100 hover:shadow-lg"
+				>
+					<h4 class="mb-2 text-lg font-bold text-green-800">Step In Package</h4>
+					<p class="mb-3 text-sm text-green-700">
+						Perfect for getting started with the basics
+					</p>
+					<div class="mb-2 text-2xl font-bold text-green-600">
+						{selectedRole === 'couple'
+							? `€${pricing.stepIn.earlyBird.couple}`
+							: `€${pricing.stepIn.earlyBird.individual}`}
+					</div>
+					<ul class="space-y-1 text-xs text-green-700">
+						<li>✓ 6 weekly classes (Mondays)</li>
+						<li>✓ Practice videos & materials</li>
+						{#if selectedRole === 'couple'}
+							<li>✓ 5 Zouk'o'Saturdays included</li>
+						{/if}
+					</ul>
+				</button>
+				<button
+					onclick={() => selectPackage('all-in')}
+					class="rounded-xl border-2 border-purple-200 bg-purple-50 p-6 text-left transition-all duration-300 hover:scale-105 hover:border-purple-400 hover:bg-purple-100 hover:shadow-lg"
+				>
+					<h4 class="mb-2 text-lg font-bold text-purple-800">All In Package</h4>
+					<p class="mb-3 text-sm text-purple-700">
+						Maximum learning with extra support
+					</p>
+					<div class="mb-2 text-2xl font-bold text-purple-600">
+						{selectedRole === 'couple'
+							? `€${pricing.allIn.earlyBird.couple}`
+							: `€${pricing.allIn.earlyBird.individual}`}
+					</div>
+					<ul class="space-y-1 text-xs text-purple-700">
+						<li>✓ Everything in Step In</li>
+						<li>✓ 5 Zouk'o'Saturdays included</li>
+						<li>✓ Money-back guarantee</li>
+					</ul>
+				</button>
+			</div>
+		</div>
+	{:else}
+		<!-- Final Registration Button -->
+		<div class="mb-8 rounded-xl border-2 border-green-200 bg-green-50 p-8 text-center">
+			<div class="mb-4">
+				<h3 class="mb-2 text-xl font-bold text-green-800">Ready to Register?</h3>
+				<p class="text-green-700">
+					{selectedRole === 'couple' ? 'Couple' : selectedRole === 'leader' ? 'Leader' : 'Follower'} • {selectedPackage === 'step-in' ? 'Step In' : 'All In'} Package
+				</p>
+			</div>
+			<a
+				href={finalRegistrationUrl}
+				target="_blank"
+				rel="noopener"
+				class="inline-block rounded-full bg-gradient-to-r from-green-500 to-green-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
+			>
+				Complete Registration on Holvi →
+			</a>
+			<button
+				onclick={resetSelections}
+				class="mt-4 block w-full text-sm text-gray-600 underline hover:text-gray-800"
+			>
+				Start over
+			</button>
+		</div>
+	{/if}
 </div>
 
 <!-- Leader/Follower Accordion -->
@@ -718,11 +820,22 @@
 	class="fixed right-0 bottom-0 left-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur md:hidden"
 >
 	<div class="mx-auto flex max-w-xl items-center justify-center p-3">
-		<button
-			disabled
-			class="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 px-6 py-3 text-center text-sm font-bold text-white shadow-md cursor-not-allowed opacity-60"
-		>
-			Registration will open soon
-		</button>
+		{#if finalRegistrationUrl}
+			<a
+				href={finalRegistrationUrl}
+				target="_blank"
+				rel="noopener"
+				class="w-full rounded-full bg-gradient-to-r from-green-500 to-green-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:from-green-600 hover:to-green-700"
+			>
+				Register Now →
+			</a>
+		{:else}
+			<button
+				onclick={scrollToRegistration}
+				class="w-full rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600"
+			>
+				Register Now
+			</button>
+		{/if}
 	</div>
 </div>
