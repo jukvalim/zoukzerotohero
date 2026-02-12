@@ -911,6 +911,18 @@
 	</p>
 </Accordion>
 
+<!-- Epassi / Edenred Accordion -->
+<Accordion
+	title="Can I pay with Epassi or Edenred vouchers?"
+	analyticsEvent="EpassiEdenredAccordionOpen"
+>
+	<p class="mb-2 text-lg">
+		Yep! Email
+		<a href="mailto:jukka@zoukzerotohero.com" class="underline">jukka@zoukzerotohero.com</a>
+		for details.
+	</p>
+</Accordion>
+
 <!-- Contact Information -->
 <p class="mb-4 text-center text-gray-600">
 	Any more questions? Contact us at
