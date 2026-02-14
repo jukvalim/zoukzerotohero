@@ -642,7 +642,7 @@
 						🎉 Early Bird Pricing Active!
 					</p>
 					<p class="text-sm text-orange-700">
-						Save money by registering before {earlyBirdDeadline}
+						Save money by registering by {earlyBirdDeadline}
 					</p>
 				</div>
 			{/if}
