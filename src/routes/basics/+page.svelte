@@ -40,7 +40,7 @@
 
 	// Early bird pricing configuration
 	const earlyBirdDeadline = 'Sunday, February 15th';
-	const isEarlyBirdActive = true; // Set to false when early bird period ends
+	const isEarlyBirdActive = false; // Set to false when early bird period ends
 
 	// Pricing structure
 	const pricing = {
