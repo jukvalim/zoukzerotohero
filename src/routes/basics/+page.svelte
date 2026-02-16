@@ -194,27 +194,26 @@
 
 		<!-- Enhanced CTA Section -->
 		<div class="mb-4 text-center">
-			<!-- Try it out on Monday CTA
+			<!-- Try Zouk with course teachers at Zouk'o'Saturday -->
 			<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4">
 				<p class="mb-3 text-lg font-medium text-orange-800">
-					<span class="font-bold text-orange-600">🎉 Want to try out Zouk before joining the course?</span>
+					<span class="font-bold text-orange-600">🎉 Want to try Zouk with the course teachers?</span>
 				</p>
 				<p class="mb-4 text-sm text-orange-700">
-					Last chance of the summer to dance outdoors! Join us at Töölönlahti stage this Wednesday, 18:00.
+					Join us at this week's Zouk'o'Saturday (21.2) — a great way to get a taste before the course starts.
 				</p>
 				<a
-					href="https://fb.me/e/6GWIUHWWW"
+					href="https://www.facebook.com/events/1544892736561338/1544892759894669/?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22home%22%7D%2C%7B%22mechanism%22%3A%22search_results%22%2C%22surface%22%3A%22search%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
 					target="_blank"
-					rel="noopener"
-					class="inline-block rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl plausible-event-name=TryItOutThursdayClick"
+					rel="noopener noreferrer"
+					class="inline-block rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl plausible-event-name=TryItOutZoukOSaturdayClick"
 				>
 					<span class="flex items-center justify-center">
 						<span class="mr-2">🎪</span>
-						Tell me more!
+						Zouk'o'Saturday — event details
 					</span>
 				</a>
-			</div> -->
-
+			</div>
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
