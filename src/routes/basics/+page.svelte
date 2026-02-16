@@ -278,9 +278,14 @@
 					<span class="font-bold">Price</span>
 				</div>
 				<ul class="space-y-2 text-blue-700">
-					<li><b>Early bird price</b> until Sunday, February 15th</li>
-					<li><b>Step In package</b>: <span class="line-through">220€</span> 190€</li>
-					<li><b>All In package</b>: <span class="line-through">300€</span> 270€, includes Saturday classes & socials and money-back guarantee</li>
+					{#if isEarlyBirdActive}
+						<li><b>Early bird price</b> until {earlyBirdDeadline}</li>
+						<li><b>Step In package</b>: <span class="line-through">€{pricing.stepIn.regular.individual}</span> €{pricing.stepIn.earlyBird.individual} (individual), <span class="line-through">€{pricing.stepIn.regular.couple}</span> €{pricing.stepIn.earlyBird.couple} (couple)</li>
+						<li><b>All In package</b>: <span class="line-through">€{pricing.allIn.regular.individual}</span> €{pricing.allIn.earlyBird.individual} (individual), <span class="line-through">€{pricing.allIn.regular.couple}</span> €{pricing.allIn.earlyBird.couple} (couple), includes Saturday classes & socials and money-back guarantee</li>
+					{:else}
+						<li><b>Step In package</b>: €{pricing.stepIn.regular.individual} (individual), €{pricing.stepIn.regular.couple} (couple)</li>
+						<li><b>All In package</b>: €{pricing.allIn.regular.individual} (individual), €{pricing.allIn.regular.couple} (couple), includes Saturday classes & socials and money-back guarantee</li>
+					{/if}
 					<li>Lower prices for couple registration</li>
 					<li>More details available when choosing package</li>
 				</ul>
