@@ -195,6 +195,7 @@
 		<!-- Enhanced CTA Section -->
 		<div class="mb-4 text-center">
 			<!-- Try Zouk with course teachers at Zouk'o'Saturday -->
+			<!--
 			<div class="mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4">
 				<p class="mb-3 text-lg font-medium text-orange-800">
 					<span class="font-bold text-orange-600">🎉 Want to try Zouk with the course teachers?</span>
@@ -214,6 +215,7 @@
 					</span>
 				</a>
 			</div>
+			-->
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
@@ -251,7 +253,7 @@
 					<li><b>Start date:</b> Monday, March 2nd</li>
 					<li><b>End date:</b> Monday, April 6th</li>
 					<li><b>Duration:</b> 6 weeks</li>
-					<li><b>Time:</b> Mondays, 19:30-21:00</li>
+					<li><b>Time:</b> Mondays, 18:00-19:30</li>
 				</ul>
 			</div>
 			<div>
