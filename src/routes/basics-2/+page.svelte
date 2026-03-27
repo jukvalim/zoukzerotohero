@@ -163,37 +163,3 @@
 	</p>
 </Accordion>
 
-
-
-<hr class="my-8" />
-
-<h2 class="mb-4 text-xl font-bold md:text-2xl">
-	🤝 Spread the Zouk &dash; Referral Program & Discounts
-</h2>
-
-<p>
-	Would you like to help us grow the Zouk community? Invite your friends to our next <a href="/basics"
-		>From Zero to Zouk Basics course</a
-	> and you'll get a 20€ discount for the basics II course.
-</p>
-
-<ul>
-	<li>Ask us for your personal <b>discount code</b> to share</li>
-	<li>
-		For each person who signs up using your code, you get:
-		<ul>
-			<li>A <b>20€ discount</b> on basics II course</li>
-			<li>
-				Alternatively, a <b>15€ discount</b> on a private class with Jukka or Anna (1h), to be taken
-				before end of the year
-			</li>
-		</ul>
-	</li>
-	<li>
-		The person who signed up for From Zero to Zouk Basics course gets:
-		<ul>
-			<li>A <b>30€ discount</b> on the course price</li>
-			<li>They get to learn Brazilian Zouk!</li>
-		</ul>
-	</li>
-</ul>
