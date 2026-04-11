@@ -49,7 +49,7 @@
 
 <p class="mb-4">
 	<b>This course is not for beginners.</b> As a prerequisite, you should be able to do the following
-	movements: Basic step, Viradinha, Lateral, Preparation (aka Lunge), Simple Turn and Pião.
+	movements: Basic step, Viradinha, Lateral, Preparation (aka Lunge) and Simple Turn.
 </p>
 
 <h2 class="mt-8 text-xl font-bold md:text-2xl">What You'll Get</h2>
