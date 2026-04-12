@@ -1,12 +1,8 @@
 <script lang="ts">
 	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 
-	const followerUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/9a750b505162b56555200de4cd1b03f5/';
 	const leaderUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/3c25a9469280f0555f8189f0f4a92141/';
-	const coupleUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/3d9675d1d9325c58904d4823ea8d07af/';
 </script>
 
 <svelte:head>
@@ -78,12 +74,11 @@
 <h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
 <div class="flex max-w-md flex-col gap-4 text-xl">
-	<a
-		href={followerUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-purple-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-purple-700"
-		>👉 Register as a follower <span class="text-base font-normal opacity-90">(110€)</span></a>
+	<span
+		class="rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
+		aria-disabled="true"
+		><span class="line-through">👉 Register as a follower</span>
+		<span class="text-base font-normal opacity-90"> (110€, sold out)</span></span>
 
 	<a
 		href={leaderUrl}
@@ -92,12 +87,11 @@
 		class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
 		>👉 Register as a leader <span class="text-base font-normal opacity-90">(110€)</span></a>
 
-	<a
-		href={coupleUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-green-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-green-700"
-		>👉 Couple registration <span class="text-base font-normal opacity-90">(200€)</span></a>
+	<span
+		class="rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
+		aria-disabled="true"
+		><span class="line-through">👉 Couple registration</span>
+		<span class="text-base font-normal opacity-90"> (200€, sold out)</span></span>
 </div>
 
 <!--
