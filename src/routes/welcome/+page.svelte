@@ -11,7 +11,7 @@
 </p>
 
 <p class="mb-8">
-	{m['welcome.welcome_description_1']()} <a href="https://fb.me/e/5tFhXNbKp">{m['welcome.welcome_description_2']()}</a>.
+	{m['welcome.welcome_description_1']()} <a href="https://www.facebook.com/events/4764200273801776">{m['welcome.welcome_description_2']()}</a>.
 </p>
 
 <h2 class="md:text-2xl text-xl font-bold mb-4">
