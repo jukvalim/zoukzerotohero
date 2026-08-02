@@ -20,8 +20,6 @@
 		"welcome_description_2": "Facebook event",
 		"beginner_courses_title": "Autumn Beginner Courses",
 		"beginner_courses_description": "In the autumn, there's a bunch of progressive beginner courses starting. They are listed below.",
-		"beginners_zzh": "Zouk Zero to Hero beginner course",
-		"beginners_zzh_description": "On Mondays, 18:00-19:30, starts 1.9, taught by Jukka and Anna. Six weeks.",
 		"welcome_beginners_hdc": "Helsinki Dance Central fundamentals course",
 		"welcome_beginners_hdc_description": "On Tuesdays, 17:45-18:45, starts 26.8, taught by Freddy and Andressa. Autumn semester.",
 		"welcome_beginners_lds": "Latiff Brazilian Dance School beginner course",
@@ -29,7 +27,9 @@
 		"welcome_beginners_lambada": "LambadaHelsinki Lambada beginner course",
 		"welcome_beginners_lambada_description": "On Sundays, starts 31.8, six weeks.",
 		"welcome_have_a_look": "You may have found this page because you saw Brazilian Zouk dancing, but if not, you can check out some in this",
-		"welcome_have_a_look_link": "Youtube playlist"
+		"welcome_have_a_look_link": "Youtube playlist",
+		"basics_zzh": "Zouk Zero to Hero basics course",
+		"basics_zzh_description": "On Mondays, 18:00-19:30, starts 28.9, taught by Jukka and Anna. Six weeks."
 	},
 	"links_title": "Brazilian Zouk in Helsinki",
 	"links": {
@@ -121,7 +121,7 @@
 		"title": "Courses",
 		"description": "Courses are a way for dance schools to teach dance. They are a way for dance schools to teach dance. They are a way for dance schools to teach dance."
 	},
-	"beginners_course_description": "Our beginner course starts 2nd of March 2026.",
+	"beginners_course_description": "Our beginner course starts 28th of September 2026.",
 	"beginners_course_link_text": "Learn more!",
 	"beginners_course_title": "Beginners Course",
 	"brazilian_zouk_youtube_playlist_link_text": "Have a look at how Brazilian Zouk looks like."

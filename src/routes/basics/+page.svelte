@@ -38,9 +38,10 @@
 	// State for teacher modal
 	let isTeacherModalOpen = $state(false);
 
-	// Early bird pricing configuration
-	const earlyBirdDeadline = 'Sunday, February 15th';
-	const isEarlyBirdActive = false; // Set to false when early bird period ends
+	// Registration & early bird configuration
+	const isRegistrationOpen = false; // Set to true when registration opens
+	const earlyBirdDeadline = 'Monday, August 31st';
+	const isEarlyBirdActive = true; // Set to false when early bird period ends
 
 	// Pricing structure
 	const pricing = {
@@ -130,9 +131,9 @@
 	<meta property="og:title" content="From Zero to Zouk - Brazilian Zouk Basics Course" />
 	<meta
 		property="og:description"
-		content="Learn to social dance in 6 weeks. Monday evenings starting March 2nd, no partner needed."
+		content="Learn to social dance in 6 weeks. Monday evenings starting September 28th, no partner needed."
 	/>
-	<meta property="og:url" content="https://zoukzerotohero.com/beginners" />
+	<meta property="og:url" content="https://zoukzerotohero.com/basics" />
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
 
@@ -219,18 +220,29 @@
 
 			<div class="mb-4">
 				<p class="text-lg font-medium text-gray-700">
-					<span class="font-bold text-red-600">Starts Monday, March 2nd</span>
+					<span class="font-bold text-red-600">Starts Monday, September 28th</span>
 				</p>
 			</div>
 
-			<div class="mx-auto flex max-w-lg justify-center">
-				<button
-					onclick={scrollToRegistration}
-					class="plausible-event-name=TopRegistrationClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
-				>
-					Register Now
-				</button>
-			</div>
+			{#if isRegistrationOpen}
+				<div class="mx-auto flex max-w-lg justify-center">
+					<button
+						onclick={scrollToRegistration}
+						class="plausible-event-name=TopRegistrationClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl"
+					>
+						Register Now
+					</button>
+				</div>
+			{:else}
+				<div class="mx-auto max-w-lg rounded-xl border-2 border-blue-200 bg-white/80 p-6 shadow-lg backdrop-blur">
+					<p class="mb-2 text-xl font-bold text-blue-800">Registration opens soon</p>
+					{#if isEarlyBirdActive}
+						<p class="text-blue-700">
+							Early bird prices available until {earlyBirdDeadline}
+						</p>
+					{/if}
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>
@@ -250,8 +262,8 @@
 					<span class="font-bold">Schedule</span>
 				</div>
 				<ul class="space-y-2 text-blue-700">
-					<li><b>Start date:</b> Monday, March 2nd</li>
-					<li><b>End date:</b> Monday, April 6th</li>
+					<li><b>Start date:</b> Monday, September 28th</li>
+					<li><b>End date:</b> Monday, November 2nd</li>
 					<li><b>Duration:</b> 6 weeks</li>
 					<li><b>Time:</b> Mondays, 18:00-19:30</li>
 				</ul>
@@ -288,7 +300,9 @@
 						<li><b>All In package</b>: €{pricing.allIn.regular.individual} (individual), €{pricing.allIn.regular.couple} (couple), includes Saturday classes & socials and money-back guarantee</li>
 					{/if}
 					<li>Lower prices for couple registration</li>
-					<li>More details available when choosing package</li>
+					{#if isRegistrationOpen}
+						<li>More details available when choosing package</li>
+					{/if}
 				</ul>
 			</div>
 		</div>
@@ -575,6 +589,19 @@
 		Ready to Join?
 	</h2>
 
+	{#if !isRegistrationOpen}
+		<div class="mb-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50 p-8">
+			<p class="mb-4 text-2xl font-bold text-blue-800">Registration opens soon</p>
+			<p class="mb-4 text-lg text-blue-700">
+				We're getting ready for the next course &mdash; stay tuned!
+			</p>
+			{#if isEarlyBirdActive}
+				<p class="text-lg font-medium text-orange-700">
+					🎉 Early bird prices until {earlyBirdDeadline}
+				</p>
+			{/if}
+		</div>
+	{:else}
 	<!--
 	<div
 		class="mb-8 rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-8"
@@ -799,6 +826,7 @@
 			</a>
 		</div>
 	{/if}
+	{/if}
 </div>
 
 <!-- Leader/Follower Accordion -->
@@ -958,7 +986,7 @@
 			onclick={scrollToRegistration}
 			class="plausible-event-name=MobileCTAClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg"
 		>
-			Register now
+			{isRegistrationOpen ? 'Register now' : 'Registration opens soon'}
 		</button>
 	</div>
 </div>

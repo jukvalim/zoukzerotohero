@@ -24,10 +24,10 @@
 
 <ul class="space-y-2 mb-8">
 	<li>
-		<a href="/beginners">
-			{m['welcome.beginners_zzh']()}
+		<a href="/basics">
+			{m['welcome.basics_zzh']()}
 		</a>
-		{m['welcome.beginners_zzh_description']()}
+		{m['welcome.basics_zzh_description']()}
 	</li>
 	<li>
 		<a href="https://www.helsinkidancecentral.com/courses-events/zoukprogressivecourses">

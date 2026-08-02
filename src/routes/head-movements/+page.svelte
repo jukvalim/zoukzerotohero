@@ -1,14 +1,20 @@
 <script lang="ts">
 	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 
+	const isRegistrationOpen = false; // Set to true when registration opens
+
+	const followerUrl =
+		'https://holvi.com/shop/zoukzerotohero/product/9a750b505162b56555200de4cd1b03f5/';
 	const leaderUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/3c25a9469280f0555f8189f0f4a92141/';
+	const coupleUrl =
+		'https://holvi.com/shop/zoukzerotohero/product/3d9675d1d9325c58904d4823ea8d07af/';
 </script>
 
 <svelte:head>
 	<title>Head Movements Course</title>
 	<meta property="og:title" content="Head Movements Course" />
-	<meta property="og:description" content="Learn Brazilian Zouk Head Movements, five weeks course. Monday evenings, 20 April – 18 May." />
+	<meta property="og:description" content="Learn Brazilian Zouk Head Movements, six weeks course. Monday evenings, 28 September – 2 November." />
 	<meta property="og:url" content="https://zoukzerotohero.com/head-movements" />
 	<meta property="og:image" content={head_movements_image} />
 </svelte:head>
@@ -51,7 +57,7 @@
 <h2 class="mt-8 text-xl font-bold md:text-2xl">What You'll Get</h2>
 
 <ul>
-	<li>5 structured weekly classes (1.5 hours each, Mondays)</li>
+	<li>6 structured weekly classes (1.5 hours each, Mondays)</li>
 	<li>Recap videos after each class</li>
 	<li>Personalized feedback</li>
 </ul>
@@ -59,40 +65,47 @@
 <h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">Course Details</h2>
 
 <ul>
-	<li><b>Teachers:</b> Jukka, Anna as assistant teacher</li>
-	<li><b>Course dates:</b> Mondays, 20 April &ndash; 18 May</li>
-	<li><b>Duration:</b> 5 weeks</li>
+	<li><b>Teachers:</b> Jukka and Anna</li>
+	<li><b>Course dates:</b> Mondays, 28 September &ndash; 2 November</li>
+	<li><b>Duration:</b> 6 weeks</li>
 	<li><b>Time:</b> Mondays, 19:30-21:00</li>
 	<li>
 		<b>Location:</b> <a href="https://www.helsinkidancecentral.com/">Helsinki Dance Central</a>,
 		Sörnaisten Rantatie 33 C, 4th Floor
 	</li>
 	<li><b>Teaching language:</b> English</li>
-	<li><b>Price:</b> 110€, couple registration 200€</li>
+	<li><b>Price:</b> 130€, couple registration 240€</li>
 </ul>
 
-<h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
+{#if isRegistrationOpen}
+	<h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
-<div class="flex max-w-md flex-col gap-4 text-xl">
-	<span
-		class="rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
-		aria-disabled="true"
-		><span class="line-through">👉 Register as a follower</span>
-		<span class="text-base font-normal opacity-90"> (110€, sold out)</span></span>
+	<div class="flex max-w-md flex-col gap-4 text-xl">
+		<a
+			href={followerUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+			>👉 Register as a follower <span class="text-base font-normal opacity-90">(130€)</span></a
+		>
 
-	<a
-		href={leaderUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-		>👉 Register as a leader <span class="text-base font-normal opacity-90">(110€)</span></a>
+		<a
+			href={leaderUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+			>👉 Register as a leader <span class="text-base font-normal opacity-90">(130€)</span></a
+		>
 
-	<span
-		class="rounded-md bg-gray-500 px-6 py-3 text-center font-medium whitespace-nowrap text-white cursor-not-allowed"
-		aria-disabled="true"
-		><span class="line-through">👉 Couple registration</span>
-		<span class="text-base font-normal opacity-90"> (200€, sold out)</span></span>
-</div>
+		<a
+			href={coupleUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+			>👉 Couple registration <span class="text-base font-normal opacity-90">(240€)</span></a
+		>
+	</div>
+{/if}
 
 <!--
 <hr class="my-8" />

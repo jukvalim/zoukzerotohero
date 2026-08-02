@@ -9,20 +9,21 @@
 	const coupleUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/a7a08a29ff3c65d1643bc1c8016f4e02/';
 
-	// Early bird pricing configuration
+	// Registration & early bird configuration
+	const isRegistrationOpen = false; // Set to true when registration opens
 	const earlyBirdDeadline = 'Saturday, February 15th';
 	const isEarlyBirdActive = false; // Set to false when early bird period ends
 	const earlyBirdDiscount = 30; // €30 off
 
-	// Pricing structure (5/6 of former 6-week prices (220 / 400), rounded down to nearest €10)
+	// Pricing structure (6-week course)
 	const pricing = {
 		individual: {
-			regular: 180,
-			earlyBird: 180 - earlyBirdDiscount
+			regular: 220,
+			earlyBird: 220 - earlyBirdDiscount
 		},
 		couple: {
-			regular: 330,
-			earlyBird: 330 - earlyBirdDiscount
+			regular: 400,
+			earlyBird: 400 - earlyBirdDiscount
 		}
 	};
 </script>
@@ -30,7 +31,7 @@
 <svelte:head>
 	<title>Brazilian Zouk Basics Course II</title>
 	<meta property="og:title" content="Brazilian Zouk Basics Course II" />
-	<meta property="og:description" content="Brazilian Zouk Basics II, five weeks course. Monday evenings, 20 April – 18 May." />
+	<meta property="og:description" content="Brazilian Zouk Basics II, six weeks course. Monday evenings, 9 November – 14 December." />
 	<meta property="og:url" content="https://zoukzerotohero.com/basics-2" />
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
@@ -57,7 +58,7 @@
 <h2 class="mt-8 text-xl font-bold md:text-2xl mb-4">What You'll Get</h2>
 
 <ul>
-	<li>5 structured weekly classes (1.5 hours each, Mondays)</li>
+	<li>6 structured weekly classes (1.5 hours each, Mondays)</li>
 	<li >
 		Recap & practice videos
 	</li>
@@ -71,8 +72,8 @@
 
 <ul>
 	<li><b>Teachers:</b> Jukka & Anna</li>
-	<li><b>Course dates:</b> Mondays, 20 April &ndash; 18 May</li>
-	<li><b>Duration:</b> 5 weeks</li>
+	<li><b>Course dates:</b> Mondays, 9 November &ndash; 14 December</li>
+	<li><b>Duration:</b> 6 weeks</li>
 	<li><b>Time:</b> Mondays, 18:00-19:30</li>
 	<li>
 		<b>Location:</b> <a href="https://www.helsinkidancecentral.com/">Helsinki Dance Central</a>,
@@ -94,78 +95,80 @@
 	</li>
 </ul>
 
-{#if isEarlyBirdActive}
-	<div class="mt-8 mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4 text-center">
-		<p class="text-lg font-semibold text-orange-800">
-			🎉 Early Bird Pricing Active!
-		</p>
-		<p class="text-sm text-orange-700">
-			Save €{earlyBirdDiscount} by registering before {earlyBirdDeadline}
-		</p>
+{#if isRegistrationOpen}
+	{#if isEarlyBirdActive}
+		<div class="mt-8 mb-6 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-4 text-center">
+			<p class="text-lg font-semibold text-orange-800">
+				🎉 Early Bird Pricing Active!
+			</p>
+			<p class="text-sm text-orange-700">
+				Save €{earlyBirdDiscount} by registering before {earlyBirdDeadline}
+			</p>
+		</div>
+	{/if}
+
+	<h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
+
+	<p class="mb-4 text-gray-700">
+		Register via our
+		<a
+			href="https://holvi.com/shop/zoukzerotohero/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="underline">Holvi shop</a
+		>.
+	</p>
+
+	<div class="flex max-w-md flex-col gap-4 text-xl mb-8">
+		<a
+			href={followerUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+			>👉 Register as a follower
+			{#if isEarlyBirdActive}
+				<span class="text-base font-normal opacity-90">
+					(€{pricing.individual.earlyBird}
+					<span class="line-through opacity-75">€{pricing.individual.regular}</span>)
+				</span>
+			{:else}
+				<span class="text-base font-normal opacity-90">(€{pricing.individual.regular})</span>
+			{/if}
+		</a>
+
+		<a
+			href={leaderUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+			>👉 Register as a leader
+			{#if isEarlyBirdActive}
+				<span class="text-base font-normal opacity-90">
+					(€{pricing.individual.earlyBird}
+					<span class="line-through opacity-75">€{pricing.individual.regular}</span>)
+				</span>
+			{:else}
+				<span class="text-base font-normal opacity-90">(€{pricing.individual.regular})</span>
+			{/if}
+		</a>
+
+		<a
+			href={coupleUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+			>👉 Couple registration
+			{#if isEarlyBirdActive}
+				<span class="text-base font-normal opacity-90">
+					(€{pricing.couple.earlyBird}
+					<span class="line-through opacity-75">€{pricing.couple.regular}</span>)
+				</span>
+			{:else}
+				<span class="text-base font-normal opacity-90">(€{pricing.couple.regular})</span>
+			{/if}
+		</a>
 	</div>
 {/if}
-
-<h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
-
-<p class="mb-4 text-gray-700">
-	Register via our
-	<a
-		href="https://holvi.com/shop/zoukzerotohero/"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="underline">Holvi shop</a
-	>.
-</p>
-
-<div class="flex max-w-md flex-col gap-4 text-xl mb-8">
-	<a
-		href={followerUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-		>👉 Register as a follower
-		{#if isEarlyBirdActive}
-			<span class="text-base font-normal opacity-90">
-				(€{pricing.individual.earlyBird}
-				<span class="line-through opacity-75">€{pricing.individual.regular}</span>)
-			</span>
-		{:else}
-			<span class="text-base font-normal opacity-90">(€{pricing.individual.regular})</span>
-		{/if}
-	</a>
-
-	<a
-		href={leaderUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-		>👉 Register as a leader
-		{#if isEarlyBirdActive}
-			<span class="text-base font-normal opacity-90">
-				(€{pricing.individual.earlyBird}
-				<span class="line-through opacity-75">€{pricing.individual.regular}</span>)
-			</span>
-		{:else}
-			<span class="text-base font-normal opacity-90">(€{pricing.individual.regular})</span>
-		{/if}
-	</a>
-
-	<a
-		href={coupleUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-		>👉 Couple registration
-		{#if isEarlyBirdActive}
-			<span class="text-base font-normal opacity-90">
-				(€{pricing.couple.earlyBird}
-				<span class="line-through opacity-75">€{pricing.couple.regular}</span>)
-			</span>
-		{:else}
-			<span class="text-base font-normal opacity-90">(€{pricing.couple.regular})</span>
-		{/if}
-	</a>
-</div>
 
 <!-- FAQ Accordion -->
 <Accordion title="Do I need to take Basics I first?" analyticsEvent="BasicsIPrerequisiteAccordionOpen">
