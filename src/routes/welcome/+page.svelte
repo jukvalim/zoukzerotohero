@@ -41,12 +41,12 @@
 		</a>
 		{m['welcome.welcome_beginners_lda_description']()}
 	</li>
-	<li>
+	<!-- <li>
 		<a href="https://fb.me/e/51eF5Ji9M">
 			{m['welcome.welcome_beginners_lambada']()}
 		</a>
 		{m['welcome.welcome_beginners_lambada_description']()}
-	</li>
+	</li> -->
 </ul>
 
 <ZoukLinks />
