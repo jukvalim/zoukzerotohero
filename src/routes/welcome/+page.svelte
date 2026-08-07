@@ -36,7 +36,7 @@
 		{m['welcome.welcome_beginners_hdc_description']()}
 	</li>
 	<li>
-		<a href="https://fb.me/e/5ULvt1Ekh">
+		<a href="https://fb.me/e/apSFFPNgQ">
 			{m['welcome.welcome_beginners_lds']()}
 		</a>
 		{m['welcome.welcome_beginners_lda_description']()}
