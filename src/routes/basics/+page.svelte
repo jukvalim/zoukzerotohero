@@ -9,12 +9,12 @@
 	// Fixed headline
 	const chosenHeadline = 'Brazilian Zouk Basics Course';
 
-	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/2189868ca4f59624859e2f836d9d8554/';
-	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/e2c5a1215a52f174c15d2fa8bb97b813/';
-	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/9a727f744ad3833ef24f1b8cced70107/';
-	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/1f698bafa0833fcb7256820cf28b2da1/';
-	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/ecac527e59c5d927f5da64b93d0f4ff9/';
-	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/472a3a06296e256e071a099198656794/';
+	const stepInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/c57c1886edf2fbcfea22e24da01a0a56/';
+	const stepInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/5497a46be0fc444446b93369496af8d9/';
+	const stepInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/3ef57520bf3c52174ee08e587233347d/';
+	const allInLeaderUrl = 'https://holvi.com/shop/zoukzerotohero/product/36ede3a2beb3911ae22c3f19531c1ac7/';
+	const allInFollowerUrl = 'https://holvi.com/shop/zoukzerotohero/product/f0e63ed07991e09da40328ed81ba4a30/';
+	const allInCoupleUrl = 'https://holvi.com/shop/zoukzerotohero/product/acd644197a1f670483dbeecf1eb76be0/';
 
 	function buildUrlWithUtm(baseUrl: string, searchParams: URLSearchParams): string {
 		const utm = new URLSearchParams();
@@ -39,7 +39,7 @@
 	let isTeacherModalOpen = $state(false);
 
 	// Registration & early bird configuration
-	const isRegistrationOpen = false; // Set to true when registration opens
+	const isRegistrationOpen = true; // Set to true when registration opens
 	const earlyBirdDeadline = 'Monday, August 31st';
 	const isEarlyBirdActive = true; // Set to false when early bird period ends
 
@@ -446,7 +446,7 @@
 					<span class="font-semibold text-purple-800">Zouk'o'Saturdays</span>
 				</div>
 				<p class="text-sm text-purple-700">
-					<a href="/zouk-o-saturday" class="underline">5 additional sessions</a> (1.5 hours of drop-in classes + 1.5 hours of social dancing each)
+					<a href="/zouk-o-saturday" class="underline">6 additional sessions</a> (1.5 hours of drop-in classes + 1.5 hours of social dancing each)
 				</p>
 			</div>
 			<div class="rounded-lg border border-purple-200 bg-white/50 p-4">
@@ -751,7 +751,7 @@
 						</li>
 						<li class="flex items-start">
 							<span class="mr-2 text-green-500">✓</span>
-							<span><a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline">Zouk'o'Saturdays</a> (5 additional sessions)</span>
+							<span><a href="/zouk-o-saturday" target="_blank" rel="noopener" class="underline">Zouk'o'Saturdays</a> (6 additional sessions)</span>
 						</li>
 						<li class="flex items-start">
 							<span class="mr-2 text-green-500">✓</span>

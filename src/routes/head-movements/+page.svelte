@@ -1,14 +1,14 @@
 <script lang="ts">
 	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 
-	const isRegistrationOpen = false; // Set to true when registration opens
+	const isRegistrationOpen = true; // Set to true when registration opens
 
 	const followerUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/9a750b505162b56555200de4cd1b03f5/';
+		'https://holvi.com/shop/zoukzerotohero/product/972dddaf602ec6ca76014d9cdd45dff5/';
 	const leaderUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/3c25a9469280f0555f8189f0f4a92141/';
+		'https://holvi.com/shop/zoukzerotohero/product/fea624e897187e49d55993b2cde7eb90/';
 	const coupleUrl =
-		'https://holvi.com/shop/zoukzerotohero/product/3d9675d1d9325c58904d4823ea8d07af/';
+		'https://holvi.com/shop/zoukzerotohero/product/17b3fe332632fb256ca3c85b34c05a79/';
 </script>
 
 <svelte:head>
@@ -51,7 +51,7 @@
 
 <p class="mb-4">
 	<b>This course is not for beginners.</b> As a prerequisite, you should be able to do the following
-	movements: Basic step, Viradinha, Lateral, Preparation (aka Lunge) and Simple Turn.
+	movements: Basic step, Viradinha, Lateral, Preparation (aka Lunge), Simple Turn and Pião.
 </p>
 
 <h2 class="mt-8 text-xl font-bold md:text-2xl">What You'll Get</h2>
