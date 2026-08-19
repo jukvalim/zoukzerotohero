@@ -62,6 +62,7 @@
 	<li>Personalized feedback</li>
 </ul>
 
+
 <h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">Course Details</h2>
 
 <ul>
@@ -76,6 +77,10 @@
 	<li><b>Teaching language:</b> English</li>
 	<li><b>Price:</b> 130€, couple registration 240€</li>
 </ul>
+
+<p class="mt-4">
+	<b>Note:</b> We're planning to continue with head movements II straight after the course, same time, same place. Registration for that will open later on.
+</p>
 
 {#if isRegistrationOpen}
 	<h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
