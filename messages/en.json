@@ -115,7 +115,8 @@
 	"zouk_o_saturday": {
 		"title": "Zouk'o'Saturday",
 		"description": "Zouk'o'Saturday is social dance event we organize on Saturdays at Helsinki Dance Central, 13-16. It consists of two 45-min drop-in classes and a 1.5 h dance social afterwards. The drop-in classes start from the very basics, so people new to Brazilian Zouk are welcome to join in. You don't need a partner of your own. Drop-in classes are taught by different teachers each week.",
-		"fb_link": "Check the details in the Facebook event"
+		"fb_link": "Check the details in the Facebook event",
+		"this_saturday": "This Saturday, 5.9, the drop-in classes are taught by Jukka and Anna. Come try it out!"
 	},
 	"courses": {
 		"title": "Courses",
@@ -124,5 +125,8 @@
 	"beginners_course_description": "Our beginner course starts 28th of September 2026.",
 	"beginners_course_link_text": "Learn more!",
 	"beginners_course_title": "Beginners Course",
-	"brazilian_zouk_youtube_playlist_link_text": "Have a look at how Brazilian Zouk looks like."
+	"brazilian_zouk_youtube_playlist_link_text": "Have a look at how Brazilian Zouk looks like.",
+	"try_zouk_saturday_title": "Try Zouk this Saturday, 5.9",
+	"try_zouk_saturday_description": "Come try Brazilian Zouk with Jukka and Anna at Zouk'o'Saturday. No previous experience or partner needed.",
+	"try_zouk_saturday_link": "Facebook event details"
 }

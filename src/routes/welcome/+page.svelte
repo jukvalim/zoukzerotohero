@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages.js';
 	import ZoukLinks from '$lib/ZoukLinks.svelte';
+	import { getZoukOSaturdayFacebookUrl } from '$lib/tryOutSaturday';
+	import { onMount } from 'svelte';
+
+	let facebookUrl = $state(getZoukOSaturdayFacebookUrl());
+
+	onMount(() => {
+		facebookUrl = getZoukOSaturdayFacebookUrl();
+	});
 </script>
 
 <h1 class="md:text-4xl text-2xl font-bold mb-4">{m['welcome.welcome_title']()}</h1>
@@ -11,7 +19,7 @@
 </p>
 
 <p class="mb-8">
-	{m['welcome.welcome_description_1']()} <a href="https://www.facebook.com/events/4764200273801776">{m['welcome.welcome_description_2']()}</a>.
+	{m['welcome.welcome_description_1']()} <a href={facebookUrl}>{m['welcome.welcome_description_2']()}</a>.
 </p>
 
 <h2 class="md:text-2xl text-xl font-bold mb-4">
