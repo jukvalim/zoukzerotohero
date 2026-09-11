@@ -43,7 +43,7 @@
 	// Registration & early bird configuration
 	const isRegistrationOpen = true; // Set to true when registration opens
 	const earlyBirdDeadline = 'Sunday, September 6th';
-	const isEarlyBirdActive = true; // Set to false when early bird period ends
+	const isEarlyBirdActive = false; // Set to false when early bird period ends
 
 	// Pricing structure
 	const pricing = {
