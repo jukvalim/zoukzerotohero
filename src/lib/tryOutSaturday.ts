@@ -1,8 +1,8 @@
-/** End of Saturday 5 Sep 2026 in Helsinki (EEST, UTC+3). Hidden from Sunday 6 Sep. */
-export const TRY_OUT_SATURDAY_ENDS_AT = new Date('2026-09-06T00:00:00+03:00');
+/** End of Saturday 26 Sep 2026 in Helsinki (EEST, UTC+3). Hidden from Sunday 27 Sep. */
+export const TRY_OUT_SATURDAY_ENDS_AT = new Date('2026-09-26T00:00:00+03:00');
 
 export const TRY_OUT_FACEBOOK_URL =
-	'https://www.facebook.com/events/4764200273801776/4764200317135105/';
+	'https://www.facebook.com/events/4764200273801776/4813469678874835/';
 
 export const ZOUK_O_SATURDAY_FACEBOOK_URL = 'https://www.facebook.com/events/4764200273801776';
 
