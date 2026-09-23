@@ -2,6 +2,9 @@
 	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 
 	const isRegistrationOpen = true; // Set to true when registration opens
+	const followerRegistrationsSoldOut = true;
+	const leaderRegistrationsSoldOut = false;
+	const coupleRegistrationsSoldOut = false;
 
 	const followerUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/972dddaf602ec6ca76014d9cdd45dff5/';
@@ -86,29 +89,50 @@
 	<h2 class="mt-8 mb-6 text-xl font-bold md:text-2xl">Sign up Now</h2>
 
 	<div class="flex max-w-md flex-col gap-4 text-xl">
-		<a
-			href={followerUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-			>👉 Register as a follower <span class="text-base font-normal opacity-90">(130€)</span></a
-		>
+		{#if followerRegistrationsSoldOut}
+			<span
+				class="cursor-not-allowed rounded-md bg-gray-400 px-6 py-3 text-center font-medium whitespace-nowrap text-white"
+				>Follower registration sold out</span
+			>
+		{:else}
+			<a
+				href={followerUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+				>👉 Register as a follower <span class="text-base font-normal opacity-90">(130€)</span></a
+			>
+		{/if}
 
-		<a
-			href={leaderUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-			>👉 Register as a leader <span class="text-base font-normal opacity-90">(130€)</span></a
-		>
+		{#if leaderRegistrationsSoldOut}
+			<span
+				class="cursor-not-allowed rounded-md bg-gray-400 px-6 py-3 text-center font-medium whitespace-nowrap text-white"
+				>Leader registration sold out</span
+			>
+		{:else}
+			<a
+				href={leaderUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+				>👉 Register as a leader <span class="text-base font-normal opacity-90">(130€)</span></a
+			>
+		{/if}
 
-		<a
-			href={coupleUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
-			>👉 Couple registration <span class="text-base font-normal opacity-90">(240€)</span></a
-		>
+		{#if coupleRegistrationsSoldOut}
+			<span
+				class="cursor-not-allowed rounded-md bg-gray-400 px-6 py-3 text-center font-medium whitespace-nowrap text-white"
+				>Couple registration sold out</span
+			>
+		{:else}
+			<a
+				href={coupleUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="rounded-md bg-blue-600 px-6 py-3 text-center font-medium whitespace-nowrap text-white transition-colors duration-200 hover:bg-blue-700"
+				>👉 Couple registration <span class="text-base font-normal opacity-90">(240€)</span></a
+			>
+		{/if}
 	</div>
 {/if}
 
