@@ -4,7 +4,7 @@
 	const isRegistrationOpen = true; // Set to true when registration opens
 	const followerRegistrationsSoldOut = true;
 	const leaderRegistrationsSoldOut = false;
-	const coupleRegistrationsSoldOut = false;
+	const coupleRegistrationsSoldOut = true;
 
 	const followerUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/972dddaf602ec6ca76014d9cdd45dff5/';

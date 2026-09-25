@@ -204,7 +204,7 @@
 						<span class="font-bold text-orange-600">🎉 Want to try Zouk with Jukka and Anna?</span>
 					</p>
 					<p class="mb-4 text-sm text-orange-700">
-						Join us this Saturday, 5.9, at Zouk'o'Saturday — a great way to get a taste before the course starts.
+						Join us this Saturday, 26.9, at Zouk'o'Saturday — a great way to get a taste before the course starts.
 					</p>
 					<a
 						href={TRY_OUT_FACEBOOK_URL}
