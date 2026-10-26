@@ -18,7 +18,8 @@
 	const coursesItems = [
 		{ href: '/basics', key: 'navigation.basics' as const },
 		{ href: '/basics-2', key: 'navigation.basics-2' as const },
-		{ href: '/head-movements', key: 'navigation.head-movements' as const }
+		{ href: '/head-movements', key: 'navigation.head-movements' as const },
+		{ href: '/head-movements-2', key: 'navigation.head-movements-2' as const }
 	] as const;
 
 	function toggleMobileMenu() {
@@ -42,22 +43,17 @@
 	}
 
 	function isCoursesActive(): boolean {
-		return $page.url.pathname.startsWith('/courses') ||
-			   $page.url.pathname.startsWith('/beginners')
+		return $page.url.pathname.startsWith('/courses') || $page.url.pathname.startsWith('/beginners');
 	}
 
 	function getActiveClasses(href: string): string {
 		const active = isActive(href);
-		return active
-			? 'text-blue-600 font-semibold border-b-2 border-blue-600 pb-1'
-			: 'text-gray-800';
+		return active ? 'text-blue-600 font-semibold border-b-2 border-blue-600 pb-1' : 'text-gray-800';
 	}
 
 	function getCoursesActiveClasses(): string {
 		const active = isCoursesActive();
-		return active
-			? 'text-blue-600 font-semibold border-b-2 border-blue-600 pb-1'
-			: 'text-gray-800';
+		return active ? 'text-blue-600 font-semibold border-b-2 border-blue-600 pb-1' : 'text-gray-800';
 	}
 
 	function handleMobileKeydown(e: KeyboardEvent, href: string) {
@@ -76,13 +72,12 @@
 <!-- Desktop Navigation -->
 <nav class="hidden items-center space-x-6 md:flex">
 	{#each navigationItems as { href, key }}
-
 		<a
 			{href}
 			class="flex items-center transition-colors hover:text-gray-600 {getActiveClasses(href)}"
 		>
 			{#if key === 'navigation.home'}
-				<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="h-8 mr-2" />
+				<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="mr-2 h-8" />
 			{/if}
 			{getMessage(key)}
 		</a>
@@ -108,11 +103,15 @@
 		</button>
 
 		{#if coursesDropdownOpen}
-			<div class="absolute left-0 top-full z-50 mt-2 w-48 rounded-md bg-white py-2 shadow-lg ring-1 ring-black ring-opacity-5">
+			<div
+				class="ring-opacity-5 absolute top-full left-0 z-50 mt-2 w-48 rounded-md bg-white py-2 shadow-lg ring-1 ring-black"
+			>
 				{#each coursesItems as { href, key }}
 					<a
 						{href}
-						class="block px-4 py-2 text-sm transition-colors hover:bg-gray-100 {isActive(href) ? 'bg-blue-50 text-blue-600 font-semibold' : 'text-gray-800'}"
+						class="block px-4 py-2 text-sm transition-colors hover:bg-gray-100 {isActive(href)
+							? 'bg-blue-50 font-semibold text-blue-600'
+							: 'text-gray-800'}"
 					>
 						{getMessage(key)}
 					</a>
@@ -164,10 +163,11 @@
 		>
 			<nav class="flex flex-col space-y-4">
 				{#each navigationItems as { href, key }, index}
-
 					<a
 						{href}
-						class="flex items-center py-2 transition-colors hover:text-gray-600 {index === 0 ? 'border-b border-gray-200' : ''}"
+						class="flex items-center py-2 transition-colors hover:text-gray-600 {index === 0
+							? 'border-b border-gray-200'
+							: ''}"
 						class:text-gray-800={!isActive(href)}
 						class:text-blue-600={isActive(href)}
 						class:font-semibold={isActive(href)}
@@ -175,7 +175,7 @@
 						onkeydown={(e) => handleMobileKeydown(e, href)}
 					>
 						{#if key === 'navigation.home'}
-							<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="h-8 mr-2" />
+							<img src="/favicon.png" alt="Zouk Zero to Hero logo" class="mr-2 h-8" />
 						{/if}
 						{getMessage(key)}
 					</a>
@@ -183,7 +183,7 @@
 
 				<!-- Courses Section in Mobile Menu -->
 				<div class="border-b border-gray-200 pb-2">
-					<div class="py-2 text-gray-800 font-medium">
+					<div class="py-2 font-medium text-gray-800">
 						{getMessage('navigation.courses')}
 					</div>
 					<div class="ml-4 space-y-2">

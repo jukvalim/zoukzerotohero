@@ -17,7 +17,10 @@
 <svelte:head>
 	<title>Head Movements Course</title>
 	<meta property="og:title" content="Head Movements Course" />
-	<meta property="og:description" content="Learn Brazilian Zouk Head Movements, six weeks course. Monday evenings, 28 September – 2 November." />
+	<meta
+		property="og:description"
+		content="Learn Brazilian Zouk Head Movements, six weeks course. Monday evenings, 28 September – 2 November."
+	/>
 	<meta property="og:url" content="https://zoukzerotohero.com/head-movements" />
 	<meta property="og:image" content={head_movements_image} />
 </svelte:head>
@@ -65,7 +68,6 @@
 	<li>Personalized feedback</li>
 </ul>
 
-
 <h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">Course Details</h2>
 
 <ul>
@@ -82,7 +84,8 @@
 </ul>
 
 <p class="mt-4">
-	<b>Note:</b> We're planning to continue with head movements II straight after the course, same time, same place. Registration for that will open later on.
+	<b>Note:</b> Head Movements II continues straight after this course, same time, same place.
+	<a href="/head-movements-2" class="underline">Registration is open</a>.
 </p>
 
 {#if isRegistrationOpen}
