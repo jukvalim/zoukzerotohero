@@ -2,7 +2,7 @@
 	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 
 	const isRegistrationOpen = true;
-	const followerRegistrationsSoldOut = false;
+	const followerRegistrationsSoldOut = true;
 	const leaderRegistrationsSoldOut = false;
 	const coupleRegistrationsSoldOut = false;
 
