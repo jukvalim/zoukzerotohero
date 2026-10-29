@@ -22,11 +22,7 @@ describe('/head-movements-2/+page.svelte', () => {
 				'href',
 				'https://holvi.com/shop/zoukzerotohero/product/1f3e0f558fb54e557494fdf2d649a6d0/'
 			);
-		await expect
-			.element(page.getByRole('link', { name: /Couple registration/ }))
-			.toHaveAttribute(
-				'href',
-				'https://holvi.com/shop/zoukzerotohero/product/3a1583b98fd7522736fb65a6b67ed859/'
-			);
+		await expect.element(page.getByText('Couple registration sold out')).toBeInTheDocument();
+		await expect.element(page.getByRole('link', { name: /Couple registration/ })).not.toBeInTheDocument();
 	});
 });

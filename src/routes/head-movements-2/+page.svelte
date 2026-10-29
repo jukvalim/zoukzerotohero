@@ -4,7 +4,7 @@
 	const isRegistrationOpen = true;
 	const followerRegistrationsSoldOut = true;
 	const leaderRegistrationsSoldOut = false;
-	const coupleRegistrationsSoldOut = false;
+	const coupleRegistrationsSoldOut = true;
 
 	const followerUrl =
 		'https://holvi.com/shop/zoukzerotohero/product/d494d87b2d2729fa2777bf29fb0b68e7/';
