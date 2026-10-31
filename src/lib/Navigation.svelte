@@ -14,13 +14,12 @@
 		{ href: '/community-guidelines', key: 'navigation.community-guidelines' as const }
 	] as const;
 
-	// Courses sub-navigation items
+	// Courses sub-navigation items. Inactive courses stay listed, but they are no longer open for registration.
 	const coursesItems = [
-		{ href: '/basics', key: 'navigation.basics' as const },
-		{ href: '/basics-2', key: 'navigation.basics-2' as const },
-		{ href: '/more-dance', key: 'navigation.more-dance' as const },
-		{ href: '/head-movements', key: 'navigation.head-movements' as const },
-		{ href: '/head-movements-2', key: 'navigation.head-movements-2' as const }
+		{ href: '/basics', key: 'navigation.basics' as const, inactive: true },
+		{ href: '/more-dance', key: 'navigation.more-dance' as const, inactive: false },
+		{ href: '/head-movements', key: 'navigation.head-movements' as const, inactive: true },
+		{ href: '/head-movements-2', key: 'navigation.head-movements-2' as const, inactive: false }
 	] as const;
 
 	function toggleMobileMenu() {
@@ -107,12 +106,14 @@
 			<div
 				class="ring-opacity-5 absolute top-full left-0 z-50 mt-2 w-48 rounded-md bg-white py-2 shadow-lg ring-1 ring-black"
 			>
-				{#each coursesItems as { href, key }}
+				{#each coursesItems as { href, key, inactive }}
 					<a
 						{href}
 						class="block px-4 py-2 text-sm transition-colors hover:bg-gray-100 {isActive(href)
 							? 'bg-blue-50 font-semibold text-blue-600'
-							: 'text-gray-800'}"
+							: inactive
+								? 'text-gray-400'
+								: 'text-gray-800'}"
 					>
 						{getMessage(key)}
 					</a>
@@ -188,11 +189,12 @@
 						{getMessage('navigation.courses')}
 					</div>
 					<div class="ml-4 space-y-2">
-						{#each coursesItems as { href, key }}
+						{#each coursesItems as { href, key, inactive }}
 							<a
 								{href}
 								class="block py-1 transition-colors hover:text-gray-600"
-								class:text-gray-800={!isActive(href)}
+								class:text-gray-800={!isActive(href) && !inactive}
+								class:text-gray-400={!isActive(href) && inactive}
 								class:text-blue-600={isActive(href)}
 								class:font-semibold={isActive(href)}
 								onclick={closeMobileMenu}

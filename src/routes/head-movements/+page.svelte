@@ -1,7 +1,7 @@
 <script lang="ts">
 	import head_movements_image from '$lib/assets/images/head_movement.jpg';
 
-	const isRegistrationOpen = true; // Set to true when registration opens
+	const isRegistrationOpen = false;
 	const followerRegistrationsSoldOut = true;
 	const leaderRegistrationsSoldOut = false;
 	const coupleRegistrationsSoldOut = true;
@@ -137,6 +137,8 @@
 			>
 		{/if}
 	</div>
+{:else}
+	<p class="mt-8 text-lg">Registration is closed.</p>
 {/if}
 
 <!--

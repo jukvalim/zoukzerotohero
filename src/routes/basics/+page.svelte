@@ -41,7 +41,7 @@
 	let isTeacherModalOpen = $state(false);
 
 	// Registration & early bird configuration
-	const isRegistrationOpen = true; // Set to true when registration opens
+	const isRegistrationOpen = false;
 	const earlyBirdDeadline = 'Sunday, September 6th';
 	const isEarlyBirdActive = false; // Set to false when early bird period ends
 
@@ -237,12 +237,7 @@
 				</div>
 			{:else}
 				<div class="mx-auto max-w-lg rounded-xl border-2 border-blue-200 bg-white/80 p-6 shadow-lg backdrop-blur">
-					<p class="mb-2 text-xl font-bold text-blue-800">Registration opens soon</p>
-					{#if isEarlyBirdActive}
-						<p class="text-blue-700">
-							Early bird prices available until {earlyBirdDeadline}
-						</p>
-					{/if}
+					<p class="mb-2 text-xl font-bold text-blue-800">Registration is closed</p>
 				</div>
 			{/if}
 		</div>
@@ -593,15 +588,7 @@
 
 	{#if !isRegistrationOpen}
 		<div class="mb-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50 p-8">
-			<p class="mb-4 text-2xl font-bold text-blue-800">Registration opens soon</p>
-			<p class="mb-4 text-lg text-blue-700">
-				We're getting ready for the next course &mdash; stay tuned!
-			</p>
-			{#if isEarlyBirdActive}
-				<p class="text-lg font-medium text-orange-700">
-					🎉 Early bird prices until {earlyBirdDeadline}
-				</p>
-			{/if}
+			<p class="mb-4 text-2xl font-bold text-blue-800">Registration is closed</p>
 		</div>
 	{:else}
 	<!--
@@ -980,15 +967,17 @@
 </div>
 
 <!-- Sticky mobile CTA -->
-<div
-	class="fixed right-0 bottom-0 left-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur md:hidden"
->
-	<div class="mx-auto flex max-w-xl items-center justify-center p-3">
-		<button
-			onclick={scrollToRegistration}
-			class="plausible-event-name=MobileCTAClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg"
-		>
-			{isRegistrationOpen ? 'Register now' : 'Registration opens soon'}
-		</button>
+{#if isRegistrationOpen}
+	<div
+		class="fixed right-0 bottom-0 left-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur md:hidden"
+	>
+		<div class="mx-auto flex max-w-xl items-center justify-center p-3">
+			<button
+				onclick={scrollToRegistration}
+				class="plausible-event-name=MobileCTAClick w-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg"
+			>
+				Register now
+			</button>
+		</div>
 	</div>
-</div>
+{/if}

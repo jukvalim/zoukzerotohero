@@ -25,15 +25,22 @@
 	<meta property="og:image" content={partner_pose_landscape} />
 </svelte:head>
 
-<h1 class="mb-8 text-2xl font-bold md:text-4xl">More Dance to Your Zouk Course</h1>
-
-<h2 class="mb-4 text-xl font-bold md:text-2xl">Make your dance look and feel more interesting and enjoyable</h2>
+<h1 class="mb-8 text-2xl font-bold md:text-4xl">More Dance to Your Zouk!</h1>
 
 <p class="mb-4">
-	The goal of this course is to help your dance look and &mdash; even more importantly &mdash; <strong>feel</strong>
-	more interesting and enjoyable; more like dance, rather than executing figures. In More Dance to Your Zouk course
-	we'll work on body movement, style, flavor and mentality. Along the way, you will also learn
-	movements and variations that work with the course theme.
+	Ever feel like you're doing the steps, but something is missing? Want your dance to feel -
+	<em>and</em> look - less like executing figures and more like actually dancing?
+</p>
+
+<p class="mb-4">
+	This course is about bringing more life, personality and enjoyment into your Brazilian Zouk. We'll
+	explore how to make your dancing feel more natural, expressive and connected, so you can enjoy not
+	just what you're dancing, but how you're dancing.
+</p>
+
+<p class="mb-4">
+	We'll work on body movement, style, flavor and dance mentality, while learning movements and
+	variations that work with the course theme.
 </p>
 
 <div class="flex flex-col items-center">
@@ -45,11 +52,10 @@
 	<p class="mt-2 text-center text-sm">Jukka and Anna &mdash; course teachers</p>
 </div>
 
-<p class="mt-4 mb-2">You can join the course if:</p>
-
-<ul class="mb-4">
-	<li>you're familiar with Brazilian Zouk basics, at least basic step, lateral and simple turn.</li>
-</ul>
+<p class="mt-4 mb-4">
+	<b>Prerequisites:</b> You should be familiar with Brazilian Zouk basics, at least the basic step,
+	lateral and simple turn.
+</p>
 
 <h2 class="mt-8 mb-4 text-xl font-bold md:text-2xl">Course Details</h2>
 
