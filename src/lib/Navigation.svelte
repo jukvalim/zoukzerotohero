@@ -18,6 +18,7 @@
 	const coursesItems = [
 		{ href: '/basics', key: 'navigation.basics' as const },
 		{ href: '/basics-2', key: 'navigation.basics-2' as const },
+		{ href: '/more-dance', key: 'navigation.more-dance' as const },
 		{ href: '/head-movements', key: 'navigation.head-movements' as const },
 		{ href: '/head-movements-2', key: 'navigation.head-movements-2' as const }
 	] as const;
